@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE displaychannel SYSTEM "../../../dtd/displaychannel.dtd">
+
+<displaychannel x="0" y="0" width="100%" height="100%" fadetime="{fadeTime}">
+
+    <background>
+        <area x="1%" y="79%" width="98%" height="22%" layer="1" transparency="10">
+            <drawimage cache="true" imagetype="skinpart" path="displaychannelback" x="0" y="0" width="100%" height="100%"/>
+        </area>
+        <area x="2%" y="80%" width="14%" height="4%" layer="2">
+            <drawimage cache="true" imagetype="icon" path="ico_vdrlogo" x="0" y="0" width="100%" height="100%"/>
+        </area>
+        <area x="2%" y="87%" width="14%" height="10%" layer="2">
+            <drawimage cache="true" imagetype="skinpart" path="channellogoback" x="0" y="0" width="100%" height="100%"/>
+        </area>
+	<area x="79%" y="1%" width="20%" height="14%" layer="1" transparency="10">
+	    <drawimage cache="true" imagetype="skinpart" path="clockback" x="0" y="0" width="100%" height="100%"/>
+	</area>
+    </background>
+
+    <time>
+        <area x="{areawidth}*0.94 - {areaheight}*0.05" y="{areaheight}*0.03" width="{areaheight}*0.10" height="{areaheight}*0.10" layer="2">
+            <drawimage imagetype="skinpart" path="watchhands/s_{sec}" x="0" y="0" width="100%" height="100%"/>
+        </area>
+        <area x="{areawidth}*0.94 - {areaheight}*0.05" y="{areaheight}*0.03" width="{areaheight}*0.10" height="{areaheight}*0.10" layer="3">
+            <drawimage imagetype="skinpart" path="watchhands/m_{min}" x="0" y="0" width="100%" height="100%"/>
+        </area>
+        <area x="{areawidth}*0.94 - {areaheight}*0.05" y="{areaheight}*0.03" width="{areaheight}*0.10" height="{areaheight}*0.10" layer="4">
+            <drawimage imagetype="skinpart" path="watchhands/h_{hmins}" x="0" y="0" width="100%" height="100%"/>
+        </area>
+    </time>
+
+    <datetime>
+        <area x="81%" y="4%" width="9%" height="8%" layer="2">
+            <drawtext align="center" valign="top" font="{vdrOsd}" fontsize="40%" color="{clrWhite}" text="{dayname}" />
+            <drawtext align="center" valign="bottom" font="{vdrOsd}" fontsize="38%" color="{clrWhite}" text="{dayleadingzero}.{month}   {time}" />
+        </area>
+    </datetime>
+
+    <!-- Available Variables channelinfo:
+    {channelnumber}                 Number of Channel, with "-" in case of channel switching
+    {channelname}                   Name of current Channel
+    {channellogoexists}             true if a channel logo exists 
+    {channelid}                     ChannelID as path to display channel logo
+    {switching}                     true if a number is pressed on the remote to switch to a dedicated channel
+    -->
+    <channelinfo>
+        <area x="2%" y="88%" width="14%" height="8%" layer="2">
+            <drawimage cache="true" imagetype="channellogo" path="{channelid}" width="94%" height="94%" align="center" valign="center"/>
+        </area>
+        <area x="18%" y="79%" width="60%" height="6%" layer="2">
+            <drawtext x="0" valign="center" font="{vdrOsd}" fontsize="75%" color="{clrWhite}" text="{channelnumber}  {channelname}" />
+        </area>
+    </channelinfo>
+
+    <!-- Available Variables datetime:
+    {time}                              time in hh:mm
+    {day}                               day in digits
+    {dayleadingzero}                    day in digits with leading 0
+    {dayname}                           Full name of the day
+    {daynameshort}                      Short 3 char name of the day
+    {month}                             month in digits with leading 0
+    {monthname}                         Full name of the month
+    {year}                              year in yyyy
+    -->
+    <customtokens>
+<!--        <area x="70%" y="79%" width="6%" height="6%" layer="2">
+	    <drawtext condition="isset{ctCpuUsage}" y="8%" align="left" font="{vdrOsd}" fontsize="29%" color="{clrWhite}" text="CPU:" />
+	    <drawtext condition="isset{ctCpuUsage}" y="8%" align="right" font="{vdrOsd}" fontsize="29%" color="{clrWhite}" text="{ctCpuUsage}%" />
+	    <drawtext condition="isset{ctMemUsage}" y="30%" align="left" font="{vdrOsd}" fontsize="29%" color="{clrWhite}" text="MEM:" />
+	    <drawtext condition="isset{ctMemUsage}" y="30%" align="right" font="{vdrOsd}" fontsize="29%" color="{clrWhite}" text="{ctMemUsage}%" />
+	    <drawtext condition="isset{ctSwapUsage}" y="52%" align="left" font="{vdrOsd}" fontsize="29%" color="{clrWhite}" text="SWAP:" />
+	    <drawtext condition="isset{ctSwapUsage}" y="52%" align="right" font="{vdrOsd}" fontsize="29%" color="{clrWhite}" text="{ctSwapUsage}%" />
+            <drawimage imagetype="skinpart" path="discpercent" x="{areawidth}*0.3-3" y="5%" width="{areawidth}*0.7+3" height="29%" />
+            <drawrectangle x="{areawidth}*0.3-3" y="5%" width="{areawidth}*0.7 - {areawidth}*0.7*{CtCpuUsage}/100" height="29%" color="{clrRed}" />
+            <drawrectangle x="{areawidth}*0.3 - {areawidth}*0.7*{CtCpuUsage}/100+3" y="5%" width="{areawidth}*0.7*{CtCpuUsage}/100" height="29%" color="{clrRed}" />
+	</area> -->
+    </customtokens>
+
+    <!-- Available Variables epginfo:
+    {currenttitle}                     Title of the current Schedule
+    {currentsubtitle}                  Subtitle of the current Schedule
+    {currentstart}                     Start of current Schedule in hh:mm
+    {currentstop}                      End of current Schedule in hh:mm 
+    {currentduration}                  Duration of current Schedule in min
+    {currentelapsed}                   Elapsed time of current Schedule in min
+    {currentremaining}                 Remaining time of current Schedule in min
+    {currentrecording}                 true if current Schedule is recorded
+    {nexttitle}                        Title of next Schedule
+    {nextsubtitle}                     Subtitle of next Schedule
+    {nextstart}                        Start of next Schedule in hh:mm
+    {nextstop}                         Stop of next Schedule in hh:mm
+    {nextduration}                     Duration of next Schedule in min
+    {nextrecording}                    true if next Schedule will be recorded
+    -->
+    <epginfo>
+        <area x="18%" y="85%" width="68%" height="6%" layer="2">
+            <drawtext name="starttime" x="0" y="5%" font="{vdrOsd}" fontsize="50%" color="{clrWhite}" text="{currentstart}" />
+            <drawtext x="{width(starttime)} + 15" y="0" width="{areawidth} - {width(starttime)} - 15" font="{vdrOsd}" fontsize="60%" color="{clrWhite}" text="{currenttitle}" />
+            <drawtext x="{width(starttime)} + 16" y="55%" width="{areawidth} - {width(starttime)} - 16" font="{vdrOsd}" fontsize="45%" color="{clrWhite}" text="{currentsubtitle}" />
+        </area>
+        <area x="86%" y="85%" width="11%" height="6%" layer="2">
+            <drawtext align="right" y="0" font="{vdrOsd}" fontsize="60%" color="{clrWhite}" text="{currentelapsed}/{currentduration}min" />
+        </area>
+        <area x="18%" y="92%" width="72%" height="6%" layer="2">
+            <drawtext name="starttime" x="0" y="5%" font="{vdrOsd}" fontsize="50%" color="{clrGray}" text="{nextstart}" />
+            <drawtext x="{width(starttime)} + 15" y="0" width="{areawidth} - {width(starttime)} - 15" font="{vdrOsd}" fontsize="60%" color="{clrGray}" text="{nexttitle}" />
+            <drawtext x="{width(starttime)} + 16" y="55%" width="{areawidth} - {width(starttime)} - 16" font="{vdrOsd}" fontsize="45%" color="{clrGray}" text="{nextsubtitle}" />
+        </area>
+        <area x="90%" y="92%" width="7%" height="6%" layer="2">
+            <drawtext align="right" y="0" font="{vdrOsd}" fontsize="60%" color="{clrGray}" text="{nextduration}min" />
+        </area>
+    </epginfo>
+
+    <!-- Available Variables progressbar:
+    {start}                            Start of current Schedule in hh:mm
+    {stop}                             End of current Schedule in hh:mm 
+    {duration}                         Total Duration of current Schedule in seconds
+    {elapsed}                          Elapsed time of current Schedule in seconds
+    {remaining}                        Remaining time of current Schedule in seconds
+    -->
+    <progressbar>
+        <area x="2%" y="84%" width="96%" height="1%" layer="2">
+            <drawellipse x="1" y="1" width="{areaheight}-2" height="{areaheight}-2" color="{clrProgressbar}" quadrant="0" />
+            <drawellipse x="1 + {elapsed}/{duration}*{areawidth} - {elapsed}/{duration}*{areaheight}" y="1" width="{areaheight}-2" height="{areaheight}-2" color="{clrProgressbar}" quadrant="0" />
+            <drawrectangle x="{areaheight}/2" y="1" width="{elapsed}/{duration}*{areawidth} - {elapsed}/{duration}*{areaheight}" height="{areaheight}-2" color="{clrProgressbar}" />
+	</area>
+        <area x="2%" y="84%" width="96%" height="1%" layer="3">
+	    <drawimage cache="true" imagetype="skinpart" path="progressbarback2" x="1" y="1" width="{elapsed}/{duration}*{areawidth} - {elapsed}/{duration}*{areaheight} + {areaheight}-2" height="{areaheight}-2"/>
+	</area>
+        <area x="2%" y="84%" width="96%" height="1%" layer="4">
+	    <drawimage cache="true" imagetype="skinpart" path="progressbarback" x="1" y="1" width="{elapsed}/{duration}*{areawidth} - {elapsed}/{duration}*{areaheight} + {areaheight}-2" height="{areaheight}-2"/>
+	</area>
+    </progressbar>
+
+    <progressbarback>
+        <area x="2%" y="84%" width="96%" height="1%" layer="2">
+            <drawellipse x="0" y="0" width="{areaheight}" height="{areaheight}" color="{clrBlack}" quadrant="0" />
+            <drawellipse x="{areawidth}-{areaheight}" y="0" width="{areaheight}" height="{areaheight}" color="{clrBlack}" quadrant="0" />
+            <drawrectangle x="{areaheight}/2" y="0" width="{areawidth} - {areaheight}" height="{areaheight}" color="{clrBlack}" />
+		</area>
+<!--
+		<area x="2%" y="84%" width="96%" height="1%" layer="3">
+			<drawimage imagetype="skinpart" path="progressbarback" x="0" y="0" width="100%" height="100%"/>
+        </area>
+-->
+    </progressbarback>
+    <!-- Available Variables statusinfo:
+    {isRadio}                          true if channel is a radio channel
+    {hasVT}                            true if channel has video text   
+    {isStereo}                         true if a stereo audio trac is available
+    {isDolby}                          true if a dolby audio track is available
+    {isEncrypted}                      true if channel is encrypted
+    {isRecording}                      true if currently a recording is running on this channel
+    -->
+    <statusinfo>
+        <area x="{areawidth}*0.98 - {areaheight}*0.25 - 25" y="97%" width="{areaheight}*0.25 + 20" height="3%" layer="2">
+            <drawimage condition="{hasVT}" imagetype="icon" path="ico_txton" x="0" y="0" width="{areaheight}" height="{areaheight}"/>
+            <drawimage condition="not{hasVT}" imagetype="icon" path="ico_txtoff" x="0" y="0" width="{areaheight}" height="{areaheight}"/>
+            <drawimage condition="{isStereo}" imagetype="icon" path="ico_stereoon" x="{areaheight}+5" y="0" width="{areaheight}" height="{areaheight}"/>
+            <drawimage condition="not{isStereo}" imagetype="icon" path="ico_stereooff" x="{areaheight}+5" y="0" width="{areaheight}" height="{areaheight}"/>
+            <drawimage condition="{isDolby}" imagetype="icon" path="ico_dolbyon" x="2*{areaheight}+10" y="0" width="{areaheight}" height="{areaheight}"/>
+            <drawimage condition="not{isDolby}" imagetype="icon" path="ico_dolbyoff" x="2*{areaheight}+10" y="0" width="{areaheight}" height="{areaheight}"/>
+            <drawimage condition="{isEncrypted}" imagetype="icon" path="ico_encrypted" x="3*{areaheight}+15" y="0" width="{areaheight}" height="{areaheight}"/>
+            <drawimage condition="not{isEncrypted}" imagetype="icon" path="ico_fta" x="3*{areaheight}+15" y="0" width="{areaheight}" height="{areaheight}"/>
+            <drawimage condition="{isRecording}" imagetype="icon" path="ico_recon" x="4*{areaheight}+20" y="0" width="{areaheight}" height="{areaheight}"/>
+            <drawimage condition="not{isRecording}" imagetype="icon" path="ico_recoff" x="4*{areaheight}+20" y="0" width="{areaheight}" height="{areaheight}"/>
+        </area>
+    </statusinfo>
+
+    <!-- Available Variables screenresolution:
+    {screenwidth}                      width of currently displayed channel in px
+    {screenheight}                     height of currently displayed channel in px
+    {resolution}                       resolution: hd1080i, hd720p, sd576i
+    {aspect}                           screen aspect, each 4:3, 16:9 or 21:9
+    {isHD}                             true for hd1080i and hd720p
+    {isWideScreen}                     true if aspect is 16:9 or 21:9
+    -->
+    <screenresolution>
+        <area x="{areawidth}*0.98 - {areaheight}*0.1" y="97%" width="{areaheight}*0.15" height="3%" layer="2">
+            <drawimage imagetype="icon" path="ico_{resolution}" x="0" y="0" width="{areaheight}*3" height="{areaheight}"/>
+        </area>
+    </screenresolution>
+
+    <!-- Available Variables dvbdeviceinfo:
+    {prevAvailable}                     true if previous Channel Group is avaialble
+    {nextAvailable}                     true if next Channel Group is avaialble
+    {group}                             Name of current Channel Group
+    {nextgroup}                         Name of next Channel Group
+    {prevgroup}                         Name of prev Channel Group
+    {sepexists}                         true if a channel separator logo exists
+    {seppath}                           path for separator logo to use in imagetype "seplogo"
+    -->
+    <channelgroup>
+        <area x="2%" y="88%" width="14%" height="8%" layer="2">
+            <drawimage condition="{sepexists}" imagetype="seplogo" path="{seppath}" width="96%" height="96%" align="center" valign="center" />
+            <drawimage condition="not{sepexists}" imagetype="icon" path="ico_channelsep" align="center" valign="center" width="{areaheight}*0.8" height="{areaheight}*0.8"/>
+        </area>
+        <area x="18%" y="87%" width="80%" height="10%" layer="2">
+<!--            <drawtext x="0" width="25%" valign="center" font="{vdrOsd}" fontsize="60%" color="{clrWhite}" text="{prevgroup}" />
+-->
+            <drawtext x="30%" width="40%" align="center" valign="center" font="{vdrOsd}" fontsize="80%" color="{clrWhite}" text="{group}" />
+<!--            <drawtext align="right" width="25%" valign="center" font="{vdrOsd}" fontsize="60%" color="{clrWhite}" text="{nextgroup}" />
+-->
+            <drawimage cache="true" imagetype="icon" path="ico_arrow_left_channelsep" x="25%" valign="center" width="{areawidth}*4/100" height="{areawidth}*4/100"/>
+            <drawimage cache="true" imagetype="icon" path="ico_arrow_right_channelsep" x="71%" valign="center" width="{areawidth}*4/100" height="{areawidth}*4/100"/>
+        </area>             
+    </channelgroup>
+    <!-- Available Variables signalquality:
+    {signalstrength}                    STR value of currently displayed channel
+    {signalquality}                     SNR value of currently displayed channel
+    -->
+<!--    <signalquality>
+        <area x="17%" y="95%" width="15%" height="4%" layer="3">
+            <drawrectangle x="{areawidth}*{signalstrength}/100" y="0" width="{areawidth} - {areawidth}*{signalstrength}/100" height="45%" color="{clrTransBlack}" />
+            <drawrectangle x="{areawidth}*{signalquality}/100" y="50%" width="{areawidth} - {areawidth}*{signalquality}/100" height="45%" color="{clrTransBlack}" />
+        </area>
+    </signalquality>
+-->
+    <!-- background of signalmeter, will only be drawn if signalquality was deleted -->
+<!--    <signalqualityback>
+        <area x="17%" y="95%" width="15%" height="4%" layer="2">
+            <drawimage imagetype="skinpart" path="signal" x="0" y="0" width="100%" height="45%"/>
+            <drawimage imagetype="skinpart" path="signal" x="0" y="50%" width="100%" height="45%"/>
+        </area>
+    </signalqualityback>
+-->
+    <!-- Available Variables scrapercontent:
+    {mediapath}                         Full Path of Poster or Banner to use in image path attribute
+    {mediawidth}                        width of image in pixel
+    {mediaheight}                       height of image in pixel
+    {isbanner}                          true if image is a banner, false if it is a poster
+    -->
+    <scrapercontent>
+        <area condition="{isbanner}" x="1%" y="1%" width="{areaheight}*0.13*{mediawidth}/{mediaheight}" height="13%" layer="2">
+            <drawimage imagetype="image" path="{mediapath}" align="center" valign="center"  width="{areawidth}" height="{areaheight}"/>
+        </area>
+        <area condition="{hasposter}" x="{areawidth}-{areaheight}*0.5*{posterwidth}/{posterheight}" y="22%" width="{areaheight}*0.5*{posterwidth}/{posterheight}" height="50%" layer="2">
+<!--            <drawimage imagetype="skinpart" path="recback_movie" x="0" y="0" valign="top" align="center" width="{areaheight} * 0.88  * {posterwidth} / {posterheight}" height="{areaheight} * 0.95" />
+-->
+            <drawimage name="poster" imagetype="image" path="{posterpath}" x="0" y="0" align="center" valign="center" width="{areaheight} * 0.83  * {posterwidth} / {posterheight}" height="{areaheight} * 0.83"/>
+        </area>
+        <area condition="{hasposter}" x="{areawidth}-{areaheight}*0.5*{posterwidth}/{posterheight}" y="22%" width="{areaheight}*0.5*{posterwidth}/{posterheight}" height="50%" layer="3">
+            <drawimage imagetype="skinpart" path="recback_movie_top" x="0" y="0" valign="top" align="center" width="{areaheight} * 0.88  * {posterwidth} / {posterheight}" height="{areaheight} * 0.95" />
+        </area>
+
+<!--        <area condition="not{isbanner}" x="1%" y="1%" width="{areaheight}*0.5*{mediawidth}/{mediaheight}" height="50%" layer="2">
+	    <drawimage imagetype="skinpart" path="displaychannelback" x="5" y="5" width="{areawidth}" height="{areaheight}"/>
+            <drawimage imagetype="image" path="{mediapath}" x="5" y="5" width="{areawidth}-10" height="{areaheight}-10"/>
+        </area>
+-->
+    </scrapercontent>
+
+    <!-- Available Variables message:
+    {text}                     message text
+    {status}                   true if message is a status message
+    {info}                     true if message is a info message
+    {warning}                  true if message is a warn message
+    {error}                    true if message is a error message
+    -->
+    <message>
+        <area x="5%" y="58%" width="90%" height="5%" layer="6">
+            <drawimage condition="{status}" imagetype="skinpart" path="messageStatus" x="0" y="0" width="100%" height="100%" />
+            <drawimage condition="{info}" imagetype="skinpart" path="messageInfo" x="0" y="0" width="100%" height="100%" />
+            <drawimage condition="{warning}" imagetype="skinpart" path="messageWarning" x="0" y="0" width="100%" height="100%" />
+            <drawimage condition="{error}" imagetype="skinpart" path="messageError" x="0" y="0" width="100%" height="100%" />
+        </area>
+        <area x="5%" y="58%" width="90%" height="5%" layer="7">
+            <drawtext align="center" valign="center" font="{light}" fontsize="40%" color="{clrWhite}" text="{text}" />
+        </area>
+    </message>
+
+
+</displaychannel>
