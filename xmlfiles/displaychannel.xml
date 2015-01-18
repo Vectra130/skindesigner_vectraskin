@@ -61,8 +61,8 @@
 
     <currentweather>
         <area x="{areawidth}*0.585" y="{areaheight}*0.015" width="19%" height="{areaheight}*0.13" layer="2">
-            <drawimage name="weathericon" imagetype="icon" path="{icon}" x="{areawidth}/6*5 - {width(weathericon)}/2" y="{areaheight}*0.06" width="{areaheight}*0.6" height="{areaheight}*0.6"/>
-            <drawtext name="summary" x="{areawidth}/6*4 - {width(summary)}/2" y="{areaheight}*0.60" font="{vdrOsd}" fontsize="16%" color="{clrWhite}" text="{summary}" />
+            <drawimage name="weathericon" imagetype="icon" path="{icon}" x="{areawidth}/6*5 - {width(weathericon)}/2" y="{areaheight}*0.02" width="{areaheight}*0.6" height="{areaheight}*0.6"/>
+            <drawtext name="summary" x="{areawidth}/6*4 - {width(summary)}/2" y="{areaheight}*0.58" font="{vdrOsd}" fontsize="20%" color="{clrWhite}" text="{summary}" />
             <drawtext name="temperature" x="{areawidth}/6*3 - {width(temperature)}/2" y="{areaheight}*0.28 - {height(temperature)}/2" font="{digital}" fontsize="35%" color="{clrWhite}" text="{temperature} 'C" />
             <drawtext name="apparenttemperature" x="{areawidth}/6*3 - {width(apparenttemperature)}/2" y="{posy(temperature)} + {height(temperature)} + {areaheight}*0.001" font="{vdrOsd}" fontsize="15%" color="{clrWhite}" text="{tr(felt)}: {apparenttemperature}°C" />
             <drawimage condition="gt({windbearing}, 352) || le({windbearing}, 7}" name="windbearingicon" imagetype="icon" path="windbearing_01" x="{areawidth}/6 - {width(windbearingicon)}/2" y="{areaheight}*0.08" width="{areaheight}*0.4" height="{areaheight}*0.4"/>

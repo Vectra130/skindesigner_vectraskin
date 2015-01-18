@@ -118,7 +118,7 @@
 
     <currentweather>
         <area x="40%" y="1%" width="20%" height="8%" layer="3">
-            <drawimage name="weathericon" imagetype="icon" path="{icon}" x="{areawidth}/2 + {width(temperature)}/2 - {width(weathericon)}/2 + 10" valign="center" width="{areaheight}*0.6" height="{areaheight}*0.6"/>
+            <drawimage name="weathericon" imagetype="icon" path="{icon}" x="{areawidth}/2 + {width(temperature)}/2 - {width(weathericon)}/2 + 10" valign="center" width="{areaheight}*1" height="{areaheight}*1"/>
             <drawtext name="temperature" x="{areawidth}/2 - {width(temperature)}/2 - {width(weathericon)}/2 - 10" valign="center" font="{digital}" fontsize="60%" color="{clrWhite}" text="{temperature} 'C" />
         </area>
     </currentweather>
