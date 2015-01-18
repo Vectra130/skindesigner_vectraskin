@@ -61,8 +61,8 @@
 
     <currentweather>
         <area x="{areawidth}*0.585" y="{areaheight}*0.015" width="19%" height="{areaheight}*0.13" layer="2">
-            <drawimage name="weathericon" imagetype="icon" path="{icon}" x="{areawidth}/6*5 - {width(weathericon)}/2" y="{areaheight}*0.08" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
-            <drawtext name="summary" x="{areawidth}/6*5 - {width(summary)}/2" y="{areaheight}*0.60" font="{vdrOsd}" fontsize="16%" color="{clrWhite}" text="{summary}" />
+            <drawimage name="weathericon" imagetype="icon" path="{icon}" x="{areawidth}/6*5 - {width(weathericon)}/2" y="{areaheight}*0.06" width="{areaheight}*0.6" height="{areaheight}*0.6"/>
+            <drawtext name="summary" x="{areawidth}/6*4 - {width(summary)}/2" y="{areaheight}*0.60" font="{vdrOsd}" fontsize="16%" color="{clrWhite}" text="{summary}" />
             <drawtext name="temperature" x="{areawidth}/6*3 - {width(temperature)}/2" y="{areaheight}*0.28 - {height(temperature)}/2" font="{digital}" fontsize="35%" color="{clrWhite}" text="{temperature} 'C" />
             <drawtext name="apparenttemperature" x="{areawidth}/6*3 - {width(apparenttemperature)}/2" y="{posy(temperature)} + {height(temperature)} + {areaheight}*0.001" font="{vdrOsd}" fontsize="15%" color="{clrWhite}" text="{tr(felt)}: {apparenttemperature}°C" />
             <drawimage condition="gt({windbearing}, 352) || le({windbearing}, 7}" name="windbearingicon" imagetype="icon" path="windbearing_01" x="{areawidth}/6 - {width(windbearingicon)}/2" y="{areaheight}*0.08" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
@@ -91,7 +91,7 @@
             <drawimage condition="gt({windbearing}, 337) ++ le({windbearing}, 252}" name="windbearingicon" imagetype="icon" path="windbearing_24" x="{areawidth}/6 - {width(windbearingicon)}/2" y="{areaheight}*0.08" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
             <drawtext name="windspeed" x="{areawidth}/6 - {width(windspeed)}/2" y="{areaheight}*0.49" font="{vdrOsd}" fontsize="16%" color="{clrWhite}" text="{windspeed}km/h" />
             <drawtext name="windbearing" x="{areawidth}/6 - {width(windbearing)}/2" y="{areaheight}*0.60" font="{vdrOsd}" fontsize="16%" color="{clrWhite}" text="{tr(from)} {windbearingstring}" />
-            <drawimage name="precipitation_ico" imagetype="icon" path="rain" x="{areawidth}/6 - {areawidth}*0.01 - {areaheight}*0.105 - {width(precipitationprobability)}/2" y="{areaheight}*0.82" height="{areaheight}*0.17" width="{areaheight}*0.17" />
+            <drawimage name="precipitation_ico" imagetype="icon" path="rain_svg" x="{areawidth}/6 - {areawidth}*0.01 - {areaheight}*0.105 - {width(precipitationprobability)}/2" y="{areaheight}*0.82" height="{areaheight}*0.17" width="{areaheight}*0.17" />
             <drawtext name="precipitationprobability" x="{areawidth}/6 - {areawidth}*0.01 + {areaheight}*0.105 - {width(precipitationprobability)}/2" y="{areaheight}*0.80" font="{vdrOsd}" fontsize="21%" color="{clrWhite}" text="{precipitationprobability}%" />
             <drawimage name="mintemp_ico" imagetype="icon" path="mintemp" x="{areawidth}/6*3 - {areaheight}*0.105 - {width(mintemperature)}/2" y="{areaheight}*0.805" height="21%" width="{areaheight}*0.21" />
             <drawtext name="mintemperature" x="{areawidth}/6*3 + {areaheight}*0.105 - {width(mintemperature)}/2" y="{areaheight}*0.80" font="{vdrOsd}" fontsize="21%" color="{clrWhite}" text="{mintemperature}°C" />
