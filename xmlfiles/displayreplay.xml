@@ -224,7 +224,7 @@
             <drawimage condition="{error}" imagetype="skinpart" path="messageError" x="0" y="0" width="100%" height="100%" />
         </area>
         <area x="5%" y="58%" width="90%" height="15%" layer="7">
-            <drawtext align="center" valign="center" font="{light}" fontsize="40%" color="{clrWhite}" text="{text}" />
+            <drawtext align="center" valign="center" font="{vdrOsd}" fontsize="40%" color="{clrWhite}" text="{text}" />
         </area>
     </message>
 
