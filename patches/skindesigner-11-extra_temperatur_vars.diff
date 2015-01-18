@@ -1,0 +1,51 @@
+--- skindesigner/views/displaymenuview.c.orig	2015-01-08 13:32:51.000000000 +0100
++++ skindesigner/views/displaymenuview.c	2015-01-07 17:34:44.000000000 +0100
+@@ -419,11 +419,11 @@
+         return;
+     }
+ 
+     cString execCommand = cString::sprintf("cd \"%s/\"; \"%s/temperatures\"", SCRIPTFOLDER, SCRIPTFOLDER);
+     system(*execCommand);
+ 
+-    string tempCPU, tempGPU;
+-    int cpu, gpu;
++    string tempCPU, tempGPU, usageCPU, usageMEM;
++    int cpu, gpu, cpuu, memu;
+ 
+     cString itemFilename = cString::sprintf("%s/cpu", SCRIPTOUTPUTPATH );
+     ifstream file(*itemFilename, ifstream::in);
+@@ -453,11 +454,34 @@
+         gpu = 0;
+     }
+ 
++    itemFilename = cString::sprintf("%s/cpuusage", SCRIPTOUTPUTPATH );
++    ifstream file3(*itemFilename, ifstream::in);
++    if( file3.is_open() ) {
++        std::getline(file3, usageCPU);
++        if (usageCPU.size() > 2) {
++            cpuu = atoi(usageCPU.substr(0,2).c_str());
++        } else
++            cpuu = 0;
++        file3.close();
++    }
++    itemFilename = cString::sprintf("%s/memusage", SCRIPTOUTPUTPATH );
++    ifstream file4(*itemFilename, ifstream::in);
++    if( file4.is_open() ) {
++        std::getline(file4, usageMEM);
++        if (usageMEM.size() > 2) {
++            memu = atoi(usageMEM.substr(0,2).c_str());
++        } else
++            memu = 0;
++        file4.close();
++    }
++
+     map < string, string > stringTokens;
+     map < string, int > intTokens;
+ 
+     intTokens.insert(pair<string,int>("cputemp", cpu));
+     intTokens.insert(pair<string,int>("gputemp", gpu));
++    intTokens.insert(pair<string,int>("cpuusage", cpuu));
++    intTokens.insert(pair<string,int>("memusage", memu));
+ 
+     ClearViewElement(veTemperatures);
+     DrawViewElement(veTemperatures, &stringTokens, &intTokens);
