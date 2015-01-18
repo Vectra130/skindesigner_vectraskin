@@ -57,18 +57,6 @@
         </area>
     </currentschedule>
 
-<!--    <time>
-        <area x="{areawidth}*0.265" y="{areawidth}*0.315" width="33%" height="{areawidth}*0.575" layer="5">
-            <drawimage imagetype="skinpart" path="watchhands/s_{sec}" x="0" y="0" width="100%" height="100%"/>
-        </area>
-        <area x="{areawidth}*0.265" y="{areawidth}*0.315" width="33%" height="{areawidth}*0.575" layer="6">
-            <drawimage imagetype="skinpart" path="watchhands/m_{min}" x="0" y="0" width="100%" height="100%"/>
-        </area>
-        <area x="{areawidth}*0.265" y="{areawidth}*0.315" width="33%" height="{areawidth}*0.575" layer="7">
-            <drawimage imagetype="skinpart" path="watchhands/h_{hmins}" x="0" y="0" width="100%" height="100%"/>
-        </area>
-    </time>
--->
     <discusage>
         <area x="87%" y="13%" width="11%" height="17%" layer="1">
             <fill condition="lt({freepercent}, 6)" color="{clrTransRed}" />
@@ -127,6 +115,35 @@
             <drawrectangle x="{width(leftbar)}+4" y="68%" width="{areawidth} - {width(leftbar)} -2" height="25%" color="{clrBlack}" />
         </area>
     </temperatures>
+
+    <currentweather>
+        <area x="40%" y="1%" width="20%" height="8%" layer="3">
+            <drawimage name="weathericon" imagetype="icon" path="{icon}" x="{areawidth}/2 + {width(temperature)}/2 - {width(weathericon)}/2 + 10" valign="center" width="{areaheight}*0.6" height="{areaheight}*0.6"/>
+            <drawtext name="temperature" x="{areawidth}/2 - {width(temperature)}/2 - {width(weathericon)}/2 - 10" valign="center" font="{digital}" fontsize="60%" color="{clrWhite}" text="{temperature} 'C" />
+        </area>
+    </currentweather>
+
+    <devices>
+    </devices>
+
+    <!-- Available Variables devices:
+    {numdevices}                number of available devices
+    {devices[]}                 array with available devices
+    {devices[num]}              number of current device
+    {devices[type]}             type of device (DVB-S, DVB-C, ...)
+    {devices[istuned]}          true if device is currently tuned to a transponder
+    {devices[livetv]}           true if device is currently playing livetv
+    {devices[recording]}        true if device is currently recording
+    {devices[hascam]}           true if device has a CAM
+    {devices[cam]}              number of CAM
+    {devices[signalstrength]}   signalstrength of devcie
+    {devices[signalquality]}    signalstrength of devcie
+    {devices[channelnumber]}    number of the currently tuned channel
+    {devices[channelname]}      name of the currently tuned channel
+    {devices[channellogoexists]} true if a channel logo exists
+    {devices[channelid]}        ID of the currently tuned channel
+    {devices[source]}           source of the currently tuned channel
+    -->
 
     <menuitems x="{areawidth}*0.005" y="15%" orientation="vertical" width="28%" height="75%" align="center" numlistelements="8">
         <listelement>

@@ -9,6 +9,7 @@
 	    <drawimage cache="true" imagetype="skinpart" path="menuclockback" x="{areawidth}*0.99 - {areaheight}" y="0" width="{areaheight}" height="100%"/>
         </area>
     </background>
+
     <scrollbar>
         <area x="98%" y="25%" width="1%" height="60%" layer="2">
             <fill color="{clrBorder}" />

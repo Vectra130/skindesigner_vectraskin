@@ -35,6 +35,7 @@
             <!-- Folders -->
             <area condition="{folder}" x="1%" width="27%" layer="3">
                 <drawimage name="foldericon" imagetype="icon" path="ico_recfolder" x="0" width="0.95*{areaheight} * 92 / 136" height="0.95*{areaheight}" valign="center" />
+                <drawimage condition="{hasposterthumbnail}" name="folderimage" imagetype="image" path="{thumbnailpath}" x="{width(foldericon)} - {width(folderimage)}" y="{areaheight}*0.9 - {height(folderimage)}" width="0.6*{areaheight} * 92 / 136" height="0.6*{areaheight}" />
                 <drawtext name="foldername" x="0.95*{areaheight} * 92 / 136 + 5" y="{areaheight}*0.15" font="{vdrOsd}" fontsize="50%" color="{clrFontMenuItem}" text="{numrecordingsfolder}" />
                 <drawtext name="foldername" x="0.95*{areaheight} * 92 / 136 + 5" y="{areaheight}*0.55" font="{vdrOsd}" fontsize="38%" color="{clrFontMenuItemSelected}" text="{newrecordingsfolder} {tr(new)}" />
             </area>

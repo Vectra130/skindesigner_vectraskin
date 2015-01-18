@@ -34,7 +34,7 @@
             <drawrectangle x="{areawidth}*29/100 - 2" y="12%" width="2" height="76%" color="{clrBorder}" />
             <!-- bottom bar -->
             <drawrectangle x="0" y="90%" width="{areawidth}" height="10%" color="{clrBackground}" />
-            <drawrectangle x="30%" y="{areaheight}*0.9 - 2" width="71%" height="2" color="{clrBorder}" />
+            <drawrectangle x="30%" y="{areaheight}*0.9 - 1" width="71%" height="2" color="{clrBorder}" />
             <!-- upper corner -->
             <drawellipse x="{areawidth}*29/100" y="{areaheight}/10" width="{areawidth}*2/100" height="{areawidth}*2/100" quadrant="-2" color="{clrBorder}" />
             <drawellipse x="{areawidth}*29/100 - 2" y="{areaheight}/10 - 2" width="{areawidth}*2/100" height="{areawidth}*2/100" quadrant="-2" color="{clrBackground}" />
@@ -211,6 +211,7 @@
             <drawtext align="center" y="30%" font="{vdrOsd}" fontsize="30%" color="{clrWhite}" text="{blue}" />
         </area>
     </colorbuttons>
+
     &displaymenudefault;
     &displaymenumain;
     &displaymenusetup;
@@ -222,4 +223,3 @@
     &displaymenudetailrecording;
     &displaymenudetailtext;
 </displaymenu>
-
