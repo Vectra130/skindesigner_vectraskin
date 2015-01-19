@@ -128,7 +128,7 @@
     -->
     <customtokens>
 <!--        <area x="70%" y="79%" width="6%" height="6%" layer="2">
-	    <drawtext condition="isset{ctCpuUsage}" y="8%" align="left" font="{vdrOsd}" fontsize="29%" color="{clrWhite}" text="CPU:" />
+	    <drawtext condition="isset{ctmemusage}" y="8%" align="left" font="{vdrOsd}" fontsize="29%" color="{clrWhite}" text="CPU:" />
 	    <drawtext condition="isset{ctCpuUsage}" y="8%" align="right" font="{vdrOsd}" fontsize="29%" color="{clrWhite}" text="{ctCpuUsage}%" />
 	    <drawtext condition="isset{ctMemUsage}" y="30%" align="left" font="{vdrOsd}" fontsize="29%" color="{clrWhite}" text="MEM:" />
 	    <drawtext condition="isset{ctMemUsage}" y="30%" align="right" font="{vdrOsd}" fontsize="29%" color="{clrWhite}" text="{ctMemUsage}%" />
