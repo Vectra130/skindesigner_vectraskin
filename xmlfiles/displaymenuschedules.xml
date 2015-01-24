@@ -191,10 +191,10 @@
 	    </area>
             <area condition="{whatson}" x="{areawidth}*0.02 + {areawidth}*{schedulesmenusize}*0.01" y="2%" width="{areawidth}*0.97 - {areawidth}*{schedulesmenusize}*0.01" height="96%" layer="2">
                 <!-- title -->
-                <drawtext name="title" align="center" y="0" font="{vdrOsd}" width="{areawidth}-20" fontsize="8%" color="{clrWhite}" text="{title}" />
+                <drawtext name="title" align="center" y="0" font="{vdrOsd}" width="{areawidth}-20" fontsize="{areaheight}*0.08 - {areaheight}*{schedulesmenusize}*0.0002" color="{clrWhite}" text="{title}" />
                 <!-- progress bar if event is running -->
-                <drawtext condition="{running}" name="start" x="{areawidth}/4 - {width(start)}" y="9%" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{start}" />
-                <drawtext condition="{running}" name="stop" x="{areawidth}*3/4" y="9%" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{stop}" />
+                <drawtext condition="{running}" name="start" x="{areawidth}/4 - {width(start)}" y="9%" font="{vdrOsd}" fontsize="{areaheight}*0.06 - {areaheight}*{schedulesmenusize}*0.0002" color="{clrWhite}" text="{start}" />
+                <drawtext condition="{running}" name="stop" x="{areawidth}*3/4" y="9%" font="{vdrOsd}" fontsize="{areaheight}*0.06 - {areaheight}*{schedulesmenusize}*0.0002" color="{clrWhite}" text="{stop}" />
                 <drawellipse condition="{running}" x="{areawidth} / 4 + 5" y="{posy(start)} + {height(start)} / 2 - 6" width="11" height="11" quadrant="0" color="{clrBackground}" />
                 <drawrectangle condition="{running}" x="{areawidth} / 4 + 10" y="{posy(start)} + {height(start)} / 2 - 6" width="{areawidth}/2 - 20" height="11" color="{clrBackground}" />
                 <drawellipse condition="{running}" x="3 * {areawidth} / 4 - 16" y="{posy(start)} + {height(start)} / 2 - 6" width="11" height="11" quadrant="0" color="{clrBackground}" />
@@ -202,7 +202,7 @@
                 <drawrectangle condition="{running}" x="{areawidth} / 4 + 10" y="{posy(start)} + {height(start)} / 2 - 5" width="{areawidth}/2 * {elapsed} / {duration} - 20 * {elapsed} / {duration}" height="9" color="{clrProgressbar}" />
                 <drawellipse condition="{running}" x="{areawidth} / 4 + 10 + {areawidth}/2 * {elapsed} / {duration} - 20 * {elapsed} / {duration} - 4" y="{posy(start)} + {height(start)} / 2 - 5" width="9" height="9" quadrant="0" color="{clrProgressbar}" />
                 <!-- start and stop if event is not running -->
-                <drawtext condition="not{running}" x="10" y="9%" font="{vdrOsd}" fontsize="{areaheight}/20" color="{clrWhite}" text="{start} - {stop} ({duration} min)" />
+                <drawtext condition="not{running}" x="10" y="9%" font="{vdrOsd}" fontsize="{areaheight}*0.08 - {areaheight}*{schedulesmenusize}*0.0002" color="{clrWhite}" text="{start} - {stop} ({duration} min)" />
                 <!-- scraper poster -->
                 <drawimage condition="{showposter}++{hasposter}" name="poster" imagetype="skinpart" path="recback_movie_top" x="{areawidth} - {areawidth}/3" y="{posy(start)} + {height(start)} + 10" width="{areawidth}/3" height="{areawidth}/2.88 * {posterheight} / {posterwidth}" />
                 <drawimage condition="{showposter}++{hasposter}" name="poster_in" imagetype="image" path="{posterpath}" x="{posx(poster)} + {width(poster)}*0.03" y="{posy(poster)} + {height(poster)}*0.085" height="{height(poster)}*0.9" width="{width(poster)}*0.94" />
@@ -210,8 +210,8 @@
                 <drawimage condition="{hasposter}" name="poster" imagetype="image" path="{posterpath}" x="{areawidth} - {areawidth}/3" y="{posy(start)} + {height(start)} + 10" width="{areawidth}/3" height="{areawidth}/3 * {posterheight} / {posterwidth}"/>
 -->
                 <!-- description -->
-                <drawtextbox condition="{showposter}++{hasposter}" x="10" y="{posy(poster)}" width="99%" height="{areaheight} - {posy(poster)}" float="topright" floatwidth="{width(poster)} + 10" floatheight="{height(poster)} + 20" font="{vdrOsd}" fontsize="{areaheight}/20" color="{clrWhite}" text="{description}" />
-                <drawtextbox condition="not{showposter}||not{hasposter}" x="10" y="{posy(poster)}" width="99%" height="{areaheight} - {posy(poster)}" font="{vdrOsd}" fontsize="{areaheight}/20" color="{clrWhite}" text="{description}" />
+                <drawtextbox condition="{showposter}++{hasposter}" x="10" y="{posy(poster)}" width="99%" height="{areaheight} - {posy(poster)}" float="topright" floatwidth="{width(poster)} + 10" floatheight="{height(poster)} + 20" font="{vdrOsd}" fontsize="{areaheight}*0.08 - {areaheight}*{schedulesmenusize}*0.0002" color="{clrWhite}" text="{description}" />
+                <drawtextbox condition="not{showposter}||not{hasposter}" x="10" y="{posy(poster)}" width="99%" height="{areaheight} - {posy(poster)}" font="{vdrOsd}" fontsize="{areaheight}*0.08 - {areaheight}*{schedulesmenusize}*0.0002" color="{clrWhite}" text="{description}" />
             </area>
             <area condition="{whatson}" x="{areawidth}*0.02 + {areawidth}*{schedulesmenusize}*0.01" y="2%" width="{areawidth}*0.97 - {areawidth}*{schedulesmenusize}*0.01" height="96%" layer="3">
                 <drawimage condition="{running}" imagetype="skinpart" path="verticalbartop" x="{areawidth} / 4 + 5" y="{areaheight}*0.09 + {areaheight}*0.06 / 2 - 6" width="{areawidth}/2 * {elapsed} / {duration} - 10 * {elapsed} / {duration}" height="9" />
@@ -228,10 +228,10 @@
             <!-- whatsonnow and whotsonnext -->
             <area condition="{whatsonnow}||{whatsonnext}" x="{areawidth}*0.02 + {areawidth}*{schedulesmenusize}*0.01" y="2%" width="{areawidth}*0.97 - {areawidth}*{schedulesmenusize}*0.01" height="76%" layer="2">
                 <!-- title -->
-                <drawtext align="center" y="0" font="{vdrOsd}" width="{areawidth}-20" fontsize="10%" color="{clrWhite}" text="{title}" />
+                <drawtext align="center" y="0" font="{vdrOsd}" width="{areawidth}-20" fontsize="{areaheight}*0.10 - {areaheight}*{schedulesmenusize}*0.0002" color="{clrWhite}" text="{title}" />
                 <!-- progress bar if event is running -->
-                <drawtext condition="{running}" name="start" x="{areawidth}/4 - {width(start)}" y="11%" font="{vdrOsd}" fontsize="8%" color="{clrWhite}" text="{start}" />
-                <drawtext condition="{running}" name="stop" x="{areawidth}*3/4" y="11%" font="{vdrOsd}" fontsize="8%" color="{clrWhite}" text="{stop}" />
+                <drawtext condition="{running}" name="start" x="{areawidth}/4 - {width(start)}" y="11%" font="{vdrOsd}" fontsize="{areaheight}*0.08 - {areaheight}*{schedulesmenusize}*0.0002" color="{clrWhite}" text="{start}" />
+                <drawtext condition="{running}" name="stop" x="{areawidth}*3/4" y="11%" font="{vdrOsd}" fontsize="{areaheight}*0.08 - {areaheight}*{schedulesmenusize}*0.0002" color="{clrWhite}" text="{stop}" />
                 <drawellipse condition="{running}" x="{areawidth} / 4 + 5" y="{posy(start)} + {height(start)} / 2 - 6" width="11" height="11" quadrant="0" color="{clrBackground}" />
                 <drawrectangle condition="{running}" x="{areawidth} / 4 + 10" y="{posy(start)} + {height(start)} / 2 - 6" width="{areawidth}/2 - 20" height="11" color="{clrBackground}" />
                 <drawellipse condition="{running}" x="3 * {areawidth} / 4 - 16" y="{posy(start)} + {height(start)} / 2 - 6" width="11" height="11" quadrant="0" color="{clrBackground}" />
@@ -239,7 +239,7 @@
                 <drawrectangle condition="{running}" x="{areawidth} / 4 + 10" y="{posy(start)} + {height(start)} / 2 - 5" width="{areawidth}/2 * {elapsed} / {duration} - 20 * {elapsed} / {duration}" height="9" color="{clrProgressbar}" />
                 <drawellipse condition="{running}" x="{areawidth} / 4 + 10 + {areawidth}/2 * {elapsed} / {duration} - 20 * {elapsed} / {duration} - 4" y="{posy(start)} + {height(start)} / 2 - 5" width="9" height="9" quadrant="0" color="{clrProgressbar}" />
                 <!-- start and stop if event is not running -->
-                <drawtext condition="not{running}" x="10" y="9%" font="{vdrOsd}" fontsize="{areaheight}/20" color="{clrWhite}" text="{start} - {stop} ({duration} min)" />
+                <drawtext condition="not{running}" x="10" y="9%" font="{vdrOsd}" fontsize="{areaheight}*0.05 - {areaheight}*{schedulesmenusize}*0.0002" color="{clrWhite}" text="{start} - {stop} ({duration} min)" />
                 <!-- scraper poster -->
                 <drawimage condition="{showposter}++{hasposter}" name="poster" imagetype="skinpart" path="recback_movie_top" x="{areawidth}*2/3 + {areawidth}/3*0.25" y="{posy(start)} + {height(start)} + 10" width="{areawidth}/3 * 0.75" height="{areawidth}/2.88 * {posterheight} / {posterwidth} * 0.75" />
                 <drawimage condition="{showposter}++{hasposter}" name="poster_in" imagetype="image" path="{posterpath}" x="{posx(poster)} + {width(poster)}*0.03" y="{posy(poster)} + {height(poster)}*0.085" height="{height(poster)}*0.9" width="{width(poster)}*0.94" />
@@ -247,17 +247,17 @@
                 <drawimage condition="{hasposter}" name="poster" imagetype="image" path="{posterpath}" x="{areawidth}* 2 / 3" y="{posy(start)} + {height(start)} + 10" width="{areawidth}/3" height="{areawidth}/3 * {posterheight} / {posterwidth}"/>
 -->
                 <!-- description -->
-                <drawtextbox condition="{showposter}++{hasposter}" x="10" y="{posy(poster)}" width="99%" height="{areaheight} - {posy(poster)} - 2" float="topright" floatwidth="{width(poster)} + 10" floatheight="{height(poster)} + 10" font="{vdrOsd}" fontsize="{areaheight}/18" color="{clrWhite}" text="{description}" />
-                <drawtextbox condition="not{showposter}||not{hasposter}" x="10" y="{posy(poster)}" width="99%" height="{areaheight} - {posy(poster)} - 2" font="{vdrOsd}" fontsize="{areaheight}/18" color="{clrWhite}" text="{description}" />
+                <drawtextbox condition="{showposter}++{hasposter}" x="10" y="{posy(poster)}" width="99%" height="{areaheight} - {posy(poster)} - 2" float="topright" floatwidth="{width(poster)} + 10" floatheight="{height(poster)} + 10" font="{vdrOsd}" fontsize="{areaheight}/18 - {areaheight}*{schedulesmenusize}*0.0002" color="{clrWhite}" text="{description}" />
+                <drawtextbox condition="not{showposter}||not{hasposter}" x="10" y="{posy(poster)}" width="99%" height="{areaheight} - {posy(poster)} - 2" font="{vdrOsd}" fontsize="{areaheight}/18 - {areaheight}*{schedulesmenusize}*0.0002" color="{clrWhite}" text="{description}" />
 		<drawrectangle x="1%" y="{areaheight}-2" width="98%" height="2" color="{clrBorder}" />
             </area>
             <area condition="{whatsonnow}||{whatsonnext}" x="{areawidth}*0.02 + {areawidth}*{schedulesmenusize}*0.01" y="2%" width="{areawidth}*0.97 - {areawidth}*{schedulesmenusize}*0.01" height="96%" layer="3">
                 <drawimage condition="{running}" imagetype="skinpart" path="verticalbartop" x="{areawidth} / 4 + 5" y="{areaheight}*0.09 + {areaheight}*0.06 / 2 - 6" width="{areawidth}/2 * {elapsed} / {duration} - 10 * {elapsed} / {duration}" height="9" />
 	    </area>
             <areascroll condition="{whatsonnow}||{whatsonnext}" mode="forthandback" orientation="vertical" delay="1000" scrollspeed="medium" x="{areawidth}*0.02 + {areawidth}*{schedulesmenusize}*0.01" y="79%" width="{areawidth}*0.97 - {areawidth}*{schedulesmenusize}*0.01" height="19%" layer="2">
-                <drawtext x="10" y="2" font="{semibold}" fontsize="20%" color="{clrWhite}" text="{tr(nextschedules)}:" />
+                <drawtext x="10" y="2" font="{semibold}" fontsize="{areaheight}*0.20 - {areaheight}*{schedulesmenusize}*0.0002" color="{clrWhite}" text="{tr(nextschedules)}:" />
                 <loop name="schedule" x="0" y="{areaheight}/4 + 7" orientation="vertical">
-                    <drawtext x="10" font="{vdrOsd}" width="{areawidth}-20" fontsize="18%" color="{clrWhite}" text="{schedule[start]} {schedule[title]}" />
+                    <drawtext x="10" font="{vdrOsd}" width="{areawidth}-20" fontsize="{areaheight}*0.18 - {areaheight}*{schedulesmenusize}*0.0002" color="{clrWhite}" text="{schedule[start]} {schedule[title]}" />
                 </loop>
             </areascroll>
         </currentelement>
