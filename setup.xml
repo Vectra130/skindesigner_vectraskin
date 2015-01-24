@@ -16,7 +16,7 @@
 <!--
         <parameter type="bool" name="showdevices" displaytext="{tr(showdevices)}">0</parameter>
 -->
-        <parameter type="bool" name="showposterswitch" displaytext="{tr(showposterswitchtext)}">1</parameter>
+        <parameter type="bool" name="vectrasetup" displaytext="{tr(vectrasetuptext)}">0</parameter>
         <parameter type="bool" name="showposter" displaytext="{tr(showpostertext)}">1</parameter>
         <parameter type="bool" name="showmainmenuicons" displaytext="{tr(showmainmenuiconstext)}">1</parameter>
         <parameter type="int" name="fadetime" min="0" max="1000" displaytext="{tr(fadetext)}">0</parameter>
@@ -92,6 +92,10 @@
         <token name="tr(schedulesmenusizetext)">
             <trans lang="en_EN">Menulisting size in schedules menu (needs VDR restart)</trans>
             <trans lang="de_DE">Auswahllisten Breite im Programm Menü in Prozent (erfordert VDR Neustart)</trans>
+        </token>
+        <token name="tr(vectrasetuptext)">
+            <trans lang="en_EN">Setup for my system</trans>
+            <trans lang="de_DE">Setup für mein eigenes System</trans>
         </token>
     </translations>
 </setup>

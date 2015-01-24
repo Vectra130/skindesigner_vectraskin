@@ -2,7 +2,8 @@
     <header>
         <area x="1%" y="0" width="64%" height="10%" layer="3">
             <drawimage imagetype="icon" path="ico_vdrlogo" x="0" valign="center" width="{areaheight} * 0.5 * 160 / 70" height="{areaheight}*0.5"/>
-            <drawtext x="{areaheight} * 0.9 * 160 / 70 - 70" valign="center" font="{vdrOsd}" fontsize="45%" color="{clrWhite}" text="{systemTyp} {vdrversion}" />
+            <drawtext condition="{vectrasetup}" x="{areaheight} * 0.9 * 160 / 70 - 70" valign="center" font="{vdrOsd}" fontsize="45%" color="{clrWhite}" text="{systemTyp} {vdrversion}" />
+            <drawtext condition="not{vectrasetup}" x="{areaheight} * 0.9 * 160 / 70 - 70" valign="center" font="{vdrOsd}" fontsize="45%" color="{clrWhite}" text="{vdrversion}" />
         </area>
     </header>
 
