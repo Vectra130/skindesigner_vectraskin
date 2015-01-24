@@ -21,22 +21,6 @@
             <drawellipse x="-{areawidth}*0.01 + {areawidth}*{recordingsmenusize}*0.01" y="{areaheight}*90/100 - {areawidth}*2/100" width="{areawidth}*2/100" height="{areawidth}*2/100" quadrant="-3" color="{clrBorder}" />
             <drawellipse x="-{areawidth}*0.01 + {areawidth}*{recordingsmenusize}*0.01 - 2" y="{areaheight}*90/100 - {areawidth}*2/100 + 2" width="{areawidth}*2/100" height="{areawidth}*2/100" quadrant="-3" color="{clrBackground}" />
         </area>
-<!--        <area condition="{recordingsmenusize}" x="0" y="0" width="100%" height="100%" layer="1">
-            <drawrectangle x="0" y="0" width="{areawidth}*0.99 - {areaheight}*0.125" height="10%" color="{clrBackground}" /> 
-            <drawrectangle x="60%" y="{areaheight}*0.1 - 2" width="{areawidth}*0.39 - {areaheight}*0.096 -5" height="2" color="{clrBorder}" />
-            <drawellipse x="{areawidth}*0.99 - {areaheight}*0.125" y="0" width="{areaheight}*0.031" height="{areaheight}*0.05 - 1" quadrant="-2" color="{clrBackground}" />
-            <drawellipse x="{areawidth}*0.99 - {areaheight}*0.125" y="{areaheight}*0.05 - 1" width="{areaheight}*0.030" height="{areaheight}*0.05 - 1" quadrant="-3" color="{clrBackground}" />
-            <drawimage cache="true" imagetype="skinpart" path="menuclockback" x="{areawidth}*0.99 - {areaheight}*0.1" y="0" width="{areaheight}*0.1" height="10%"/>
-            <drawrectangle x="0" y="10%" width="{areawidth}*59/100" height="81%" color="{clrBackground}" />
-            <drawrectangle x="{areawidth}*59/100 - 2" y="12%" width="2" height="76%" color="{clrBorder}" />
-            <drawrectangle x="0" y="90%" width="{areawidth}" height="10%" color="{clrBackground}" />
-            <drawrectangle x="60%" y="{areaheight}*0.9 - 1" width="41%" height="2" color="{clrBorder}" />
-            <drawellipse x="{areawidth}*59/100" y="{areaheight}/10" width="{areawidth}*2/100" height="{areawidth}*2/100" quadrant="-2" color="{clrBorder}" />
-            <drawellipse x="{areawidth}*59/100 - 2" y="{areaheight}/10 - 2" width="{areawidth}*2/100" height="{areawidth}*2/100" quadrant="-2" color="{clrBackground}" />
-            <drawellipse x="{areawidth}*59/100" y="{areaheight}*90/100 - {areawidth}*2/100" width="{areawidth}*2/100" height="{areawidth}*2/100" quadrant="-3" color="{clrBorder}" />
-            <drawellipse x="{areawidth}*59/100 - 2" y="{areaheight}*90/100 - {areawidth}*2/100 + 2" width="{areawidth}*2/100" height="{areawidth}*2/100" quadrant="-3" color="{clrBackground}" />
-        </area>
--->
         <area x="0" y="0" width="100%" height="10%" layer="2">
             <drawimage cache="true" imagetype="skinpart" path="headertop" x="0" y="0" width="90%" height="100%"/>
         </area>
@@ -132,15 +116,15 @@
 	    </area>
             <area x="{areawidth}*0.02 + {areawidth}*{recordingsmenusize}*0.01" y="2%" width="{areawidth}*0.97 - {areawidth}*{recordingsmenusize}*0.01" height="96%" layer="3">
                 <!-- header -->
-                <drawtext name="title" x="1%" y="0" width="98%" font="{vdrOsd}" fontsize="8%" color="{clrWhite}" text="{name}" />
-                <drawtext name="shorttext" x="1%" y="{height(title)}" width="{areawidth} - {areawidth}/3 + {areawidth}/3*0.24" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{shorttext}" />
-                <drawtext name="datetime" x="1%" y="{posy(shorttext)} + {height(shorttext)}" font="{vdrOsd}" fontsize="5%" color="{clrWhite}" text="{date} {time}, {duration} min" />
+                <drawtext name="title" x="1%" y="0" width="98%" font="{vdrOsd}" fontsize="{areaheight}*0.08 - {areaheight}*{recordingsmenusize}*0.0002" color="{clrWhite}" text="{name}" />
+                <drawtext name="shorttext" x="1%" y="{height(title)}" width="{areawidth} - {areawidth}/3 + {areawidth}/3*0.24" font="{vdrOsd}" fontsize="{areaheight}*0.06 - {areaheight}*{recordingsmenusize}*0.0002" color="{clrWhite}" text="{shorttext}" />
+                <drawtext name="datetime" x="1%" y="{posy(shorttext)} + {height(shorttext)}" font="{vdrOsd}" fontsize="{areaheight}*0.05 - {areaheight}*{recordingsmenusize}*0.0002" color="{clrWhite}" text="{date} {time}, {duration} min" />
                 <!-- scraper poster -->
                 <drawimage condition="{showposter}++{hasposter}" name="poster" imagetype="skinpart" path="recback_movie_top" x="{areawidth} - {areawidth}/3 + {areawidth}/3*0.25" y="{posy(datetime)} + {height(datetime)} + 5" width="{areawidth}/3*0.75" height="{areawidth}/2.88 * {posterheight} / {posterwidth} * 0.75" />
                 <drawimage condition="{showposter}++{hasposter}" name="poster_in" imagetype="image" path="{posterpath}" x="{posx(poster)} + {width(poster)}*0.03" y="{posy(poster)} + {height(poster)}*0.085" height="{height(poster)}*0.9" width="{width(poster)}*0.94" />
                 <!-- description -->
-                <drawtextbox condition="{showposter}++{hasposter}" x="1%" y="{posy(datetime)} + {height(datetime)} + 20" width="98%" height="{areaheight} - {posy(poster)} - {height(datetime)}" float="topright" floatwidth="{width(poster)} + 5" floatheight="{height(poster)} + 20" font="{vdrOsd}" fontsize="5%" color="{clrWhite}" text="{description}" />
-                <drawtextbox condition="not{showposter}||not{hasposter}" x="1%" y="{posy(datetime)} + {height(datetime)} + 10" width="98%" height="{areaheight} - {posy(poster)} - {height(date)}" font="{vdrOsd}" fontsize="5%" color="{clrWhite}" text="{description}" />
+                <drawtextbox condition="{showposter}++{hasposter}" x="1%" y="{posy(datetime)} + {height(datetime)} + 20" width="98%" height="{areaheight} - {posy(poster)} - {height(datetime)}" float="topright" floatwidth="{width(poster)} + 5" floatheight="{height(poster)} + 20" font="{vdrOsd}" fontsize="{areaheight}*0.05 - {areaheight}*{recordingsmenusize}*0.0002" color="{clrWhite}" text="{description}" />
+                <drawtextbox condition="not{showposter}||not{hasposter}" x="1%" y="{posy(datetime)} + {height(datetime)} + 10" width="98%" height="{areaheight} - {posy(poster)} - {height(date)}" font="{vdrOsd}" fontsize="{areaheight}*0.05 - {areaheight}*{recordingsmenusize}*0.0002" color="{clrWhite}" text="{description}" />
             </area>
         </currentelement>
     </menuitems>
