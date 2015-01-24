@@ -40,9 +40,11 @@
             <drawellipse condition="not{mute}" x="{volume}/{maxvolume}*{areawidth} - {volume}/{maxvolume}*{areaheight}/2" y="1" width="{areaheight}/2 - 2" height="{areaheight}-2" color="{clrProgressbar}" quadrant="5" />
             <drawellipse condition="{mute}" x="{volume}/{maxvolume}*{areawidth} - {volume}/{maxvolume}*{areaheight}/2" y="1" width="{areaheight}/2 - 2" height="{areaheight}-2" color="{clrGray}" quadrant="5" />
         </area>        
+<!--
         <area condition="not{mute}" x="{areawidth}*0.04+{areaheight}*0.15/2" y="70%" width="{areawidth}*0.92-{areaheight}*0.15/2" height="15%" layer="4">
             <drawimage cache="true" imagetype="skinpart" path="progressbarback2" x="1" y="1" width="{volume}/{maxvolume}*{areawidth} - {volume}/{maxvolume}*{areaheight}/2" height="{areaheight}-2" />
         </area>
+-->
         <area condition="not{mute}" x="{areawidth}*0.04+{areaheight}*0.15/2" y="70%" width="{areawidth}*0.92-{areaheight}*0.15/2" height="15%" layer="5">
             <drawimage cache="true" imagetype="skinpart" path="progressbarback" x="1" y="1" width="{volume}/{maxvolume}*{areawidth} - {volume}/{maxvolume}*{areaheight}/2" height="{areaheight}-2" />
         </area>

@@ -12,10 +12,15 @@
                 <drawimage condition="not{current}" imagetype="skinpart" path="menubutton" x="0" y="10%" width="{areawidth}" height="{areaheight}*0.8"/>
                 <drawimage condition="{current}" imagetype="skinpart" path="menubuttonactive" x="0" y="10%" width="{areawidth}" height="{areaheight}*0.8"/>
             </area>
-            <area x="0" width="100%" layer="3">
+            <area condition="{showmainmenuicons}" x="0" width="100%" layer="3">
                 <drawimage imagetype="menuicon" path="{icon}" x="10" valign="center" width="{areaheight}*0.75" height="{areaheight}*0.75"/>
             </area>
-            <areascroll scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="23%" width="77%" layer="3">
+            <areascroll condition="not{showmainmenuicons}" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="2%" width="98%" layer="3">
+                <drawtext condition="not{current}" name="menutext" x="2%" valign="center" font="{vdrOsd}" fontsize="40%" color="{clrFontMenuItem}" text="{number} {label}" />
+                <drawtext condition="{current}" name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="80%" color="{clrFontMenuItemSelected}" text="{number}" />
+                <drawtext condition="{current}" name="menutext" x="15%" valign="center" font="{vdrOsd}" fontsize="40%" color="{clrFontMenuItemSelected}" text="{label}" />
+            </areascroll>
+            <areascroll condition="{showmainmenuicons}" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="23%" width="77%" layer="3">
                 <drawtext condition="not{current}" name="menutext" x="2%" valign="center" font="{vdrOsd}" fontsize="40%" color="{clrFontMenuItem}" text="{number} {label}" />
                 <drawtext condition="{current}" name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="80%" color="{clrFontMenuItemSelected}" text="{number}" />
                 <drawtext condition="{current}" name="menutext" x="15%" valign="center" font="{vdrOsd}" fontsize="40%" color="{clrFontMenuItemSelected}" text="{label}" />

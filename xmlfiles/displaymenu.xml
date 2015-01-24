@@ -12,7 +12,7 @@
 <!ENTITY displaymenudetailtext SYSTEM "displaymenudetailtext.xml">
 ]>
 
-<displaymenu x="0" y="0" width="100%" height="100%" fadetime="0">
+<displaymenu x="0" y="0" width="100%" height="100%" fadetime="{fadetime}">
     <!-- 
     The following background, header, datetime and colorbuttons definitions are default
     implementations. If one or more of these elements are not implemented in the subview, 
@@ -23,9 +23,7 @@
             <!-- top bar -->
             <drawrectangle x="0" y="0" width="{areawidth}*0.99 - {areaheight}*0.125" height="10%" color="{clrBackground}" />
             <drawrectangle x="30%" y="{areaheight}*0.1 - 2" width="{areawidth}*0.69 - {areaheight}*0.096 -5" height="2" color="{clrBorder}" />
-<!--            <drawellipse x="{areawidth}*0.99 - {areaheight}*0.125" y="0" width="{areaheight}*0.0275 - 1" height="{areaheight}*0.05 - 1" quadrant="-2" color="{clrBorder}" /> -->
             <drawellipse x="{areawidth}*0.99 - {areaheight}*0.125" y="0" width="{areaheight}*0.031" height="{areaheight}*0.05 - 1" quadrant="-2" color="{clrBackground}" />
-<!--            <drawellipse x="{areawidth}*0.99 - {areaheight}*0.125" y="{areaheight}*0.05 - 1" width="{areaheight}*0.0275 - 1" height="{areaheight}*0.05 - 1" quadrant="-3" color="{clrBorder}" /> -->
             <drawellipse x="{areawidth}*0.99 - {areaheight}*0.125" y="{areaheight}*0.05 - 1" width="{areaheight}*0.030" height="{areaheight}*0.05 - 1" quadrant="-3" color="{clrBackground}" />
 	    <!-- clock -->
             <drawimage cache="true" imagetype="skinpart" path="menuclockback" x="{areawidth}*0.99 - {areaheight}*0.1" y="0" width="{areaheight}*0.1" height="10%"/>
@@ -43,7 +41,6 @@
             <drawellipse x="{areawidth}*29/100 - 2" y="{areaheight}*90/100 - {areawidth}*2/100 + 2" width="{areawidth}*2/100" height="{areawidth}*2/100" quadrant="-3" color="{clrBackground}" />
         </area>
         <area x="0" y="0" width="100%" height="10%" layer="2">
-<!--            <drawimage cache="true" imagetype="skinpart" path="headerback" x="0" y="0" width="100%" height="100%"/> -->
             <drawimage cache="true" imagetype="skinpart" path="headertop" x="0" y="0" width="90%" height="100%"/>
         </area>
     </background>

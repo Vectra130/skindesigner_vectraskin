@@ -1,4 +1,4 @@
-<menurecordings x="0" y="0" width="100%" height="100%" fadetime="{fadetime}" scaletvx="{areawidth}*0.03 + {areawidth}*{recordingsmenusize}*0.01" scaletvy="-{areaheight}*0.2 + {areaheight}*{recordingsmenusize}*0.01" scaletvwidth="{areawidth}*0.95 - {areawidth}*{recordingsmenusize}*0.01" scaletvheight="{areaheight}*1.10 - {areaheight}*{recordingsmenusize}*0.01">
+<menurecordings x="0" y="0" width="100%" height="100%" fadetime="{fadetime}" scaletvx="{areawidth}*0.03 + {areawidth}*{recordingsmenusize}*0.01" scaletvy="{areaheight}/2 - {areaheight}*{recordingsmenusize}*0.01*0.61" scaletvwidth="{areawidth}*0.95 - {areawidth}*{recordingsmenusize}*0.01" scaletvheight="{areaheight}*1.10 - {areaheight}*{recordingsmenusize}*0.01">
     <background>
         <area x="0" y="0" width="100%" height="100%" layer="1">
             <!-- top bar -->

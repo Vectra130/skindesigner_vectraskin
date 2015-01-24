@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE setup SYSTEM "../../dtd/setup.dtd">
+
+<setup>
+    <!--
+    define all your parameters here which should be configurable via
+    OSD and the skindesigner setup menu.
+    Parameters must have type "bool" or "integer". For "bool" Parameters
+    a choice yes/no is shown in the setup menu, a "integer" parameter
+    can be configured to a value between "min" and "max". If "min" is not
+    set, "0" is the minimum, if "max" is not set, "1000" is maximum.
+    "displayname" is used to display the option in the setup menu.
+    The configured parameter value is the default value.
+    -->
+    <parameters>
+<!--
+        <parameter type="bool" name="showdevices" displaytext="{tr(showdevices)}">0</parameter>
+-->
+        <parameter type="bool" name="showposterswitch" displaytext="{tr(showposterswitchtext)}">1</parameter>
+        <parameter type="bool" name="showposter" displaytext="{tr(showpostertext)}">1</parameter>
+        <parameter type="bool" name="showmainmenuicons" displaytext="{tr(showmainmenuiconstext)}">1</parameter>
+        <parameter type="int" name="fadetime" min="0" max="1000" displaytext="{tr(fadetext)}">0</parameter>
+<!--
+        <parameter type="int" name="nummenuitemsmain" min="6" max="30" displaytext="{tr(nummenuitemsmain)}">10</parameter>
+        <parameter type="int" name="nummenuitems" min="6" max="30" displaytext="{tr(nummenuitems)}">10</parameter>
+        <parameter type="int" name="nummenuitemsdefault" min="6" max="30" displaytext="{tr(nummenuitemsdefault)}">16</parameter>
+        <parameter type="bool" name="showsubtitle" displaytext="{tr(showsubtitle)}">1</parameter>
+-->
+        <parameter type="bool" name="showweather" displaytext="{tr(showweathertext)}">1</parameter>
+        <parameter type="bool" name="showmenuweather" displaytext="{tr(showmenuweathertext)}">1</parameter>
+        <parameter type="bool" name="showmainmenusysinfo" displaytext="{tr(showmainmenusysinfotext)}">1</parameter>
+        <parameter type="int" name="recordingsmenusize" min="30" max="70" displaytext="{tr(recordingsmenusizetext)}">30</parameter>
+        <parameter type="int" name="schedulesmenusize" min="30" max="70" displaytext="{tr(schedulesmenusizetext)}">30</parameter>
+    </parameters>
+
+    <!--
+    translations of displaytexts
+    -->
+    <translations>
+        <token name="tr(showdevices)">
+            <trans lang="en_EN">Show DVB device info when switching channel</trans>
+            <trans lang="de_DE">DVB Karten Info beim Umschalten anzeigen</trans>
+        </token>
+        <token name="tr(showpostertext)">
+            <trans lang="en_EN">Show Poster and Banner in menus</trans>
+            <trans lang="de_DE">Poster und Banner in den Menüs anzeigen</trans>
+        </token>
+        <token name="tr(showposterswitchtext)">
+            <trans lang="en_EN">Show Poster and Banner on channel switch</trans>
+            <trans lang="de_DE">Poster und Banner anzeigen beim Kanalwechsel</trans>
+        </token>
+        <token name="tr(showmainmenuiconstext)">
+            <trans lang="en_EN">Show Icons in Main Menu</trans>
+            <trans lang="de_DE">Icons im Hauptmenü anzeigen</trans>
+        </token>
+        <token name="tr(fadetext)">
+            <trans lang="en_EN">Fade time in ms (needs VDR restart)</trans>
+            <trans lang="de_DE">Einblendzeit in ms (erfordert VDR Neustart)</trans>
+        </token>
+        <token name="tr(nummenuitemsmain)">
+            <trans lang="en_EN">Items in main menu (needs VDR restart)</trans>
+            <trans lang="de_DE">Elemente im Hauptmenü (erfordert VDR Neustart)</trans>
+        </token>
+        <token name="tr(nummenuitems)">
+            <trans lang="en_EN">Items in sdchedules, timers, ... menus (needs VDR restart)</trans>
+            <trans lang="de_DE">Elemente in Programm, Timer, ... Menüs (erfordert VDR Neustart)</trans>
+        </token>
+        <token name="tr(nummenuitemsdefault)">
+            <trans lang="en_EN">Items in default list menu (needs VDR restart)</trans>
+            <trans lang="de_DE">Elemente im Standard ListenMenü (erfordert VDR Neustart)</trans>
+        </token>
+        <token name="tr(showsubtitle)">
+            <trans lang="en_EN">Show shorttexts in schedules menus</trans>
+            <trans lang="de_DE">Kurztexte im Programm Menü anzeigen</trans>
+        </token>
+        <token name="tr(showweathertext)">
+            <trans lang="en_EN">Show weather widget in channel view</trans>
+            <trans lang="de_DE">Wetter Widget in der Kanalanzeige</trans>
+        </token>
+        <token name="tr(showmenuweathertext)">
+            <trans lang="en_EN">Show weather in menu</trans>
+            <trans lang="de_DE">Wetter Anzeige im Hauptmenü</trans>
+        </token>
+        <token name="tr(showmainmenusysinfotext)">
+            <trans lang="en_EN">Show sysinfo in mainmenu</trans>
+            <trans lang="de_DE">Sysinfo Anzeige im Hauptmenü</trans>
+        </token>
+        <token name="tr(recordingsmenusizetext)">
+            <trans lang="en_EN">Menulisting size in recordings menu (needs VDR restart)</trans>
+            <trans lang="de_DE">Auswahllisten Breite im Aufnahmen Menü in Prozent (erfordert VDR Neustart)</trans>
+        </token>
+        <token name="tr(schedulesmenusizetext)">
+            <trans lang="en_EN">Menulisting size in schedules menu (needs VDR restart)</trans>
+            <trans lang="de_DE">Auswahllisten Breite im Programm Menü in Prozent (erfordert VDR Neustart)</trans>
+        </token>
+    </translations>
+</setup>

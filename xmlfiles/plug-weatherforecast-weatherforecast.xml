@@ -3,11 +3,14 @@
 
 <menuplugin x="0" y="0" width="100%" height="100%" fadetime="0" scaletvx="33%" scaletvy="10%" scaletvwidth="65%" scaletvheight="80%">
     <scrollbar>
-        <area x="{areawidth}*0.305" y="16%" width="{areawidth}*0.0075" height="68%" layer="2">
+        <area x="{areawidth}*0.005 + {areawidth}* 30 *0.01" y="16%" width="{areawidth}*0.0075" height="68%" layer="2">
             <fill color="{clrBorder}" />
             <drawrectangle x="2" y="2" width="{areawidth} - 4" height="{areaheight} - 4" color="{clrTransparent}" />
             <drawrectangle x="4" y="4 + {areaheight} * {offset} / 1000" width="{areawidth} - 8" height="{areaheight} * {height} / 1000 - 8" color="{clrProgressbar}" />
-	</area>
+        </area>
+        <area x="{areawidth}*0.005 + {areawidth}* 30 *0.01" y="16%" width="{areawidth}*0.0075" height="68%" layer="3">
+            <drawimage imagetype="skinpart" path="verticalbartop" x="4" y="5 + {areaheight} * {offset} / 1000" width="{areawidth} - 8" height="{areaheight}* {height} / 1000 - 10" />
+        </area>
     </scrollbar>
 
     <menuitems x="{areawidth}*0.005" y="10%" orientation="vertical" width="99%" height="80%" align="center" numlistelements="10">

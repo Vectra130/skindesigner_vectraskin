@@ -1,9 +1,12 @@
 <menutimers x="0" y="0" width="100%" height="100%" fadetime="0" scaletvx="33%" scaletvy="10%" scaletvwidth="65%" scaletvheight="80%">
     <scrollbar>
-        <area x="{areawidth}*0.305" y="16%" width="{areawidth}*0.0075" height="68%" layer="2">
+        <area x="{areawidth}*0.005 + {areawidth}* 30 *0.01" y="16%" width="{areawidth}*0.0075" height="68%" layer="2">
             <fill color="{clrBorder}" />
             <drawrectangle x="2" y="2" width="{areawidth} - 4" height="{areaheight} - 4" color="{clrTransparent}" />
             <drawrectangle x="4" y="4 + {areaheight} * {offset} / 1000" width="{areawidth} - 8" height="{areaheight} * {height} / 1000 - 8" color="{clrProgressbar}" />
+        </area>
+        <area x="{areawidth}*0.005 + {areawidth}* 30 *0.01" y="16%" width="{areawidth}*0.0075" height="68%" layer="3">
+            <drawimage imagetype="skinpart" path="verticalbartop" x="4" y="5 + {areaheight} * {offset} / 1000" width="{areawidth} - 8" height="{areaheight}* {height} / 1000 - 10" />
         </area>
     </scrollbar>
 
@@ -86,9 +89,10 @@
                 <!-- start and stop if event is not running -->
                 <drawtext x="10" y="9%" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{dayname} {eventstart} - {eventstop}, {channelname}" />
                 <!-- scraper poster -->
-                <drawimage condition="{hasposter}" name="poster" imagetype="image" path="{posterpath}" x="{areawidth} - {areawidth}/4" y="17%" width="{areawidth}/4" height="{areawidth}/4 * {posterheight} / {posterwidth}"/>
+                <drawimage condition="{hasposter}" name="poster" imagetype="image" path="{posterpath}" x="{posx(postertop)} + {width(postertop)}*0.03" y="{posy(postertop)} + {height(postertop)}*0.085" height="{height(postertop)}*0.9" width="{width(postertop)}*0.94" />
+                <drawimage condition="{hasposter}" name="postertop" imagetype="skinpart" path="recback_movie_top" x="{areawidth} - {areawidth}/4" y="17%" width="{areawidth}/4" height="{areawidth}/4 * {posterheight} / {posterwidth}"/>
                 <!-- description -->
-                <drawtextbox condition="{hasposter}" x="10" y="{posy(poster)}" width="99%" height="{areaheight} - {posy(poster)}" float="topright" floatwidth="{width(poster)} + 10" floatheight="{height(poster)} + 20" font="{vdrOsd}" fontsize="5%" color="{clrWhite}" text="{eventdescription}" />
+                <drawtextbox condition="{hasposter}" x="10" y="{posy(postertop)}" width="99%" height="{areaheight} - {posy(postertop)}" float="topright" floatwidth="{width(postertop)} + 10" floatheight="{height(postertop)} + 20" font="{vdrOsd}" fontsize="5%" color="{clrWhite}" text="{eventdescription}" />
                 <drawtextbox condition="not{hasposter}" x="10" y="{posy(poster)}" width="99%" height="{areaheight} - {posy(poster)}" font="{vdrOsd}" fontsize="5%" color="{clrWhite}" text="{eventdescription}" />
             </area>
             <area condition="not{flagactive}" x="32%" y="2%" width="67%" height="96%" layer="2">

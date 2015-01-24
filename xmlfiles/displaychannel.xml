@@ -4,23 +4,6 @@
 <displaychannel x="0" y="0" width="100%" height="100%" fadetime="{fadeTime}">
 
     <background>
-<!--
-        <area x="1%" y="77%" width="98%" height="22%" layer="1" transparency="10">
-            <drawimage cache="true" imagetype="skinpart" path="displaychannelback" x="0" y="0" width="100%" height="100%"/>
-        </area>
-        <area x="2%" y="78%" width="14%" height="4%" layer="2">
-            <drawimage cache="true" imagetype="icon" path="ico_vdrlogo" x="0" y="0" width="100%" height="100%"/>
-        </area>
-        <area x="2%" y="85%" width="14%" height="10%" layer="2">
-            <drawimage cache="true" imagetype="skinpart" path="channellogoback" x="0" y="0" width="100%" height="100%"/>
-        </area>
-	<area x="79%" y="1%" width="20%" height="14%" layer="1" transparency="10">
-	    <drawimage cache="true" imagetype="skinpart" path="clockback" x="0" y="0" width="100%" height="100%"/>
-	</area>
-	<area x="58%" y="1%" width="20%" height="14%" layer="1" transparency="10">
-	    <drawimage cache="true" imagetype="skinpart" path="weatherback" x="0" y="0" width="100%" height="100%"/>
-	</area>
--->
         <area x="1%" y="77%" width="98%" height="22%" layer="1" transparency="10">
             <drawimage name="displaychannelback" cache="true" imagetype="skinpart" path="displaychannelback" x="0" y="0" width="100%" height="100%"/>
         </area>
@@ -28,26 +11,29 @@
             <drawimage name="channellogoback" cache="true" imagetype="skinpart" path="channellogoback" x="{areawidth}*0.010204" y="{areaheight}*0.363632" width="{areawidth}*0.142856" height="{areaheight}*0.454545"/>
             <drawimage cache="true" imagetype="icon" path="ico_vdrlogo" x="{areawidth}*0.010204" y="{areaheight}*0.045454" width="{areawidth}*0.142856" height="{areaheight}*0.181816"/>
         </area>
-<!-- 0.010204 0.045454       <area x="2%" y="78%" width="14%" height="4%" layer="2">
-        </area>
-        <area x="2%" y="85%" width="14%" height="10%" layer="2">
-        </area> -->
+<!-- 0.010204 0.045454 -->
 	<area x="79%" y="1%" width="20%" height="14%" layer="1" transparency="10">
-	    <drawimage name="clockback" cache="true" imagetype="skinpart" path="clockback" x="0" y="0" width="100%" height="100%"/>
+	    <drawimage name="clockback" cache="true" imagetype="skinpart" path="widgetback" x="0" y="0" width="100%" height="100%"/>
 	</area>
-	<area x="58%" y="1%" width="20%" height="14%" layer="1" transparency="10">
-	    <drawimage name="weatherback" cache="true" imagetype="skinpart" path="weatherback" x="0" y="0" width="100%" height="100%"/>
+	<area x="{areawidth}*0.94 - {areaheight}*0.10/2" y="{areaheight}*0.03" width="{areaheight}*0.10" height="{areaheight}*0.10" layer="1">
+	    <drawimage name="menuclockback" cache="true" imagetype="skinpart" path="menuclockback" x="0" y="0" width="100%" height="100%"/>
+	</area>
+	<area condition="{showweather}" x="58%" y="1%" width="20%" height="14%" layer="1" transparency="10">
+	    <drawimage name="weatherback" cache="true" imagetype="skinpart" path="widgetback" x="0" y="0" width="100%" height="100%"/>
+	</area>
+	<area condition="{showweather}" x="58%" y="1%" width="20%" height="14%" layer="1" transparency="10">
+	    <drawimage cache="true" imagetype="skinpart" path="weatherback" x="0" y="0" width="100%" height="100%"/>
 	</area>
     </background>
 
     <time>
-        <area x="{areawidth}*0.94 - {areaheight}*0.05" y="{areaheight}*0.03" width="{areaheight}*0.10" height="{areaheight}*0.10" layer="2">
+        <area x="{areawidth}*0.94 - {areaheight}*0.05" y="{areaheight}*0.03" width="{areaheight}*0.10" height="{areaheight}*0.10" layer="3">
             <drawimage imagetype="skinpart" path="watchhands/s_{sec}" x="0" y="0" width="100%" height="100%"/>
         </area>
-        <area x="{areawidth}*0.94 - {areaheight}*0.05" y="{areaheight}*0.03" width="{areaheight}*0.10" height="{areaheight}*0.10" layer="3">
+        <area x="{areawidth}*0.94 - {areaheight}*0.05" y="{areaheight}*0.03" width="{areaheight}*0.10" height="{areaheight}*0.10" layer="4">
             <drawimage imagetype="skinpart" path="watchhands/m_{min}" x="0" y="0" width="100%" height="100%"/>
         </area>
-        <area x="{areawidth}*0.94 - {areaheight}*0.05" y="{areaheight}*0.03" width="{areaheight}*0.10" height="{areaheight}*0.10" layer="4">
+        <area x="{areawidth}*0.94 - {areaheight}*0.05" y="{areaheight}*0.03" width="{areaheight}*0.10" height="{areaheight}*0.10" layer="5">
             <drawimage imagetype="skinpart" path="watchhands/h_{hmins}" x="0" y="0" width="100%" height="100%"/>
         </area>
     </time>
@@ -60,7 +46,7 @@
     </datetime>
 
     <currentweather>
-        <area x="{areawidth}*0.585" y="{areaheight}*0.015" width="19%" height="{areaheight}*0.13" layer="2">
+        <area condition="{showweather}" x="{areawidth}*0.585" y="{areaheight}*0.015" width="19%" height="{areaheight}*0.13" layer="2">
             <drawimage name="weathericon" imagetype="icon" path="{icon}" x="{areawidth}/6*5 - {width(weathericon)}/2" y="{areaheight}*0.02" width="{areaheight}*0.6" height="{areaheight}*0.6"/>
             <drawtext name="summary" x="{areawidth}/6*4 - {width(summary)}/2" y="{areaheight}*0.58" font="{vdrOsd}" fontsize="20%" color="{clrWhite}" text="{summary}" />
             <drawtext name="temperature" x="{areawidth}/6*3 - {width(temperature)}/2" y="{areaheight}*0.28 - {height(temperature)}/2" font="{digital}" fontsize="35%" color="{clrWhite}" text="{temperature} 'C" />
@@ -188,11 +174,13 @@
             <drawellipse x="1 + {elapsed}/{duration}*{areawidth} - {elapsed}/{duration}*{areaheight}" y="1" width="{areaheight}-2" height="{areaheight}-2" color="{clrProgressbar}" quadrant="0" />
             <drawrectangle x="{areaheight}/2" y="1" width="{elapsed}/{duration}*{areawidth} - {elapsed}/{duration}*{areaheight}" height="{areaheight}-2" color="{clrProgressbar}" />
 	</area>
+<!--
         <area x="2%" y="82%" width="96%" height="1%" layer="3">
 	    <drawimage cache="true" imagetype="skinpart" path="progressbarback2" x="1" y="1" width="{elapsed}/{duration}*{areawidth} - {elapsed}/{duration}*{areaheight} + {areaheight}-2" height="{areaheight}-2"/>
 	</area>
+-->
         <area x="2%" y="82%" width="96%" height="1%" layer="4">
-	    <drawimage cache="true" imagetype="skinpart" path="progressbarback" x="1" y="1" width="{elapsed}/{duration}*{areawidth} - {elapsed}/{duration}*{areaheight} + {areaheight}-2" height="{areaheight}-2"/>
+	    <drawimage cache="true" imagetype="skinpart" path="horizontalbartop" x="1" y="1" width="{elapsed}/{duration}*{areawidth} - {elapsed}/{duration}*{areaheight} + {areaheight}-2" height="{areaheight}-2"/>
 	</area>
     </progressbar>
 
@@ -201,12 +189,7 @@
             <drawellipse x="0" y="0" width="{areaheight}" height="{areaheight}" color="{clrBlack}" quadrant="0" />
             <drawellipse x="{areawidth}-{areaheight}" y="0" width="{areaheight}" height="{areaheight}" color="{clrBlack}" quadrant="0" />
             <drawrectangle x="{areaheight}/2" y="0" width="{areawidth} - {areaheight}" height="{areaheight}" color="{clrBlack}" />
-		</area>
-<!--
-		<area x="2%" y="84%" width="96%" height="1%" layer="3">
-			<drawimage imagetype="skinpart" path="progressbarback" x="0" y="0" width="100%" height="100%"/>
-        </area>
--->
+	</area>
     </progressbarback>
     <!-- Available Variables statusinfo:
     {isRadio}                          true if channel is a radio channel
@@ -295,23 +278,19 @@
     {isbanner}                          true if image is a banner, false if it is a poster
     -->
     <scrapercontent>
-        <area condition="{isbanner}" x="1%" y="1%" width="{areaheight}*0.13*{mediawidth}/{mediaheight}" height="13%" layer="2">
+        <area condition="{showposter}++{isbanner}" x="1%" y="1%" width="{areaheight}*0.14*{mediawidth}/{mediaheight}" height="14%" layer="2">
+            <drawimage name="bannerback" imagetype="skinpart" path="displayvolume" align="center" valign="center"  width="{areawidth}" height="{areaheight}"/>
+        </area>
+<!-- 5.446969 0.022727 -->
+        <area condition="{showposter}++{isbanner}" x="{areawidth}*0.01 + {areaheight}*0.14*0.022727" y="{areaheight}*0.01 + {areaheight}*0.14*0.022727" width="{areaheight}*0.14*{mediawidth}/{mediaheight} - {areaheight}*0.14*0.022727*2" height="{areaheight}*0.14 - {areaheight}*0.14*0.022727*3" layer="3">
             <drawimage imagetype="image" path="{mediapath}" align="center" valign="center"  width="{areawidth}" height="{areaheight}"/>
         </area>
-        <area condition="{hasposter}" x="{areawidth}-{areaheight}*0.5*{posterwidth}/{posterheight}" y="21%" width="{areaheight}*0.5*{posterwidth}/{posterheight}" height="50%" layer="2">
-<!--            <drawimage imagetype="skinpart" path="recback_movie" x="0" y="0" valign="top" align="center" width="{areaheight} * 0.88  * {posterwidth} / {posterheight}" height="{areaheight} * 0.95" />
--->
+        <area condition="{showposter}++{hasposter}" x="{areawidth}-{areaheight}*0.5*{posterwidth}/{posterheight}" y="21%" width="{areaheight}*0.5*{posterwidth}/{posterheight}" height="50%" layer="2">
             <drawimage name="poster" imagetype="image" path="{posterpath}" x="0" y="0" align="center" valign="center" width="{areaheight} * 0.83  * {posterwidth} / {posterheight}" height="{areaheight} * 0.83"/>
         </area>
-        <area condition="{hasposter}" x="{areawidth}-{areaheight}*0.5*{posterwidth}/{posterheight}" y="21%" width="{areaheight}*0.5*{posterwidth}/{posterheight}" height="50%" layer="3">
+        <area condition="{showposter}++{hasposter}" x="{areawidth}-{areaheight}*0.5*{posterwidth}/{posterheight}" y="21%" width="{areaheight}*0.5*{posterwidth}/{posterheight}" height="50%" layer="3">
             <drawimage imagetype="skinpart" path="recback_movie_top" x="0" y="0" valign="top" align="center" width="{areaheight} * 0.88  * {posterwidth} / {posterheight}" height="{areaheight} * 0.95" />
         </area>
-
-<!--        <area condition="not{isbanner}" x="1%" y="1%" width="{areaheight}*0.5*{mediawidth}/{mediaheight}" height="50%" layer="2">
-	    <drawimage imagetype="skinpart" path="displaychannelback" x="5" y="5" width="{areawidth}" height="{areaheight}"/>
-            <drawimage imagetype="image" path="{mediapath}" x="5" y="5" width="{areawidth}-10" height="{areaheight}-10"/>
-        </area>
--->
     </scrapercontent>
 
     <!-- Available Variables message:

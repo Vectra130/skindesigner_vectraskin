@@ -46,13 +46,13 @@
     </header>
 
     <currentschedule> <!-- VideoPoster -->
-        <area condition="not{hasposter}" x="{areawidth}*0.265" y="{areaheight}*0.315" width="{areawidth}*0.33" height="{areaheight}*0.575" layer="1">
+        <area condition="not{showposter}||not{hasposter}" x="{areawidth}*0.265" y="{areaheight}*0.315" width="{areawidth}*0.33" height="{areaheight}*0.575" layer="1">
             <drawimage cache="true" imagetype="icon" path="ico_vdrlogo" x="0" y="20%" valign="top" align="center" width="50%" height="50%" />
 	</area>
-        <area condition="{hasposter}" x="{areawidth}*0.262" y="{areaheight}*0.325" width="{areawidth}*0.33" height="{areaheight}*0.558" layer="1">
+        <area condition="{showposter}++{hasposter}" x="{areawidth}*0.262" y="{areaheight}*0.325" width="{areawidth}*0.33" height="{areaheight}*0.558" layer="1">
             <drawimage name="poster" imagetype="image" path="{posterpath}" x="0" y="0" align="center" valign="center" width="{areaheight} * 0.83 * {posterwidth} / {posterheight}" height="{areaheight} * 0.83"/>
         </area>
-        <area condition="{hasposter}" x="{areawidth}*0.262" y="{areaheight}*0.325" width="{areawidth}*0.33" height="{areaheight}*0.558" layer="2">
+        <area condition="{showposter}++{hasposter}" x="{areawidth}*0.262" y="{areaheight}*0.325" width="{areawidth}*0.33" height="{areaheight}*0.558" layer="2">
             <drawimage cache="true" imagetype="skinpart" path="recback_movie_top" x="0" y="0" valign="top" align="center" width="{areaheight} * 0.88  * {posterwidth} / {posterheight}" height="{areaheight} * 0.95" />
         </area>
     </currentschedule>
@@ -69,7 +69,7 @@
             <drawtext align="center" y="{posy(diskusage)}+{height(diskusage)}-5" font="{vdrOsd}" fontsize="12%" color="{clrWhite}" text="({freegb}GB)" />
 	</area>
 	<area x="{areawidth}*0,87+5" y="28%" width="{areawidth}*0,11-10" height="1%" layer="2" >
-            <drawimage imagetype="skinpart" path="discpercent" x="0" y="0" width="{areawidth}" height="100%" />
+            <drawimage imagetype="skinpart" path="farbverlauf" x="0" y="0" width="{areawidth}" height="100%" />
             <drawrectangle name="leftbar" x="0" y="0" width="{areawidth}*{usedpercent}/100 - 4*{usedpercent}/100 - {areawidth}*1/100 - 4*1/100" height="100%" color="{clrBlack}" />
             <drawrectangle name="rightbar" x="{width(leftbar)}+4" y="0" width="{areawidth} - {width(leftbar)} -2" height="100%" color="{clrBlack}" />
 <!--            <drawrectangle x="{areawidth}-{areawidth}-3" y="0" width="{usedpercent}/100*{areawidth}" height="100%" color="{clrBlack}" />
@@ -80,7 +80,7 @@
 <!--    <customtokens> -->
     <temperatures>
 <!--        <area condition="{cpuload}||{gputemp}||{cputemp}||{cpuusage}||{memusage}" x="{areawidth}*0.759" y="13%" width="11%" height="17%" layer="1"> -->
-        <area x="{areawidth}*0.759" y="13%" width="11%" height="17%" layer="1">
+        <area condition="{showmainmenusysinfo}" x="{areawidth}*0.759" y="13%" width="11%" height="17%" layer="1">
             <fill color="{clrBackground}" />
 	</area>
 <!--
@@ -107,23 +107,23 @@
             <drawrectangle x="{width(leftbar)}+4" y="68%" width="{areawidth} - {width(leftbar)} -2" height="25%" color="{clrBlack}" />
         </area>
 -->
-	<area condition="{cputemp}" x="{areawidth}*0,759+5" y="22%" width="{areawidth}*0,11-10" height="4%" layer="2" >
+	<area condition="{showmainmenusysinfo}++{cputemp}" x="{areawidth}*0,759+5" y="22%" width="{areawidth}*0,11-10" height="4%" layer="2" >
             <drawtext align="center" y="2%" font="{vdrOsd}" fontsize="60%" color="{clrWhite}" text="{tr(cputemp)}" />
-            <drawimage imagetype="skinpart" path="discpercent" x="0" y="68%" width="{areawidth}" height="25%" />
+            <drawimage imagetype="skinpart" path="farbverlauf" x="0" y="68%" width="{areawidth}" height="25%" />
             <drawrectangle name="leftbar" x="0" y="68%" width="{areawidth}*{cputemp}/80 - 4*{cputemp}/80 - {areawidth}*1/80 - 4*1/80" height="25%" color="{clrBlack}" />
             <drawrectangle x="{width(leftbar)}+4" y="68%" width="{areawidth} - {width(leftbar)} -2" height="25%" color="{clrBlack}" />
         </area>
-	<area condition="{gputemp}" x="{areawidth}*0,759+5" y="26%" width="{areawidth}*0,11-10" height="4%" layer="2" >
+	<area condition="{showmainmenusysinfo}++{gputemp}" x="{areawidth}*0,759+5" y="26%" width="{areawidth}*0,11-10" height="4%" layer="2" >
             <drawtext align="center" y="2%" font="{vdrOsd}" fontsize="60%" color="{clrWhite}" text="{tr(gputemp)}" />
-            <drawimage imagetype="skinpart" path="discpercent" x="0" y="68%" width="{areawidth}" height="25%" />
+            <drawimage imagetype="skinpart" path="farbverlauf" x="0" y="68%" width="{areawidth}" height="25%" />
             <drawrectangle name="leftbar" x="0" y="68%" width="{areawidth}*{gputemp}/80 - 4*{gputemp}/80 - {areawidth}*1/80 - 4*1/80" height="25%" color="{clrBlack}" />
             <drawrectangle x="{width(leftbar)}+4" y="68%" width="{areawidth} - {width(leftbar)} -2" height="25%" color="{clrBlack}" />
         </area>
     </temperatures>
     <systemload>
-	<area x="{areawidth}*0,759+5" y="14%" width="{areawidth}*0,11-10" height="4%" layer="2" >
+	<area condition="{showmainmenusysinfo}" x="{areawidth}*0,759+5" y="14%" width="{areawidth}*0,11-10" height="4%" layer="2" >
             <drawtext align="center" y="2%" font="{vdrOsd}" fontsize="60%" color="{clrWhite}" text="{tr(systemload)}" />
-            <drawimage imagetype="skinpart" path="discpercent" x="0" y="68%" width="{areawidth}" height="25%" />
+            <drawimage imagetype="skinpart" path="farbverlauf" x="0" y="68%" width="{areawidth}" height="25%" />
             <drawrectangle name="leftbar" x="0" y="68%" width="{areawidth}*{loadhand}/2500 - 4*{loadhand}/2500 - {areawidth}/2500 - 4/2500" height="25%" color="{clrBlack}" />
 <!--            <drawrectangle condition="le({load}, 2.5)" name="leftbarfull" x="0" y="68%" width="{areawidth}- 4" height="25%" color="{clrBlack}" /> -->
             <drawrectangle x="{width(leftbar)}+4" y="68%" width="{areawidth} - {width(leftbar)} -2" height="25%" color="{clrBlack}" />
@@ -132,16 +132,16 @@
     </systemload>
     <customtokens>
 <!--	<area condition="isset{ctmemusage}" x="{areawidth}*0,759+5" y="18%" width="{areawidth}*0,11-10" height="4%" layer="2" > -->
-	<area x="{areawidth}*0,759+5" y="18%" width="{areawidth}*0,11-10" height="4%" layer="2" >
+	<area condition="{showmainmenusysinfo}++{ctmemusage}" x="{areawidth}*0,759+5" y="18%" width="{areawidth}*0,11-10" height="4%" layer="2" >
             <drawtext align="center" y="2%" font="{vdrOsd}" fontsize="60%" color="{clrWhite}" text="{tr(memusage)} {ctMem}" />
-            <drawimage imagetype="skinpart" path="discpercent" x="0" y="68%" width="{areawidth}" height="25%" />
+            <drawimage imagetype="skinpart" path="farbverlauf" x="0" y="68%" width="{areawidth}" height="25%" />
             <drawrectangle name="leftbar" x="0" y="68%" width="{areawidth}*{ctmemusage}/100 - 4*{ctmemusage}/100 - {areawidth}*1/100 - 4*1/100" height="25%" color="{clrBlack}" />
             <drawrectangle x="{width(leftbar)}+4" y="68%" width="{areawidth} - {width(leftbar)} -2" height="25%" color="{clrBlack}" />
         </area>
     </customtokens>
 
     <currentweather>
-        <area x="40%" y="1%" width="20%" height="8%" layer="3">
+        <area condition="{showmenuweather}" x="40%" y="1%" width="20%" height="8%" layer="3">
             <drawimage name="weathericon" imagetype="icon" path="{icon}" x="{areawidth}/2 + {width(temperature)}/2 - {width(weathericon)}/2 + 10" valign="center" width="{areaheight}*1" height="{areaheight}*1"/>
             <drawtext name="temperature" x="{areawidth}/2 - {width(temperature)}/2 - {width(weathericon)}/2 - 10" valign="center" font="{digital}" fontsize="60%" color="{clrWhite}" text="{temperature} 'C" />
         </area>
@@ -175,10 +175,15 @@
                 <drawimage cache="true" condition="not{current}" imagetype="skinpart" path="menubutton" x="0" y="10%" width="{areawidth}" height="{areaheight}*0.8"/>
                 <drawimage cache="true" condition="{current}" imagetype="skinpart" path="menubuttonactive" x="0" y="10%" width="{areawidth}" height="{areaheight}*0.8"/>
             </area>
-            <area x="0" width="100%" layer="3">
+            <area condition="{showmainmenuicons}" x="0" width="100%" layer="3">
                 <drawimage cache="true" imagetype="menuicon" path="{icon}" x="10" valign="center" width="{areaheight}*0.75" height="{areaheight}*0.75"/>
             </area>
-            <areascroll scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="23%" width="77%" layer="3">
+            <areascroll condition="not{showmainmenuicons}" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="2%" width="98%" layer="3">
+                <drawtext condition="not{current}" name="menutext" x="2%" valign="center" font="{vdrOsd}" fontsize="40%" color="{clrFontMenuItem}" text="{number} {label}" />
+                <drawtext condition="{current}" name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="80%" color="{clrFontMenuItemSelected}" text="{number}" />
+                <drawtext condition="{current}" name="menutext" x="15%" valign="center" font="{vdrOsd}" fontsize="40%" color="{clrFontMenuItemSelected}" text="{label}" />
+            </areascroll>
+            <areascroll condition="{showmainmenuicons}" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="23%" width="77%" layer="3">
                 <drawtext condition="not{current}" name="menutext" x="2%" valign="center" font="{vdrOsd}" fontsize="40%" color="{clrFontMenuItem}" text="{number} {label}" />
                 <drawtext condition="{current}" name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="80%" color="{clrFontMenuItemSelected}" text="{number}" />
                 <drawtext condition="{current}" name="menutext" x="15%" valign="center" font="{vdrOsd}" fontsize="40%" color="{clrFontMenuItemSelected}" text="{label}" />

@@ -1,25 +1,25 @@
-<menurecordings x="0" y="0" width="100%" height="100%" fadetime="{fadetime}" scaletvx="{areawidth}*0.03 + {areawidth}*{recordingsmenusize}*0.01" scaletvy="-{areaheight}*0.2 + {areaheight}*{recordingsmenusize}*0.01" scaletvwidth="{areawidth}*0.95 - {areawidth}*{recordingsmenusize}*0.01" scaletvheight="{areaheight}*1.10 - {areaheight}*{recordingsmenusize}*0.01">
+<menurecordings x="0" y="0" width="100%" height="100%" fadetime="{fadetime}" scaletvx="{areawidth}*0.33 + {areawidth}*{recordingsmenusize}/100" scaletvy="{areaheight}*0.10 + {areaheight}*{recordingsmenusize}*0.01" scaletvwidth="{areawidth}*0.65 - {areawidth}*{recordingsmenusize}*0.01" scaletvheight="{areaheight}*0.80 - {areaheight}*{recordingsmenusize}*0.01">
     <background>
         <area x="0" y="0" width="100%" height="100%" layer="1">
             <!-- top bar -->
             <drawrectangle x="0" y="0" width="{areawidth}*0.99 - {areaheight}*0.125" height="10%" color="{clrBackground}" /> 
-            <drawrectangle x="{areawidth}*{recordingsmenusize}*0.01" y="{areaheight}*0.1 - 2" width="{areawidth}*0.99 - {areawidth}*{recordingsmenusize}*0.01- {areaheight}*0.096 -5" height="2" color="{clrBorder}" />
+            <drawrectangle x="{areawidth}*0.30 + {areawidth}*{recordingsmenusize}*0.01" y="{areaheight}*0.1 - 2" width="{areawidth}*0.69 - {areawidth}*{recordingsmenusize}*0.01- {areaheight}*0.096 -5" height="2" color="{clrBorder}" />
             <drawellipse x="{areawidth}*0.99 - {areaheight}*0.125" y="0" width="{areaheight}*0.031" height="{areaheight}*0.05 - 1" quadrant="-2" color="{clrBackground}" />
             <drawellipse x="{areawidth}*0.99 - {areaheight}*0.125" y="{areaheight}*0.05 - 1" width="{areaheight}*0.030" height="{areaheight}*0.05 - 1" quadrant="-3" color="{clrBackground}" />
 	    <!-- clock -->
             <drawimage cache="true" imagetype="skinpart" path="menuclockback" x="{areawidth}*0.99 - {areaheight}*0.1" y="0" width="{areaheight}*0.1" height="10%"/>
             <!-- menu bar -->
-            <drawrectangle x="0" y="10%" width="-{areawidth}*0.01 + {areawidth}*{recordingsmenusize}*0.01" height="81%" color="{clrBackground}" />
-            <drawrectangle x="-{areawidth}*0.01 + {areawidth}*{recordingsmenusize}*0.01 - 2" y="12%" width="2" height="76%" color="{clrBorder}" />
+            <drawrectangle x="0" y="10%" width="{areawidth}*0.29 + {areawidth}*{recordingsmenusize}*0.01" height="81%" color="{clrBackground}" />
+            <drawrectangle x="{areawidth}*0.29 + {areawidth}*{recordingsmenusize}*0.01 - 2" y="12%" width="2" height="76%" color="{clrBorder}" />
             <!-- bottom bar -->
             <drawrectangle x="0" y="90%" width="{areawidth}" height="10%" color="{clrBackground}" />
-            <drawrectangle x="{areawidth}*{recordingsmenusize}*0.01" y="{areaheight}*0.9 - 1" width="{areawidth} - {areawidth}*{recordingsmenusize}*0.01" height="2" color="{clrBorder}" />
+            <drawrectangle x="{areawidth}*0.30 + {areawidth}*{recordingsmenusize}*0.01" y="{areaheight}*0.9 - 1" width="{areawidth}*0.70 - {areawidth}*{recordingsmenusize}*0.01" height="2" color="{clrBorder}" />
             <!-- upper corner -->
-            <drawellipse x="-{areawidth}*0.01 + {areawidth}*{recordingsmenusize}*0.01" y="{areaheight}/10" width="{areawidth}*2/100" height="{areawidth}*2/100" quadrant="-2" color="{clrBorder}" />
-            <drawellipse x="-{areawidth}*0.01 + {areawidth}*{recordingsmenusize}*0.01 - 2" y="{areaheight}/10 - 2" width="{areawidth}*2/100" height="{areawidth}*2/100" quadrant="-2" color="{clrBackground}" />
+            <drawellipse x="{areawidth}*0.29 + {areawidth}*{recordingsmenusize}*0.01" y="{areaheight}/10" width="{areawidth}*2/100" height="{areawidth}*2/100" quadrant="-2" color="{clrBorder}" />
+            <drawellipse x="{areawidth}*0.29 + {areawidth}*{recordingsmenusize}*0.01 - 2" y="{areaheight}/10 - 2" width="{areawidth}*2/100" height="{areawidth}*2/100" quadrant="-2" color="{clrBackground}" />
             <!-- lower corner -->
-            <drawellipse x="-{areawidth}*0.01 + {areawidth}*{recordingsmenusize}*0.01" y="{areaheight}*90/100 - {areawidth}*2/100" width="{areawidth}*2/100" height="{areawidth}*2/100" quadrant="-3" color="{clrBorder}" />
-            <drawellipse x="-{areawidth}*0.01 + {areawidth}*{recordingsmenusize}*0.01 - 2" y="{areaheight}*90/100 - {areawidth}*2/100 + 2" width="{areawidth}*2/100" height="{areawidth}*2/100" quadrant="-3" color="{clrBackground}" />
+            <drawellipse x="{areawidth}*0.29 + {areawidth}*{recordingsmenusize}*0.01" y="{areaheight}*90/100 - {areawidth}*2/100" width="{areawidth}*2/100" height="{areawidth}*2/100" quadrant="-3" color="{clrBorder}" />
+            <drawellipse x="{areawidth}*0.29 + {areawidth}*{recordingsmenusize}*0.01 - 2" y="{areaheight}*90/100 - {areawidth}*2/100 + 2" width="{areawidth}*2/100" height="{areawidth}*2/100" quadrant="-3" color="{clrBackground}" />
         </area>
 <!--        <area condition="{recordingsmenusize}" x="0" y="0" width="100%" height="100%" layer="1">
             <drawrectangle x="0" y="0" width="{areawidth}*0.99 - {areaheight}*0.125" height="10%" color="{clrBackground}" /> 
@@ -42,12 +42,12 @@
         </area>
     </background>
     <scrollbar>
-        <area x="{areawidth}*0.005 + {areawidth}*{recordingsmenusize}*0.01" y="16%" width="{areawidth}*0.0075" height="68%" layer="2">
+        <area x="{areawidth}*0.305 + {areawidth}*{recordingsmenusize}*0.01" y="16%" width="{areawidth}*0.0075" height="68%" layer="2">
             <fill color="{clrBorder}" />
             <drawrectangle x="2" y="2" width="{areawidth} - 4" height="{areaheight} - 4" color="{clrTransparent}" />
             <drawrectangle x="4" y="4 + {areaheight} * {offset} / 1000" width="{areawidth} - 8" height="{areaheight} * {height} / 1000 - 8" color="{clrProgressbar}" />
         </area>
-        <area x="{areawidth}*0.005 + {areawidth}*{recordingsmenusize}*0.01" y="16%" width="{areawidth}*0.0075" height="68%" layer="3">
+        <area x="{areawidth}*0.305 + {areawidth}*{recordingsmenusize}*0.01" y="16%" width="{areawidth}*0.0075" height="68%" layer="3">
             <drawimage imagetype="skinpart" path="verticalbartop" x="4" y="5 + {areaheight} * {offset} / 1000" width="{areawidth} - 8" height="{areaheight} * {height} / 1000 - 10" />
         </area>
     </scrollbar>
@@ -73,7 +73,7 @@
         -->
         <listelement>
             <!-- background and foreground-->
-            <area x="0" width="-{areawidth}*0.02 + {areawidth}*{recordingsmenusize}*0.01" layer="2">
+            <area x="0" width="{areawidth}*0.28 + {areawidth}*{recordingsmenusize}*0.01" layer="2">
                 <drawimage condition="not{current}" imagetype="skinpart" path="menubutton" x="0" y="1%" width="{areawidth}" height="{areaheight}*0.98"/>
                 <drawimage condition="{current}" imagetype="skinpart" path="menubuttonactive" x="0" y="1%" width="{areawidth}" height="{areaheight}*0.98"/>
             </area>
@@ -95,11 +95,11 @@
             <area condition="{showposter}++{hasposterthumbnail}++not{folder}" x="1%" width="4%" layer="3">
                 <drawimage imagetype="image" path="{thumbnailpath}" x="0" width="0.9*{areaheight} * {thumbnailbwidth} / {thumbnailheight}" height="0.9*{areaheight}" valign="center" />
             </area>
-            <areascroll condition="not{folder}" scrollelement="recname" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="4%" width="-{areawidth}*0.06 + {areawidth}*{recordingsmenusize}*0.01" layer="3">
+            <areascroll condition="not{folder}" scrollelement="recname" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="4%" width="{areawidth}*0.24 + {areawidth}*{recordingsmenusize}*0.01" layer="3">
                 <drawtext condition="not{current}" name="recname" x="0" y="0" font="{vdrOsd}" fontsize="60%" color="{clrFontMenuItemSelected}" text="{name}" />
                 <drawtext condition="{current}" name="recname" x="0" y="0" font="{vdrOsd}" fontsize="60%" color="{clrFontMenuItemSelected}" text="{name}" />
             </areascroll>
-            <area condition="not{folder}" x="4%" width="-{areawidth}*0.06 + {areawidth}*{recordingsmenusize}*0.01" layer="3">
+            <area condition="not{folder}" x="4%" width="{areawidth}*0.24 + {areawidth}*{recordingsmenusize}*0.01" layer="3">
                 <drawtext condition="not{current}" x="0" y="55%" font="{vdrOsd}" fontsize="40%" color="{clrFontMenuItem}" text="{date} {time}" />
                 <drawtext condition="{current}" x="0" y="55%" font="{vdrOsd}" fontsize="40%" color="{clrFontMenuItemSelected}" text="{date} {time}" />
                 <drawimage condition="{new}" name="new" imagetype="icon" path="ico_recnew" x="{areawidth} - {areaheight}/2 - 5" y="{areaheight}*0.5 + 4" width="{areaheight}*4/10" height="{areaheight}*4/10" />
@@ -127,10 +127,10 @@
         {posterpath}            absolute path of scraped poster
         -->
         <currentelement delay="500" fadetime="300">
-            <area x="{areawidth}*0.02 + {areawidth}*{recordingsmenusize}*0.01" y="2%" width="{areawidth}*0.97 - {areawidth}*{recordingsmenusize}*0.01" height="96%" layer="2">
+            <area x="{areawidth}*0.32 + {areawidth}*{recordingsmenusize}*0.01" y="2%" width="{areawidth}*0.67 - {areawidth}*{recordingsmenusize}*0.01" height="96%" layer="2">
                 <fill color="{clrTransBlack}" />
 	    </area>
-            <area x="{areawidth}*0.02 + {areawidth}*{recordingsmenusize}*0.01" y="2%" width="{areawidth}*0.97 - {areawidth}*{recordingsmenusize}*0.01" height="96%" layer="3">
+            <area x="{areawidth}*0.32 + {areawidth}*{recordingsmenusize}*0.01" y="2%" width="{areawidth}*0.67 - {areawidth}*{recordingsmenusize}*0.01" height="96%" layer="3">
                 <!-- header -->
                 <drawtext name="title" x="1%" y="0" width="98%" font="{vdrOsd}" fontsize="8%" color="{clrWhite}" text="{name}" />
                 <drawtext name="shorttext" x="1%" y="{height(title)}" width="{areawidth} - {areawidth}/3 + {areawidth}/3*0.24" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{shorttext}" />

@@ -13,12 +13,16 @@
         </area>
     </background>
     <scrollbar>
-        <area x="97%" y="25%" width="2%" height="60%" layer="2">
+        <area x="{areawidth}*0.98" y="25%" width="{areawidth}*0.01" height="60%" layer="2">
             <fill color="{clrBorder}" />
             <drawrectangle x="2" y="2" width="{areawidth} - 4" height="{areaheight} - 4" color="{clrTransparent}" />
             <drawrectangle x="4" y="4 + {areaheight} * {offset} / 1000" width="{areawidth} - 8" height="{areaheight} * {height} / 1000 - 8" color="{clrProgressbar}" />
         </area>
+        <area x="{areawidth}*0.98" y="25%" width="{areawidth}*0.01" height="60%" layer="3">
+            <drawimage imagetype="skinpart" path="verticalbartop" x="4" y="5 + {areaheight} * {offset} / 1000" width="{areawidth} - 8" height="{areaheight}* {height} / 1000 - 10" />
+        </area>
     </scrollbar>
+
     <!-- Available Variables in detailheader and tab:
     {menuheader}                        "Current Weather"
     {city}                              configured city to display weather for

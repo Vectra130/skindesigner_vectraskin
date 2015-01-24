@@ -16,7 +16,10 @@
             <drawrectangle x="1" y="2" width="{areawidth} - 2" height="{areaheight} - 4" color="{clrTransparent}" />
             <drawrectangle x="2" y="4 + {areaheight} * {offset} / 1000" width="{areawidth} - 4" height="{areaheight} * {height} / 1000 - 8" color="{clrProgressbar}" />
         </area>
-    </scrollbar>
+        <area x="98%" y="25%" width="1%" height="60%" layer="3">
+             <drawimage cache="true" imagetype="skinpart" path="verticalbartop" x="2" y="4 + {areaheight} * {offset} / 1000" width="{areawidth} - 4" height="{areaheight} * {height} / 1000 - 8"/>
+        </area>
+     </scrollbar>
     <!-- Available Variables in detailheader elements:
     {name}                    name of recording
     {shorttext}               shorttext of recording
@@ -171,13 +174,11 @@
     <!-- just define as many tabs as needed -->
     <tab name="Info" x="2%" y="25%" width="94%" height="60%" layer="2" scrollheight="{areaheight}/4">
         <drawtextbox condition="not{isseries}++not{ismovie}" x="0" y="0" width="96%" font="{vdrOsd}" fontsize="8%" color="{clrWhite}" text="{description}" />
-        <drawimage condition="{isseries}" name="seriesposter" imagetype="image" path="{seriesposter1path}" x="{areawidth}*0.7" y="0" width="{areawidth}*0.3" height="{areawidth} * 0.3 * {seriesposter1height} / {seriesposter1width}"/>
-                <drawimage condition="{hasposter}" name="poster" imagetype="skinpart" path="recback_movie_top" x="{areawidth}*0.7" y="5" width="{areawidth}/3" height="{areawidth}/2.88 * {posterheight} / {posterwidth}" />
-                <drawimage condition="{ismovie}" name="poster_in" imagetype="image" path="{posterpath}" x="{posx(poster)} + {width(poster)}*0.03" y="{posy(poster)} + {height(poster)}*0.085" height="{height(poster)}*0.9" width="{width(poster)}*0.94" />
-<!--        <drawimage condition="{ismovie}" name="movieposter" imagetype="image" path="{posterpath}" x="{areawidth}*0.7" y="0" width="{areawidth}*0.3" height="{areawidth} * 0.3 * {posterheight} / {posterwidth}" />
--->
-        <drawtextbox condition="{isseries}" x="0" y="0" width="96%" float="topright" floatwidth="{width(seriesposter)} + 10" floatheight="{height(seriesposter)} + 20" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{description}" />
-        <drawtextbox condition="{ismovie}" x="0" y="0" width="96%" float="topright" floatwidth="{width(movieposter)} + 10" floatheight="{height(movieposter)} + 20" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{description}" />
+        <drawimage condition="{isseries}" name="postertop" imagetype="skinpart" path="recback_movie_top" x="{areawidth}*0.7" y="5" width="{areawidth}/3*0.9" height="{areawidth}/2.88*0.9 * {seriesposter1height} / {seriesposter1width}" />
+        <drawimage condition="{ismovie}" name="postertop" imagetype="skinpart" path="recback_movie_top" x="{areawidth}*0.7" y="5" width="{areawidth}/3*0.9" height="{areawidth}/2.88*0.9 * {posterheight} / {posterwidth}" />
+        <drawimage condition="{isseries}" name="seriesposter" imagetype="image" path="{seriesposter1path}" x="{posx(postertop)} + {width(postertop)}*0.03" y="{posy(postertop)} + {height(postertop)}*0.085" height="{height(postertop)}*0.9" width="{width(postertop)}*0.94" />
+        <drawimage condition="{ismovie}" name="movieposter" imagetype="image" path="{posterpath}" x="{posx(postertop)} + {width(postertop)}*0.03" y="{posy(postertop)} + {height(postertop)}*0.085" height="{height(postertop)}*0.9" width="{width(postertop)}*0.94" />
+        <drawtextbox condition="{isseries}||{ismovie}" x="0" y="0" width="96%" float="topright" floatwidth="{width(postertop)} + 10" floatheight="{height(postertop)} + 20" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{description}" />
     </tab>
     <tab name="{tr(recinfo)}" x="2%" y="25%" width="94%" height="60%" layer="2" scrollheight="{areaheight}/4">
         <drawtext align="center" y="0" name="title" font="{vdrOsd}" fontsize="10%" color="{clrWhite}" text="{tr(recinfo)}" />
