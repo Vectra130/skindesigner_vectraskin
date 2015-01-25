@@ -25,8 +25,6 @@
             <loop name="timers" x="0" y="0" orientation="horizontal" rowheight="100%" columnwidth="{areawidth} / 4" overflow="cut">
                 <drawimage cache="true" name="logo" imagetype="channellogo" path="{timers[channelid]}" height="52%" width="{columnwidth} / 2" align="center" y="5" />
 	        <drawimage condition="{timers[recording]}" x="{columnwidth}/1.6" y="85%" imagetype="icon" path="ico_timer_recording" width="15%" height="15%" />
-<!--	        <drawimage x="2" y="{areaheight}*0.85 - 2" imagetype="icon" path="ico_activetimer" width="{areawidth}/4*0.15" height="15%" />
--->
                 <drawtextbox x="5" y="58%" width="{columnwidth}-10" align="center" maxlines="2" font="{vdrOsd}" fontsize="15%" color="{clrWhite}" text="{timers[title]}" />
 
                 <drawtext align="center" y="{areaheight}*0.85-2" font="{vdrOsd}" fontsize="15%" color="{clrWhite}" text="{timers[datetime]}" />
@@ -73,41 +71,13 @@
             <drawimage imagetype="skinpart" path="farbverlauf" x="0" y="0" width="{areawidth}" height="100%" />
             <drawrectangle name="leftbar" x="0" y="0" width="{areawidth}*{usedpercent}/100 - 4*{usedpercent}/100 - {areawidth}*1/100 - 4*1/100" height="100%" color="{clrBlack}" />
             <drawrectangle name="rightbar" x="{width(leftbar)}+4" y="0" width="{areawidth} - {width(leftbar)} -2" height="100%" color="{clrBlack}" />
-<!--            <drawrectangle x="{areawidth}-{areawidth}-3" y="0" width="{usedpercent}/100*{areawidth}" height="100%" color="{clrBlack}" />
-            <drawrectangle x="{usedpercent}/100*{areawidth} + 3 " y="0" width="{areawidth} - {usedpercent}/100*{areawidth} - 3" height="100%" color="{clrBlack}" />
--->        </area>        
+        </area>        
     </discusage>
 
-<!--    <customtokens> -->
     <temperatures>
-<!--        <area condition="{cpuload}||{gputemp}||{cputemp}||{cpuusage}||{memusage}" x="{areawidth}*0.759" y="13%" width="11%" height="17%" layer="1"> -->
         <area condition="{showmainmenusysinfo}" x="{areawidth}*0.759" y="13%" width="11%" height="17%" layer="1">
             <fill color="{clrBackground}" />
 	</area>
-<!--
-	<area condition="{cpuusage}" x="{areawidth}*0,759+5" y="13%" width="{areawidth}*0,11-10" height="4%" layer="2" >
-            <drawtext align="center" y="2%" font="{vdrOsd}" fontsize="60%" color="{clrWhite}" text="{tr(cpuusage)}" />
-            <drawimage imagetype="skinpart" path="discpercent" x="0" y="74%" width="{areawidth}" height="25%" />
-            <drawrectangle name="leftbar" x="0" y="74%" width="{areawidth}*{cpuusage}/100 - 4*{cpuusage}/100 - {areawidth}*1/100 - 4*1/100" height="25%" color="{clrBlack}" />
-            <drawrectangle x="{width(leftbar)}+4" y="74%" width="{areawidth} - {width(leftbar)} -2" height="25%" color="{clrBlack}" />
-        </area>
--->
-<!--
-	<area condition="{cpuusage}" x="{areawidth}*0,759+5" y="14%" width="{areawidth}*0,11-10" height="4%" layer="2" >
-            <drawtext align="center" y="2%" font="{vdrOsd}" fontsize="60%" color="{clrWhite}" text="{tr(systemload)}" />
-            <drawimage imagetype="skinpart" path="discpercent" x="0" y="68%" width="{areawidth}" height="25%" />
-            <drawrectangle name="leftbar" x="0" y="68%" width="{areawidth}*{cpuusage}/250 - 4*{cpuusage}/250 - {areawidth}*1/250 - 4*1/250" height="25%" color="{clrBlack}" />
-            <drawrectangle x="{width(leftbar)}+4" y="68%" width="{areawidth} - {width(leftbar)} -2" height="25%" color="{clrBlack}" />
-        </area>
--->
-<!--
-	<area condition="{memusage}" x="{areawidth}*0,759+5" y="18%" width="{areawidth}*0,11-10" height="4%" layer="2" >
-            <drawtext align="center" y="2%" font="{vdrOsd}" fontsize="60%" color="{clrWhite}" text="{tr(memusage)}" />
-            <drawimage imagetype="skinpart" path="discpercent" x="0" y="68%" width="{areawidth}" height="25%" />
-            <drawrectangle name="leftbar" x="0" y="68%" width="{areawidth}*{memusage}/100 - 4*{memusage}/100 - {areawidth}*1/100 - 4*1/100" height="25%" color="{clrBlack}" />
-            <drawrectangle x="{width(leftbar)}+4" y="68%" width="{areawidth} - {width(leftbar)} -2" height="25%" color="{clrBlack}" />
-        </area>
--->
 	<area condition="{showmainmenusysinfo}++{cputemp}" x="{areawidth}*0,759+5" y="22%" width="{areawidth}*0,11-10" height="4%" layer="2" >
             <drawtext align="center" y="2%" font="{vdrOsd}" fontsize="60%" color="{clrWhite}" text="{tr(cputemp)}" />
             <drawimage imagetype="skinpart" path="farbverlauf" x="0" y="68%" width="{areawidth}" height="25%" />
@@ -126,17 +96,14 @@
             <drawtext align="center" y="2%" font="{vdrOsd}" fontsize="60%" color="{clrWhite}" text="{tr(systemload)}" />
             <drawimage imagetype="skinpart" path="farbverlauf" x="0" y="68%" width="{areawidth}" height="25%" />
             <drawrectangle name="leftbar" x="0" y="68%" width="{areawidth}*{loadhand}/2500 - 4*{loadhand}/2500 - {areawidth}/2500 - 4/2500" height="25%" color="{clrBlack}" />
-<!--            <drawrectangle condition="le({load}, 2.5)" name="leftbarfull" x="0" y="68%" width="{areawidth}- 4" height="25%" color="{clrBlack}" /> -->
             <drawrectangle x="{width(leftbar)}+4" y="68%" width="{areawidth} - {width(leftbar)} -2" height="25%" color="{clrBlack}" />
-<!--            <drawrectangle condition="le({load}, 2.5)" x="{width(leftbarfull)}+4" y="68%" width="{areawidth} - {width(leftbarfull)} -2" height="25%" color="{clrBlack}" /> -->
         </area>
     </systemload>
-    <customtokens>
-<!--	<area condition="isset{ctmemusage}" x="{areawidth}*0,759+5" y="18%" width="{areawidth}*0,11-10" height="4%" layer="2" > -->
-	<area condition="{showmainmenusysinfo}++{ctmemusage}" x="{areawidth}*0,759+5" y="18%" width="{areawidth}*0,11-10" height="4%" layer="2" >
-            <drawtext align="center" y="2%" font="{vdrOsd}" fontsize="60%" color="{clrWhite}" text="{tr(memusage)} {ctMem}" />
+    <customtokens> <!-- memusage -->
+	<area condition="{showmainmenusysinfo}++{ctMem}" x="{areawidth}*0,759+5" y="18%" width="{areawidth}*0,11-10" height="4%" layer="2" >
+            <drawtext align="center" y="2%" font="{vdrOsd}" fontsize="60%" color="{clrWhite}" text="{tr(memusage)}" />
             <drawimage imagetype="skinpart" path="farbverlauf" x="0" y="68%" width="{areawidth}" height="25%" />
-            <drawrectangle name="leftbar" x="0" y="68%" width="{areawidth}*{ctmemusage}/100 - 4*{ctmemusage}/100 - {areawidth}*1/100 - 4*1/100" height="25%" color="{clrBlack}" />
+            <drawrectangle name="leftbar" x="0" y="68%" width="{areawidth}*{ctMem}/100 - 4*{ctMem}/100 - {areawidth}*1/100 - 4*1/100" height="25%" color="{clrBlack}" />
             <drawrectangle x="{width(leftbar)}+4" y="68%" width="{areawidth} - {width(leftbar)} -2" height="25%" color="{clrBlack}" />
         </area>
     </customtokens>

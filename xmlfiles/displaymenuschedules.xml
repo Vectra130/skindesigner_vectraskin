@@ -214,7 +214,7 @@
                 <drawtextbox condition="not{showposter}||not{hasposter}" x="10" y="{posy(poster)}" width="99%" height="{areaheight} - {posy(poster)}" font="{vdrOsd}" fontsize="{areaheight}*0.08 - {areaheight}*{schedulesmenusize}*0.0002" color="{clrWhite}" text="{description}" />
             </area>
             <area condition="{whatson}" x="{areawidth}*0.02 + {areawidth}*{schedulesmenusize}*0.01" y="2%" width="{areawidth}*0.97 - {areawidth}*{schedulesmenusize}*0.01" height="96%" layer="3">
-                <drawimage condition="{running}" imagetype="skinpart" path="verticalbartop" x="{areawidth} / 4 + 5" y="{areaheight}*0.09 + {areaheight}*0.06 / 2 - 6" width="{areawidth}/2 * {elapsed} / {duration} - 10 * {elapsed} / {duration}" height="9" />
+                <drawimage condition="{running}" imagetype="skinpart" path="verticalbartop" x="{areawidth} / 4 + 5" y="{areaheight}*0.09 + {areaheight}*0.06 / 2 - {areaheight}*{schedulesmenusize}*0.0002/2 - 6" width="{areawidth}/2 * {elapsed} / {duration} - 10 * {elapsed} / {duration}" height="9" />
 	    </area>
 
 <!--

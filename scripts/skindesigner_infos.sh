@@ -1,14 +1,26 @@
 #!/bin/bash
+# v1.0 eeebox
 
 #Infos fuer den SkinDesigner
 
+DBUS="/usr/bin/vdr-dbus-send.sh /Plugins/skindesigner plugin.SVDRPCommand string:SCTK"
 OUTPUTFLDR=/tmp/skindesigner
 mkdir -p $OUTPUTFLDR
+
+#cpu usage
+#CPUUSAGE=$(printf "%.0f\n" $(cat /proc/stat | grep '^cpu ' | awk '{ print ($2+$4)*100/($2+$4+$5) }' | sed -e 's/[.]/,/g'))
+#CPUUSAGE=$(cat /proc/stat | grep '^cpu ' | awk '{ print ($2+$4)*100/($2+$4+$5) }' | awk -F'.' '{ print $1 }' )
+#$DBUS string:"ctCpuUsage = $(( $(echo $CPUUSAGE  | sed -e 's/[,]/./g') + 1 ))"
+#[ $CPUUSAGE -gt 100 ] && CPUUSAGE=100
+#echo "${CPUUSAGE}.0" > ${OUTPUTFLDR}/cpuusage
+#logger -t INFO "CPUUSAGE "$CPUUSAGE
 
 #mem usage
 MEMUSAGE=$(free | grep "Mem:" | awk '{ print $3*100/$2 }'  | awk -F'.' '{ print $1 }' )
 [ $MEMUSAGE -gt 100 ] && MEMUSAGE=100
-echo "${MEMUSAGE}.0" > ${OUTPUTFLDR}/memusage
+$DBUS string:"ctMem = ${MEMUSAGE}"
+#echo "${MEMUSAGE}.0" > ${OUTPUTFLDR}/memusage
+#logger -t INFO "MEMUSAGE "$MEMUSAGE
 
 #swap usage
 #SWAPUSAGE=$(free | grep "Swap:" | awk '{ print ($2-$4)*100/$2 }'  | awk -F'.' '{ print $1 }' )
@@ -26,7 +38,7 @@ GPUTEMP=$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader  | awk -F
 echo "${GPUTEMP}.0" > ${OUTPUTFLDR}/gpu
 
 #cpuload
-CPULOAD=$(cat /proc/loadavg | awk '{ print $1 }')
-CPULOAD=$(echo "$CPULOAD * 100" | bc | awk -F'.' '{ print $1 }')
-[ $CPULOAD -gt 250 ] && CPULOAD=250
-echo "${CPULOAD}.0" > ${OUTPUTFLDR}/cpuusage
+#CPULOAD=$(cat /proc/loadavg | awk '{ print $1 }')
+#CPULOAD=$(echo "$CPULOAD * 100" | bc | awk -F'.' '{ print $1 }')
+#[ $CPULOAD -gt 250 ] && CPULOAD=250
+#echo "${CPULOAD}.0" > ${OUTPUTFLDR}/cpuusage

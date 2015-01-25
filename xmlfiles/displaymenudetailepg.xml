@@ -20,14 +20,6 @@
              <drawimage cache="true" imagetype="skinpart" path="verticalbartop" x="2" y="4 + {areaheight} * {offset} / 1000" width="{areawidth} - 4" height="{areaheight} * {height} / 1000 - 8"/>
         </area>
     </scrollbar>
-<!--     <scrollbar>
-        <area x="97%" y="25%" width="2%" height="60%" layer="2">
-            <fill color="{clrBorder}" />
-            <drawrectangle x="2" y="2" width="{areawidth} - 4" height="{areaheight} - 4" color="{clrTransparent}" />
-            <drawrectangle x="4" y="4 + {areaheight} * {offset} / 1000" width="{areawidth} - 8" height="{areaheight} * {height} / 1000 - 8" color="{clrProgressbar}" />
-        </area>
-    </scrollbar>
--->
     <!-- Available Variables in detailheader elements:
     {title}                   title of event
     {shorttext}               shorttext of event
@@ -60,7 +52,7 @@
             <drawimage name="logo" imagetype="channellogo" path="{channelid}" x="0" width="15%" height="80%" valign="center" />
             
             <drawimage condition="{isseries}++{banneravailable}++not{epgpicavailable}" imagetype="image" path="{bannerpath}" x="{areawidth} - {areawidth}/3 - 10" valign="center" width="{areawidth}/3" height="{areawidth}/3 * {bannerheight} / {bannerwidth}"/>
-            <drawimage condition="{ismovie}++{posteravailable}++not{epgpicavailable}" imagetype="image" path="{posterpath}" x="{areawidth} - {areaheight}*8/10" valign="center" width="{areaheight}*8 / 10 * {posterheight} / {posterwidth}" height="{areaheight}*8 / 10"/>
+            <drawimage debug="true" condition="{ismovie}++{posteravailable}++not{epgpicavailable}" imagetype="image" path="{posterpath}" x="{areawidth} - {areaheight}*8/10" valign="center" width="{areaheight}*8 / 10 * {posterheight} / {posterwidth}" height="{areaheight}*8 / 10"/>
             <drawimage condition="{epgpicavailable}" imagetype="image" path="{epgpicpath}" x="{areawidth} - {areaheight}*8/10 * 174 / 130" valign="center" width="{areaheight}*8/10 * 174 / 130" height="{areaheight}*8 / 10"/>
 
             <drawtext name="title" x="{width(logo)} + 20" valign="center" font="{vdrOsd}" fontsize="35%" color="{clrWhite}" text="{title}" />
@@ -196,11 +188,27 @@
     <!-- TAB EPGINFO -->
     <tab name="EPG Info" x="2%" y="25%" width="94%" height="60%" layer="2" scrollheight="{areaheight}/4">
         <drawtextbox condition="not{isseries}++not{ismovie}" x="0" y="10" width="96%" font="{vdrOsd}" fontsize="8%" color="{clrWhite}" text="{description}" />
-        <drawimage condition="{isseries}" name="postertop" imagetype="skinpart" path="recback_movie_top" x="{areawidth}*0.7" y="10" width="{areawidth}/3*0.9" height="{areawidth}/2.88*0.9 * {seriesposter1height} / {seriesposter1width}" />
-        <drawimage condition="{ismovie}" name="postertop" imagetype="skinpart" path="recback_movie_top" x="{areawidth}*0.7" y="10" width="{areawidth}/3*0.9" height="{areawidth}/2.88*0.9 * {posterheight} / {posterwidth}" />
-        <drawimage condition="{isseries}" name="seriesposter" imagetype="image" path="{seriesposter1path}" x="{posx(postertop)} + {width(postertop)}*0.03" y="{posy(postertop)} + {height(postertop)}*0.085" height="{height(postertop)}*0.9" width="{width(postertop)}*0.94" />
-        <drawimage condition="{ismovie}" name="movieposter" imagetype="image" path="{posterpath}" x="{posx(postertop)} + {width(postertop)}*0.03" y="{posy(postertop)} + {height(postertop)}*0.085" height="{height(postertop)}*0.9" width="{width(postertop)}*0.94" />
-        <drawtextbox condition="{isseries}||{ismovie}" x="0" y="10" width="96%" float="topright" floatwidth="{width(postertop)} + 10" floatheight="{height(postertop)} + 20" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{description}" />
+        <drawimage condition="{isseries}++not{epgpic1available}" name="seriespostertop" imagetype="skinpart" path="recback_movie_top" x="{areawidth}*0.7" y="10" width="{areawidth}/3*0.9" height="{areawidth}/2.88*0.9 * {seriesposter1height} / {seriesposter1width}" />
+        <drawimage condition="{ismovie}++not{epgpic1available}" name="moviepostertop" imagetype="skinpart" path="recback_movie_top" x="{areawidth}*0.7" y="10" width="{areawidth}/3*0.9" height="{areawidth}/2.88*0.9 * {posterheight} / {posterwidth}" />
+        <drawimage condition="{epgpic1available}" name="epgpostertop" imagetype="skinpart" path="recback_movie_top" x="{areawidth}*0.7" y="10" width="{areawidth}/3*0.9" height="{areawidth}/2.88*0.9 * {epgpic1height} / {epgpic1posterwidth}" />
+        <drawimage condition="{isseries}++not{epgpic1available}" name="seriesposter" imagetype="image" path="{seriesposter1path}" x="{posx(seriespostertop)} + {width(seriespostertop)}*0.03" y="{posy(seriespostertop)} + {height(seriespostertop)}*0.085" height="{height(seriespostertop)}*0.9" width="{width(seriespostertop)}*0.94" />
+        <drawimage condition="{ismovie}++not{epgpic1available}" name="movieposter" imagetype="image" path="{posterpath}" x="{posx(moviepostertop)} + {width(moviepostertop)}*0.03" y="{posy(moviepostertop)} + {height(moviepostertop)}*0.085" height="{height(moviepostertop)}*0.9" width="{width(moviepostertop)}*0.94" />
+        <drawimage condition="{epgpic1available}" name="epgposter" imagetype="image" path="{epgpic1path}" x="{posx(epgpostertop)} + {width(epgpostertop)}*0.03" y="{posy(epgpostertop)} + {height(epgpostertop)}*0.085" height="{height(epgpostertop)}*0.9" width="{width(epgpostertop)}*0.94" />
+        <drawtextbox condition="{isseries}++not{epgpic1available}" x="0" y="10" width="96%" float="topright" floatwidth="{width(seriespostertop)} + 10" floatheight="{height(seriespostertop)} + 20" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{description}" />
+        <drawtextbox condition="{ismovie}++not{epgpic1available}" x="0" y="10" width="96%" float="topright" floatwidth="{width(moviepostertop)} + 10" floatheight="{height(moviepostertop)} + 20" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{description}" />
+        <drawtextbox condition="{epgpic1available}" x="0" y="10" width="96%" float="topright" floatwidth="{width(epgpostertop)} + 10" floatheight="{height(epgpostertop)} + 20" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{description}" />
+<!--
+        <drawtextbox condition="not{isseries}++not{ismovie}" x="0" y="10" width="96%" font="{vdrOsd}" fontsize="8%" color="{clrWhite}" text="{description}" />
+        <drawimage condition="{isseries}||{epgpic1available}" name="seriespostertop" imagetype="skinpart" path="recback_movie_top" x="{areawidth}*0.7" y="10" width="{areawidth}/3*0.9" height="{areawidth}/2.88*0.9 * {seriesposter1height} / {seriesposter1width}" />
+        <drawimage condition="{ismovie}||{epgpic1available}" name="moviepostertop" imagetype="skinpart" path="recback_movie_top" x="{areawidth}*0.7" y="10" width="{areawidth}/3*0.9" height="{areawidth}/2.88*0.9 * {posterheight} / {posterwidth}" />
+        <drawimage condition="{epgpic1available}" name="epgpostertop" imagetype="skinpart" path="recback_movie_top" x="{areawidth}*0.7" y="10" width="{areawidth}/3*0.9" height="{areawidth}/2.88*0.9 * {epgpic1height} / {epgpic1posterwidth}" />
+        <drawimage condition="{isseries}||{epgpic1available}" name="seriesposter" imagetype="image" path="{seriesposter1path}" x="{posx(seriespostertop)} + {width(seriespostertop)}*0.03" y="{posy(seriespostertop)} + {height(seriespostertop)}*0.085" height="{height(seriespostertop)}*0.9" width="{width(seriespostertop)}*0.94" />
+        <drawimage condition="{ismovie}||{epgpic1available}" name="movieposter" imagetype="image" path="{movieposterpath}" x="{posx(moviepostertop)} + {width(moviepostertop)}*0.03" y="{posy(moviepostertop)} + {height(moviepostertop)}*0.085" height="{height(moviepostertop)}*0.9" width="{width(moviepostertop)}*0.94" />
+        <drawimage condition="{epgpic1available}" name="epgposter" imagetype="image" path="{epgpic1path}" x="{posx(epgpostertop)} + {width(epgpostertop)}*0.03" y="{posy(epgpostertop)} + {height(epgpostertop)}*0.085" height="{height(epgpostertop)}*0.9" width="{width(epgpostertop)}*0.94" />
+        <drawtextbox condition="{isseries}||{epgpic1available}" x="0" y="10" width="96%" float="topright" floatwidth="{width(seriespostertop)} + 10" floatheight="{height(seriespostertop)} + 20" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{description}" />
+        <drawtextbox condition="{ismovie}||{epgpic1available}" x="0" y="10" width="96%" float="topright" floatwidth="{width(moviepostertop)} + 10" floatheight="{height(moviepostertop)} + 20" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{description}" />
+        <drawtextbox condition="{epgpic1available}" x="0" y="10" width="96%" float="topright" floatwidth="{width(epgpostertop)} + 10" floatheight="{height(epgpostertop)} + 20" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{description}" />
+-->
 <!--
         <drawtextbox condition="not{isseries}++not{ismovie}" x="0" y="10" width="96%" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{description}" />
         <drawimage condition="{isseries}" name="seriesposter" imagetype="image" path="{seriesposter1path}" x="{areawidth}*0.75" y="10" width="{areawidth}*0.25" height="{areawidth} * 0.25 * {seriesposter1height} / {seriesposter1width}"/>
