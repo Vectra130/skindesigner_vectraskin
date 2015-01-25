@@ -31,6 +31,15 @@
         <parameter type="bool" name="showmainmenusysinfo" displaytext="{tr(showmainmenusysinfotext)}">1</parameter>
         <parameter type="int" name="recordingsmenusize" min="30" max="70" displaytext="{tr(recordingsmenusizetext)}">30</parameter>
         <parameter type="int" name="schedulesmenusize" min="30" max="70" displaytext="{tr(schedulesmenusizetext)}">30</parameter>
+<!-- displaychannel -->
+        <parameter type="int" name="displaychannelweatherx" min="0" max="80" displaytext="{tr(displaychannelweatherxtext)}">1</parameter>
+        <parameter type="int" name="displaychannelweathery" min="0" max="86" displaytext="{tr(displaychannelweatherytext)}">1</parameter>
+        <parameter type="int" name="displaychannelclockx" min="0" max="80" displaytext="{tr(displaychannelclockxtext)}">79</parameter>
+        <parameter type="int" name="displaychannelclocky" min="0" max="86" displaytext="{tr(displaychannelclockytext)}">1</parameter>
+<!--
+        <parameter type="int" name="displaychannelbannery" min="0" max="86" displaytext="{tr(displaychannelbannerytext)}">1</parameter>
+        <parameter type="int" name="displaychannelposterx" min="0" max="1" displaytext="{tr(displaychannelposterxtext)}">1</parameter>
+-->
     </parameters>
 
     <!--
@@ -96,6 +105,30 @@
         <token name="tr(vectrasetuptext)">
             <trans lang="en_EN">Setup for my system</trans>
             <trans lang="de_DE">Setup für mein eigenes System</trans>
+        </token>
+        <token name="tr(displaychannelweatherxtext)">
+            <trans lang="en_EN">X Position of weatherwidget at channelswitch (%)</trans>
+            <trans lang="de_DE">X Position des Wetterwidget beim Kanalwechsel (%)</trans>
+        </token>
+        <token name="tr(displaychannelweatherytext)">
+            <trans lang="en_EN">Y Position of weatherwidget at channelswitch (%)</trans>
+            <trans lang="de_DE">Y Position des Wetterwidget beim Kanalwechsel (%)</trans>
+        </token>
+        <token name="tr(displaychannelclockxtext)">
+            <trans lang="en_EN">X Position of clockwidget at channelswitch (%)</trans>
+            <trans lang="de_DE">X Position des Uhrwidget beim Kanalwechsel (%)</trans>
+        </token>
+        <token name="tr(displaychannelclockytext)">
+            <trans lang="en_EN">Y Position of clockwidget at channelswitch (%)</trans>
+            <trans lang="de_DE">Y Position des Uhrwidget beim Kanalwechsel (%)</trans>
+        </token>
+        <token name="tr(displaychannelbannerytext)">
+            <trans lang="en_EN">Y Position of banner at channelswitch (%)</trans>
+            <trans lang="de_DE">Y Position des Banners beim Kanalwechsel (%)</trans>
+        </token>
+        <token name="tr(displaychannelposterxtext)">
+            <trans lang="en_EN">X Position of poster at channelswitch (0=left, 1=right)</trans>
+            <trans lang="de_DE">X Position des Posters beim Kanalwechsel (0=links, 1=rechts)</trans>
         </token>
     </translations>
 </setup>
