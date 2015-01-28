@@ -30,7 +30,10 @@
         <parameter type="bool" name="showmenuweather" displaytext="{tr(showmenuweathertext)}">1</parameter>
         <parameter type="bool" name="showmainmenusysinfo" displaytext="{tr(showmainmenusysinfotext)}">1</parameter>
         <parameter type="int" name="recordingsmenusize" min="30" max="70" displaytext="{tr(recordingsmenusizetext)}">30</parameter>
-        <parameter type="int" name="schedulesmenusize" min="30" max="100" displaytext="{tr(schedulesmenusizetext)}">30</parameter>
+        <parameter type="int" name="schedulesmenustyle" min="1" max="2" displaytext="{tr(schedulesmenustyletext)}">1</parameter>
+        <parameter type="int" name="schedulesmenufadetime" min="0" max="1000" displaytext="{tr(schedulesmenufadetimetext)}">500</parameter>
+        <parameter type="int" name="schedulesmenudelay" min="0" max="5000" displaytext="{tr(schedulesmenudelaytext)}">2000</parameter>
+        <parameter type="int" name="schedulesmenusize" min="30" max="70" displaytext="{tr(schedulesmenusizetext)}">30</parameter>
 <!-- displaychannel -->
         <parameter type="int" name="displaychannelweatherx" min="0" max="80" displaytext="{tr(displaychannelweatherxtext)}">1</parameter>
         <parameter type="int" name="displaychannelweathery" min="0" max="86" displaytext="{tr(displaychannelweatherytext)}">1</parameter>
@@ -99,8 +102,20 @@
             <trans lang="de_DE">Auswahllisten Breite im Aufnahmen Menü in Prozent (erfordert VDR Neustart)</trans>
         </token>
         <token name="tr(schedulesmenusizetext)">
-            <trans lang="en_EN">Menulisting size in schedules menu (needs VDR restart)</trans>
-            <trans lang="de_DE">Auswahllisten Breite im Programm Menü in Prozent (erfordert VDR Neustart)</trans>
+            <trans lang="en_EN">Menulisting size in schedules menu (style 1)(needs VDR restart)</trans>
+            <trans lang="de_DE">Auswahllisten Breite im Programm Menü in Prozent (Style 1)(erfordert VDR Neustart)</trans>
+        </token>
+        <token name="tr(schedulesmenustyletext)">
+            <trans lang="en_EN">Schedules menu style (needs VDR restart)</trans>
+            <trans lang="de_DE">Programm Menü Style (erfordert VDR Neustart)</trans>
+        </token>
+        <token name="tr(schedulesmenufadetimetext)">
+            <trans lang="en_EN">Fadetime in schedules menu (needs VDR restart)</trans>
+            <trans lang="de_DE">Fadetime im Programm Menü (erfordert VDR Neustart)</trans>
+        </token>
+        <token name="tr(schedulesmenudelaytext)">
+            <trans lang="en_EN">Extra info delay in schedules menu (needs VDR restart)</trans>
+            <trans lang="de_DE">Verzögerung der Zusatzinfos im Programm Menü (erfordert VDR Neustart)</trans>
         </token>
         <token name="tr(vectrasetuptext)">
             <trans lang="en_EN">Setup for my system</trans>
