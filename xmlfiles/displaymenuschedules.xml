@@ -1,4 +1,3 @@
-<!-- <menuschedules x="0" y="0" width="100%" height="100%" fadetime="0" scaletvx="{areawidth}*0.03 + {areawidth}*{schedulesmenusize}*0.01" scaletvy="-{areaheight}*0.20 + {areaheight}*{schedulesmenusize}*0.01" scaletvwidth="{areawidth}*0.95 - {areawidth}*{schedulesmenusize}*0.01" scaletvheight="{areaheight}*1.1 - {areaheight}*{schedulesmenusize}*0.01" > -->
 <menuschedules x="0" y="0" width="100%" height="100%" fadetime="0" >
     <!-- Available Variables header:
     {title}                         title of current menu
