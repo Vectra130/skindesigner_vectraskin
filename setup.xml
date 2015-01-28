@@ -30,7 +30,7 @@
         <parameter type="bool" name="showmenuweather" displaytext="{tr(showmenuweathertext)}">1</parameter>
         <parameter type="bool" name="showmainmenusysinfo" displaytext="{tr(showmainmenusysinfotext)}">1</parameter>
         <parameter type="int" name="recordingsmenusize" min="30" max="70" displaytext="{tr(recordingsmenusizetext)}">30</parameter>
-        <parameter type="int" name="schedulesmenusize" min="30" max="70" displaytext="{tr(schedulesmenusizetext)}">30</parameter>
+        <parameter type="int" name="schedulesmenusize" min="30" max="100" displaytext="{tr(schedulesmenusizetext)}">30</parameter>
 <!-- displaychannel -->
         <parameter type="int" name="displaychannelweatherx" min="0" max="80" displaytext="{tr(displaychannelweatherxtext)}">1</parameter>
         <parameter type="int" name="displaychannelweathery" min="0" max="86" displaytext="{tr(displaychannelweatherytext)}">1</parameter>

@@ -286,7 +286,7 @@
     {isbanner}                          true if image is a banner, false if it is a poster
     -->
     <scrapercontent>
-        <area debug="true" condition="{showposter}++{isbanner}" x="{areawidth}/2 - {areaheight}*0.14*{mediawidth}/{mediaheight}/2 + {areaheight}*0.14*0.04" y="1%" width="{areaheight}*0.14*{mediawidth}/{mediaheight} - {areaheight}*0.14*0.08" height="14%" layer="2">
+        <area condition="{showposter}++{isbanner}" x="{areawidth}/2 - {areaheight}*0.14*{mediawidth}/{mediaheight}/2 + {areaheight}*0.14*0.15" y="1%" width="{areaheight}*0.14*{mediawidth}/{mediaheight} - {areaheight}*0.14*0.3" height="14%" layer="2">
             <drawimage name="bannerback" imagetype="skinpart" path="displayvolume" align="center" valign="center"  width="{areawidth}" height="{areaheight}"/>
         </area>
 <!--
