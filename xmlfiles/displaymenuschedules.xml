@@ -97,7 +97,7 @@
         </area>
     </scrollbar>
 
-    <menuitems x="{areawidth}*0.005" y="10%" orientation="vertical" width="99%" height="80%" align="center" numlistelements="4 + {schedulesmenustyle}*8">
+    <menuitems x="{areawidth}*0.005" y="10%" orientation="vertical" width="99%" height="80%" align="center" numlistelements="{schedulesmenuitems}">
         <!-- Available Variables schedules menu listelement:
         {title}                   title of event
         {shorttext}               shorttext of event
@@ -208,6 +208,7 @@
             </area>
             <areascroll condition="not{separator}++{whatson}++eq({schedulesmenustyle}, 2)" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="15%" width="80%" layer="3">
                 <drawtext name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="80%" color="{clrFontMenuItemSelected}" text="{title}" />
+                <drawtext condition="isset{shorttext}" x="{posx(menutext)}+{width(menutext)}" y="25%" font="{vdrOsd}" fontsize="60%" color="{clrFontMenuItem}" text="     {shorttext}" />
             </areascroll>
             <!-- current element whatson -->
             <area condition="not{separator}++{whatson}++{current}++eq({schedulesmenustyle}, 2)" x="2%" width="95%" layer="3">
@@ -222,7 +223,7 @@
             </area>
             <area condition="not{separator}++{whatsonnow}++not{current}++eq({schedulesmenustyle}, 2)" x="2%" width="95%" layer="3">
                 <drawtext x="{areaheight}+10" valign="center" name="startstoptime" font="{vdrOsd}" fontsize="70%" color="{clrFontMenuItem}" text="{start} - {stop}" />
-                <drawrectangle name="timebar2" x="{areawidth}*0.40/2 - {width(startstoptime)}/2" y="{areaheight}*0.5-10" width="{areawidth}*0.05" height="20" color="{clrFontMenuItem}" />
+                <drawrectangle name="timebar2" x="{width(startstoptime)} + {areawidth}*0.1" y="{areaheight}*0.5-10" width="{areawidth}*0.05" height="20" color="{clrFontMenuItem}" />
                 <drawrectangle x="{posx(timebar2)}+1" y="{posy(timebar2)}+1" width="{width(timebar2)}-2" height="{height(timebar2)}-2" color="{clrTransparent}" />
                 <drawrectangle x="{posx(timebar2)}+1" y="{posy(timebar2)}+1" width="{areawidth}*0.05 * {elapsed}/{duration} - 2" height="{height(timebar2)}-2" color="{clrWhite}" />
                 <drawimage condition="{timerfull}" imagetype="icon" path="ico_activetimer" x="{posy(startstoptime)}+{width(startstoptime)}+10" valign="center" width="{areaheight}*5/10" height="{areaheight}*5/10" />
@@ -230,11 +231,12 @@
             </area>
             <areascroll condition="not{separator}++{whatsonnow}++eq({schedulesmenustyle}, 2)" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="30%" width="65%" layer="3">
                 <drawtext name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="80%" color="{clrFontMenuItemSelected}" text="{title}" />
+                <drawtext condition="isset{shorttext}" x="{posx(menutext)}+{width(menutext)}" y="25%" font="{vdrOsd}" fontsize="60%" color="{clrFontMenuItem}" text="     {shorttext}" />
             </areascroll>
             <!-- current element whatsonnow -->
             <area condition="not{separator}++{whatsonnow}++{current}++eq({schedulesmenustyle}, 2)" x="2%" width="95%" layer="3">
                 <drawtext x="{areaheight}+10" valign="center" name="startstoptime" font="{vdrOsd}" fontsize="70%" color="{clrFontMenuItemSelected}" text="{start} - {stop}" />
-                <drawrectangle name="timebar2" x="{areawidth}*0.40/2 - {width(startstoptime)}/2" y="{areaheight}*0.5-10" width="{areawidth}*0.05" height="20" color="{clrFontMenuItem}" />
+                <drawrectangle name="timebar2" x="{width(startstoptime)} + {areawidth}*0.1" y="{areaheight}*0.5-10" width="{areawidth}*0.05" height="20" color="{clrFontMenuItem}" />
                 <drawrectangle x="{posx(timebar2)}+1" y="{posy(timebar2)}+1" width="{width(timebar2)}-2" height="{height(timebar2)}-2" color="{clrTransparent}" />
                 <drawrectangle x="{posx(timebar2)}+1" y="{posy(timebar2)}+1" width="{areawidth}*0.05 * {elapsed}/{duration} - 2" height="{height(timebar2)}-2" color="{clrWhite}" />
                 <drawimage condition="{timerfull}" imagetype="icon" path="ico_activetimer" x="{posy(startstoptime)}+{width(startstoptime)}+10" valign="center" width="{areaheight}*5/10" height="{areaheight}*5/10" />
@@ -252,6 +254,7 @@
             </area>
             <areascroll condition="not{separator}++{whatsonnext}++eq({schedulesmenustyle}, 2)" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="15%" width="80%" layer="3">
                 <drawtext name="menutext" x="{posx(logo)}+{width(logo)}+10" valign="center" font="{vdrOsd}" fontsize="80%" color="{clrFontMenuItemSelected}" text="{title}" />
+                <drawtext condition="isset{shorttext}" x="{posx(menutext)}+{width(menutext)}" y="25%" font="{vdrOsd}" fontsize="60%" color="{clrFontMenuItem}" text="     {shorttext}" />
             </areascroll>
             <!-- current element whatsonnext -->
             <area condition="not{separator}++{whatsonnext}++{current}++eq({schedulesmenustyle}, 2)" x="2%" width="95%" layer="3">
@@ -271,6 +274,7 @@
             </area>
             <areascroll condition="not{separator}++{whatsonfavorites}++eq({schedulesmenustyle}, 2)" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="15%" width="80%" layer="3">
                 <drawtext name="menutext" x="{posx(logo)}+{width(logo)}+10" valign="center" font="{vdrOsd}" fontsize="80%" color="{clrFontMenuItemSelected}" text="{title}" />
+                <drawtext condition="isset{shorttext}" x="{posx(menutext)}+{width(menutext)}" y="25%" font="{vdrOsd}" fontsize="60%" color="{clrFontMenuItem}" text="     {shorttext}" />
             </areascroll>
             <!-- current element whatsonfavorites -->
             <area condition="not{separator}++{whatsonfavorites}++{current}++eq({schedulesmenustyle}, 2)" x="2%" width="95%" layer="3">
