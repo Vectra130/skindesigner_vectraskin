@@ -12,39 +12,51 @@
     "displayname" is used to display the option in the setup menu.
     The configured parameter value is the default value.
     -->
-    <parameters>
+    <menu>
 <!--
         <parameter type="bool" name="showdevices" displaytext="{tr(showdevices)}">0</parameter>
 -->
-        <parameter type="bool" name="vectrasetup" displaytext="{tr(vectrasetuptext)}">0</parameter>
+    <submenu name="submenu1" displaytext="{tr(subgeneral)}">
         <parameter type="bool" name="showposter" displaytext="{tr(showpostertext)}">1</parameter>
-        <parameter type="bool" name="showmainmenuicons" displaytext="{tr(showmainmenuiconstext)}">1</parameter>
         <parameter type="int" name="fadetime" min="0" max="1000" displaytext="{tr(fadetext)}">0</parameter>
+    </submenu>
+    <submenu name="submenu2" displaytext="{tr(submainmenu)}">
+        <parameter type="bool" name="showmainmenuicons" displaytext="{tr(showmainmenuiconstext)}">1</parameter>
+        <parameter type="bool" name="showmenuweather" displaytext="{tr(showmenuweathertext)}">1</parameter>
+        <parameter type="bool" name="showmainmenusysinfo" displaytext="{tr(showmainmenusysinfotext)}">1</parameter>
+    </submenu>
+    <submenu name="submenu3" displaytext="{tr(subdisplaychannel)}">
+        <parameter type="bool" name="showweather" displaytext="{tr(showweathertext)}">1</parameter>
+        <parameter type="int" name="displaychannelweatherx" min="0" max="80" displaytext="{tr(displaychannelweatherxtext)}">1</parameter>
+        <parameter type="int" name="displaychannelweathery" min="0" max="86" displaytext="{tr(displaychannelweatherytext)}">1</parameter>
+        <parameter type="int" name="displaychannelclockx" min="0" max="80" displaytext="{tr(displaychannelclockxtext)}">79</parameter>
+        <parameter type="int" name="displaychannelclocky" min="0" max="86" displaytext="{tr(displaychannelclockytext)}">1</parameter>
+    </submenu>
+    <submenu name="submenu4" displaytext="{tr(subdisplaymenurecordings)}">
+        <parameter type="int" name="recordingsmenusize" min="30" max="70" displaytext="{tr(recordingsmenusizetext)}">30</parameter>
+    </submenu>
+    <submenu name="submenu5" displaytext="{tr(subdisplaymenuschedules)}">
+        <parameter type="int" name="schedulesmenustyle" min="1" max="2" displaytext="{tr(schedulesmenustyletext)}">1</parameter>
+        <parameter type="int" name="schedulesmenufadetime" min="0" max="1000" displaytext="{tr(schedulesmenufadetimetext)}">500</parameter>
+        <parameter type="int" name="schedulesmenudelay" min="0" max="5000" displaytext="{tr(schedulesmenudelaytext)}">2000</parameter>
+        <parameter type="int" name="schedulesmenusize" min="30" max="70" displaytext="{tr(schedulesmenusizetext)}">30</parameter>
+        <parameter type="int" name="schedulesmenuitems" min="12" max="20" displaytext="{tr(schedulesmenuitemstext)}">12</parameter>
+    </submenu>
+    <submenu name="submenu6" displaytext="{tr(subspecial)}">
+        <parameter type="bool" name="vectrasetup" displaytext="{tr(vectrasetuptext)}">0</parameter>
+    </submenu>
 <!--
         <parameter type="int" name="nummenuitemsmain" min="6" max="30" displaytext="{tr(nummenuitemsmain)}">10</parameter>
         <parameter type="int" name="nummenuitems" min="6" max="30" displaytext="{tr(nummenuitems)}">10</parameter>
         <parameter type="int" name="nummenuitemsdefault" min="6" max="30" displaytext="{tr(nummenuitemsdefault)}">16</parameter>
         <parameter type="bool" name="showsubtitle" displaytext="{tr(showsubtitle)}">1</parameter>
 -->
-        <parameter type="bool" name="showweather" displaytext="{tr(showweathertext)}">1</parameter>
-        <parameter type="bool" name="showmenuweather" displaytext="{tr(showmenuweathertext)}">1</parameter>
-        <parameter type="bool" name="showmainmenusysinfo" displaytext="{tr(showmainmenusysinfotext)}">1</parameter>
-        <parameter type="int" name="recordingsmenusize" min="30" max="70" displaytext="{tr(recordingsmenusizetext)}">30</parameter>
-        <parameter type="int" name="schedulesmenustyle" min="1" max="2" displaytext="{tr(schedulesmenustyletext)}">1</parameter>
-        <parameter type="int" name="schedulesmenufadetime" min="0" max="1000" displaytext="{tr(schedulesmenufadetimetext)}">500</parameter>
-        <parameter type="int" name="schedulesmenudelay" min="0" max="5000" displaytext="{tr(schedulesmenudelaytext)}">2000</parameter>
-        <parameter type="int" name="schedulesmenusize" min="30" max="70" displaytext="{tr(schedulesmenusizetext)}">30</parameter>
-        <parameter type="int" name="schedulesmenuitems" min="12" max="20" displaytext="{tr(schedulesmenuitemstext)}">12</parameter>
 <!-- displaychannel -->
-        <parameter type="int" name="displaychannelweatherx" min="0" max="80" displaytext="{tr(displaychannelweatherxtext)}">1</parameter>
-        <parameter type="int" name="displaychannelweathery" min="0" max="86" displaytext="{tr(displaychannelweatherytext)}">1</parameter>
-        <parameter type="int" name="displaychannelclockx" min="0" max="80" displaytext="{tr(displaychannelclockxtext)}">79</parameter>
-        <parameter type="int" name="displaychannelclocky" min="0" max="86" displaytext="{tr(displaychannelclockytext)}">1</parameter>
 <!--
         <parameter type="int" name="displaychannelbannery" min="0" max="86" displaytext="{tr(displaychannelbannerytext)}">1</parameter>
         <parameter type="int" name="displaychannelposterx" min="0" max="1" displaytext="{tr(displaychannelposterxtext)}">1</parameter>
 -->
-    </parameters>
+    </menu>
 
     <!--
     translations of displaytexts
@@ -67,20 +79,20 @@
             <trans lang="de_DE">Icons im Hauptmenü anzeigen</trans>
         </token>
         <token name="tr(fadetext)">
-            <trans lang="en_EN">Fade time in ms (needs VDR restart)</trans>
-            <trans lang="de_DE">Einblendzeit in ms (erfordert VDR Neustart)</trans>
+            <trans lang="en_EN">Fade time in ms</trans>
+            <trans lang="de_DE">Einblendzeit in ms</trans>
         </token>
         <token name="tr(nummenuitemsmain)">
-            <trans lang="en_EN">Items in main menu (needs VDR restart)</trans>
-            <trans lang="de_DE">Elemente im Hauptmenü (erfordert VDR Neustart)</trans>
+            <trans lang="en_EN">Items in main menu</trans>
+            <trans lang="de_DE">Elemente im Hauptmenü</trans>
         </token>
         <token name="tr(nummenuitems)">
-            <trans lang="en_EN">Items in sdchedules, timers, ... menus (needs VDR restart)</trans>
-            <trans lang="de_DE">Elemente in Programm, Timer, ... Menüs (erfordert VDR Neustart)</trans>
+            <trans lang="en_EN">Items in sdchedules, timers, ... menus</trans>
+            <trans lang="de_DE">Elemente in Programm, Timer, ... Menüs</trans>
         </token>
         <token name="tr(nummenuitemsdefault)">
-            <trans lang="en_EN">Items in default list menu (needs VDR restart)</trans>
-            <trans lang="de_DE">Elemente im Standard ListenMenü (erfordert VDR Neustart)</trans>
+            <trans lang="en_EN">Items in default list menu</trans>
+            <trans lang="de_DE">Elemente im Standard ListenMenü</trans>
         </token>
         <token name="tr(showsubtitle)">
             <trans lang="en_EN">Show shorttexts in schedules menus</trans>
@@ -88,7 +100,7 @@
         </token>
         <token name="tr(showweathertext)">
             <trans lang="en_EN">Show weather widget in channel view</trans>
-            <trans lang="de_DE">Wetter Widget in der Kanalanzeige</trans>
+            <trans lang="de_DE">Wetter Widget beim Kanalwechsel</trans>
         </token>
         <token name="tr(showmenuweathertext)">
             <trans lang="en_EN">Show weather in menu</trans>
@@ -99,28 +111,28 @@
             <trans lang="de_DE">Sysinfo Anzeige im Hauptmenü</trans>
         </token>
         <token name="tr(recordingsmenusizetext)">
-            <trans lang="en_EN">Menulisting size in recordings menu (needs VDR restart)</trans>
-            <trans lang="de_DE">Auswahllisten Breite im Aufnahmen Menü in Prozent (erfordert VDR Neustart)</trans>
+            <trans lang="en_EN">Menulisting size in recordings menu</trans>
+            <trans lang="de_DE">Auswahllisten Breite im Aufnahmen Menü (%)</trans>
         </token>
         <token name="tr(schedulesmenusizetext)">
-            <trans lang="en_EN">Menulisting size in schedules menu (style 1)(needs VDR restart)</trans>
-            <trans lang="de_DE">Auswahllisten Breite im Programm Menü in Prozent (Style 1)(erfordert VDR Neustart)</trans>
+            <trans lang="en_EN">Menulisting size in schedules menu (style 1)</trans>
+            <trans lang="de_DE">Auswahllisten Breite im Programm Menü in Prozent (Style 1)</trans>
         </token>
         <token name="tr(schedulesmenustyletext)">
-            <trans lang="en_EN">Schedules menu style (needs VDR restart)</trans>
-            <trans lang="de_DE">Programm Menü Style (erfordert VDR Neustart)</trans>
+            <trans lang="en_EN">Schedules menu style</trans>
+            <trans lang="de_DE">Programm Menü Style</trans>
         </token>
         <token name="tr(schedulesmenufadetimetext)">
-            <trans lang="en_EN">Fadetime in schedules menu (needs VDR restart)</trans>
-            <trans lang="de_DE">Fadetime im Programm Menü (erfordert VDR Neustart)</trans>
+            <trans lang="en_EN">Fadetime in schedules menu</trans>
+            <trans lang="de_DE">Fadetime im Programm Menü</trans>
         </token>
         <token name="tr(schedulesmenudelaytext)">
-            <trans lang="en_EN">Extra info delay in schedules menu (needs VDR restart)</trans>
-            <trans lang="de_DE">Verzögerung der Zusatzinfos im Programm Menü (erfordert VDR Neustart)</trans>
+            <trans lang="en_EN">Extra info delay in schedules menu</trans>
+            <trans lang="de_DE">Verzögerung der Zusatzinfos im Programm Menü</trans>
         </token>
         <token name="tr(schedulesmenuitemstext)">
-            <trans lang="en_EN">Number of entries in schedules menu (needs VDR restart)</trans>
-            <trans lang="de_DE">Anzahl Einträge im Programm Menü (erfordert VDR Neustart)</trans>
+            <trans lang="en_EN">Number of entries in schedules menu</trans>
+            <trans lang="de_DE">Anzahl Einträge im Programm Menü</trans>
         </token>
         <token name="tr(vectrasetuptext)">
             <trans lang="en_EN">Setup for my system</trans>
@@ -149,6 +161,30 @@
         <token name="tr(displaychannelposterxtext)">
             <trans lang="en_EN">X Position of poster at channelswitch (0=left, 1=right)</trans>
             <trans lang="de_DE">X Position des Posters beim Kanalwechsel (0=links, 1=rechts)</trans>
+        </token>
+        <token name="tr(subgeneral)">
+            <trans lang="en_EN">General</trans>
+            <trans lang="de_DE">Allgemein</trans>
+        </token>
+        <token name="tr(submainmenu)">
+            <trans lang="en_EN">Menu</trans>
+            <trans lang="de_DE">Menü</trans>
+        </token>
+        <token name="tr(subdisplaychannel)">
+            <trans lang="en_EN">Channel switch</trans>
+            <trans lang="de_DE">Kanalwechsel</trans>
+        </token>
+        <token name="tr(subdisplaymenurecordings)">
+            <trans lang="en_EN">Recordings</trans>
+            <trans lang="de_DE">Aufnahmen</trans>
+        </token>
+        <token name="tr(subdisplaymenuschedules)">
+            <trans lang="en_EN">Schedule</trans>
+            <trans lang="de_DE">Programmführer</trans>
+        </token>
+        <token name="tr(subspecial)">
+            <trans lang="en_EN">Vectra's special settings ;-)</trans>
+            <trans lang="de_DE">Vectra's Spezialeinstellungen ;-)</trans>
         </token>
     </translations>
 </setup>

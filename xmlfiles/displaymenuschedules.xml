@@ -282,7 +282,7 @@
                 <drawimage condition="{timerpartitial}" imagetype="icon" path="ico_activetimer" x="{posy(startstoptime)}+{width(startstoptime)}+10" valign="center" width="{areaheight}*3/10" height="{areaheight}*3/10" />
             </area>
 
-            <!-- element whatsonfavorited -->
+            <!-- element whatsonfavorites -->
             <area condition="not{separator}++{whatsonfavorites}++eq({schedulesmenustyle}, 2)" x="1" width="5%" layer="3">
                 <drawimage name="logo" imagetype="channellogo" path="{channelid}" x="0" width="100%" height="74%" valign="center" />
             </area>
