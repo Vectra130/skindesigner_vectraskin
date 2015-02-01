@@ -252,6 +252,7 @@
                 <drawtext name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="80%" color="{clrFontMenuItemSelected}" text="{title}" />
                 <drawtext debug="true" condition="isset{shorttext}" x="{posx(menutext)}+{width(menutext)}" y="25%" font="{vdrOsd}" fontsize="60%" color="{clrFontMenuItem}" text="     {shorttext}" />
             </areascroll>
+
             <!-- current element whatsonnow -->
             <area condition="not{separator}++{whatsonnow}++{current}++eq({schedulesmenustyle}, 2)" x="2%" width="95%" layer="3">
                 <drawtext x="{areaheight}+10" valign="center" name="startstoptime" font="{vdrOsd}" fontsize="70%" color="{clrFontMenuItemSelected}" text="{start} - {stop}" />
