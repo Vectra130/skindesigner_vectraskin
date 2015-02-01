@@ -31,6 +31,7 @@
         <parameter type="int" name="displaychannelweathery" min="0" max="86" displaytext="{tr(displaychannelweatherytext)}">1</parameter>
         <parameter type="int" name="displaychannelclockx" min="0" max="80" displaytext="{tr(displaychannelclockxtext)}">79</parameter>
         <parameter type="int" name="displaychannelclocky" min="0" max="86" displaytext="{tr(displaychannelclockytext)}">1</parameter>
+        <parameter type="int" name="displaychannelfontzoom" min="0" max="30" displaytext="{tr(displaychannelfontzoomtext)}">20</parameter>
     </submenu>
     <submenu name="submenu4" displaytext="{tr(subdisplaymenurecordings)}">
         <parameter type="int" name="recordingsmenusize" min="30" max="70" displaytext="{tr(recordingsmenusizetext)}">30</parameter>
@@ -161,6 +162,10 @@
         <token name="tr(displaychannelposterxtext)">
             <trans lang="en_EN">X Position of poster at channelswitch (0=left, 1=right)</trans>
             <trans lang="de_DE">X Position des Posters beim Kanalwechsel (0=links, 1=rechts)</trans>
+        </token>
+        <token name="tr(displaychannelfontzoomtext)">
+            <trans lang="en_EN">Zoom fonts in channel switch</trans>
+            <trans lang="de_DE">Schriftgröße beim Kanalwechsel</trans>
         </token>
         <token name="tr(subgeneral)">
             <trans lang="en_EN">General</trans>

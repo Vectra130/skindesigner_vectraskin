@@ -24,14 +24,6 @@
 	<area condition="{showweather}" x="{areawidth}*{displaychannelweatherx}*0.01" y="{areaheight}*{displaychannelweathery}*0.01" width="20%" height="14%" layer="1" transparency="10">
 	    <drawimage cache="true" imagetype="skinpart" path="weatherback" x="0" y="0" width="100%" height="100%"/>
 	</area>
-<!--
-	<area condition="{showweather}" x="58%" y="1%" width="20%" height="14%" layer="1" transparency="10">
-	    <drawimage name="weatherback" cache="true" imagetype="skinpart" path="widgetback" x="0" y="0" width="100%" height="100%"/>
-	</area>
-	<area condition="{showweather}" x="58%" y="1%" width="20%" height="14%" layer="1" transparency="10">
-	    <drawimage cache="true" imagetype="skinpart" path="weatherback" x="0" y="0" width="100%" height="100%"/>
-	</area>
--->
     </background>
 
     <time>
@@ -48,8 +40,8 @@
 
     <datetime>
         <area x="{areawidth}*{displaychannelclockx}*0.01 + {areawidth}*0.02" y="{areaheight}*{displaychannelclocky}*0.01 + {areaheight}*0.03" width="9%" height="8%" layer="2">
-            <drawtext align="center" valign="top" font="{vdrOsd}" fontsize="40%" color="{clrWhite}" text="{dayname}" />
-            <drawtext align="center" valign="bottom" font="{vdrOsd}" fontsize="38%" color="{clrWhite}" text="{dayleadingzero}.{month}   {time}" />
+            <drawtext align="center" valign="top" font="{vdrOsd}" fontsize="{areaheight}*0.25 + {areaheight}*{displaychannelfontzoom}/100" color="{clrWhite}" text="{dayname}" />
+            <drawtext align="center" valign="bottom" font="{vdrOsd}" fontsize="{areaheight}*0.38" color="{clrWhite}" text="{dayleadingzero}.{month}   {time}" />
         </area>
     </datetime>
 
@@ -106,7 +98,7 @@
             <drawimage cache="true" imagetype="channellogo" path="{channelid}" width="94%" height="94%" align="center" valign="center"/>
         </area>
         <area x="18%" y="77%" width="60%" height="6%" layer="2">
-            <drawtext x="0" valign="center" font="{vdrOsd}" fontsize="75%" color="{clrWhite}" text="{channelnumber}  {channelname}" />
+            <drawtext x="0" valign="center" font="{vdrOsd}" fontsize="{areaheight}*0.60 + {areaheight}*{displaychannelfontzoom}/100" color="{clrWhite}" text="{channelnumber}  {channelname}" />
         </area>
     </channelinfo>
 
@@ -152,20 +144,20 @@
     -->
     <epginfo>
         <area x="18%" y="83%" width="68%" height="6%" layer="2">
-            <drawtext name="starttime" x="0" y="5%" font="{vdrOsd}" fontsize="50%" color="{clrWhite}" text="{currentstart}" />
-            <drawtext x="{width(starttime)} + 15" y="0" width="{areawidth} - {width(starttime)} - 15" font="{vdrOsd}" fontsize="60%" color="{clrWhite}" text="{currenttitle}" />
-            <drawtext x="{width(starttime)} + 16" y="55%" width="{areawidth} - {width(starttime)} - 16" font="{vdrOsd}" fontsize="45%" color="{clrWhite}" text="{currentsubtitle}" />
+            <drawtext name="starttime" x="0" y="5%" font="{vdrOsd}" fontsize="{areaheight}*0.35 + {areaheight}*{displaychannelfontzoom}/100" color="{clrWhite}" text="{currentstart}" />
+            <drawtext x="{width(starttime)} + 15" y="0" width="{areawidth} - {width(starttime)} - 15" font="{vdrOsd}" fontsize="{areaheight}*0.45 + {areaheight}*{displaychannelfontzoom}/100" color="{clrWhite}" text="{currenttitle}" />
+            <drawtext x="{width(starttime)} + 16" y="55%" width="{areawidth} - {width(starttime)} - 16" font="{vdrOsd}" fontsize="{areaheight}*0.30 + {areaheight}*{displaychannelfontzoom}/100" color="{clrWhite}" text="{currentsubtitle}" />
         </area>
         <area x="86%" y="83%" width="11%" height="6%" layer="2">
-            <drawtext align="right" y="0" font="{vdrOsd}" fontsize="60%" color="{clrWhite}" text="{currentelapsed}/{currentduration}min" />
+            <drawtext align="right" y="0" font="{vdrOsd}" fontsize="{areaheight}*0.45 + {areaheight}*{displaychannelfontzoom}/100" color="{clrWhite}" text="{currentelapsed}/{currentduration}min" />
         </area>
         <area x="18%" y="90%" width="72%" height="6%" layer="2">
-            <drawtext name="starttime" x="0" y="5%" font="{vdrOsd}" fontsize="50%" color="{clrGray}" text="{nextstart}" />
-            <drawtext x="{width(starttime)} + 15" y="0" width="{areawidth} - {width(starttime)} - 15" font="{vdrOsd}" fontsize="60%" color="{clrGray}" text="{nexttitle}" />
-            <drawtext x="{width(starttime)} + 16" y="55%" width="{areawidth} - {width(starttime)} - 16" font="{vdrOsd}" fontsize="45%" color="{clrGray}" text="{nextsubtitle}" />
+            <drawtext name="starttime" x="0" y="5%" font="{vdrOsd}" fontsize="{areaheight}*0.35 + {areaheight}*{displaychannelfontzoom}/100" color="{clrGray}" text="{nextstart}" />
+            <drawtext x="{width(starttime)} + 15" y="0" width="{areawidth} - {width(starttime)} - 15" font="{vdrOsd}" fontsize="{areaheight}*0.45 + {areaheight}*{displaychannelfontzoom}/100" color="{clrGray}" text="{nexttitle}" />
+            <drawtext x="{width(starttime)} + 16" y="55%" width="{areawidth} - {width(starttime)} - 16" font="{vdrOsd}" fontsize="{areaheight}*0.30 + {areaheight}*{displaychannelfontzoom}/100" color="{clrGray}" text="{nextsubtitle}" />
         </area>
         <area x="90%" y="90%" width="7%" height="6%" layer="2">
-            <drawtext align="right" y="0" font="{vdrOsd}" fontsize="60%" color="{clrGray}" text="{nextduration}min" />
+            <drawtext align="right" y="0" font="{vdrOsd}" fontsize="{areaheight}*0.45 + {areaheight}*{displaychannelfontzoom}/100" color="{clrGray}" text="{nextduration}min" />
         </area>
     </epginfo>
 
@@ -253,7 +245,7 @@
         <area x="18%" y="85%" width="80%" height="10%" layer="2">
 <!--            <drawtext x="0" width="25%" valign="center" font="{vdrOsd}" fontsize="60%" color="{clrWhite}" text="{prevgroup}" />
 -->
-            <drawtext x="30%" width="40%" align="center" valign="center" font="{vdrOsd}" fontsize="80%" color="{clrWhite}" text="{group}" />
+            <drawtext x="30%" width="40%" align="center" valign="center" font="{vdrOsd}" fontsize="{areaheight}*0.65 + {areaheight}*{displaychannelfontzoom}/100" color="{clrWhite}" text="{group}" />
 <!--            <drawtext align="right" width="25%" valign="center" font="{vdrOsd}" fontsize="60%" color="{clrWhite}" text="{nextgroup}" />
 -->
             <drawimage cache="true" imagetype="icon" path="ico_arrow_left_channelsep" x="25%" valign="center" width="{areawidth}*4/100" height="{areawidth}*4/100"/>
@@ -321,7 +313,7 @@
             <drawimage condition="{error}" imagetype="skinpart" path="messageError" x="0" y="0" width="100%" height="100%" />
         </area>
         <area x="5%" y="82%" width="90%" height="5%" layer="7">
-            <drawtext align="center" valign="center" font="{vdrOsd}" fontsize="40%" color="{clrWhite}" text="{text}" />
+            <drawtext align="center" valign="center" font="{vdrOsd}" fontsize="80%" color="{clrWhite}" text="{text}" />
         </area>
     </message>
 
