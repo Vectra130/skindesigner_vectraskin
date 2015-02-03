@@ -9,7 +9,7 @@
 
     <timers>
         <area x="{areawidth}*0.319" y="13%" width="44%" height="{areaheight}*0.02 - 2" layer="1">
-            <drawrectangle condition="gt({numtimers}, 0)" y="0" x="0" height="{areaheight}" width="{areawidth}/4*{numtimers} - {areawidth}/4 + {areawidth}/4*0.99 + 1" color="{clrBackground}" />
+            <drawrectangle condition="gt({numtimers}, 0)" y="0" x="0" height="{areaheight}" width="{areawidth}/4*{numtimers} - {areawidth}/4 + {areawidth}/4*0.99" color="{clrBackground}" />
 	</area>
         <area x="{areawidth}*0.319" y="13%" width="44%" height="{areaheight}*0.02 - 2" layer="2">
 	    <drawimage condition="gt({numtimers}, 0)" x="2" y="1" imagetype="icon" path="ico_activetimer" width="{areaheight}-2" height="{areaheight}-2" />

@@ -67,7 +67,7 @@
     -->
     <datetime>
         <area x="56%" y="0" width="34%" height="10%" layer="3">
-            <drawtext align="right" valign="center" font="{vdrOsd}" fontsize="50%" color="{clrWhite}" text="{dayname}   {dayleadingzero}.{month}   {time}" />
+            <drawtext align="right" valign="center" font="{vdrOsd}" fontsize="50%" color="{clrWhite}" text="{dayname}   {dayleadingzero}.{month}.   {time}" />
         </area>
     </datetime>
 

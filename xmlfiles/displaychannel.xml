@@ -41,7 +41,7 @@
     <datetime>
         <area x="{areawidth}*{displaychannelclockx}*0.01 + {areawidth}*0.02" y="{areaheight}*{displaychannelclocky}*0.01 + {areaheight}*0.03" width="9%" height="8%" layer="2">
             <drawtext align="center" valign="top" font="{vdrOsd}" fontsize="{areaheight}*0.25 + {areaheight}*{displaychannelfontzoom}/100" color="{clrWhite}" text="{dayname}" />
-            <drawtext align="center" valign="bottom" font="{vdrOsd}" fontsize="{areaheight}*0.38" color="{clrWhite}" text="{dayleadingzero}.{month}   {time}" />
+            <drawtext align="center" valign="bottom" font="{vdrOsd}" fontsize="{areaheight}*0.38" color="{clrWhite}" text="{dayleadingzero}.{month}.   {time}" />
         </area>
     </datetime>
 
