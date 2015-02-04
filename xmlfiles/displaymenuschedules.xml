@@ -250,7 +250,7 @@
             </area>
             <areascroll condition="not{separator}++{whatsonnow}++eq({schedulesmenustyle}, 2)" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="{areaheight}/{schedulesmenuitems}*9" width="{areawidth}*0.95 - {areaheight}/{schedulesmenuitems}*9" layer="3">
                 <drawtext name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="80%" color="{clrFontMenuItemSelected}" text="{title}" />
-                <drawtext debug="true" condition="isset{shorttext}" x="{posx(menutext)}+{width(menutext)}" y="25%" font="{vdrOsd}" fontsize="60%" color="{clrFontMenuItem}" text="     {shorttext}" />
+                <drawtext condition="isset{shorttext}" x="{posx(menutext)}+{width(menutext)}" y="25%" font="{vdrOsd}" fontsize="60%" color="{clrFontMenuItem}" text="     {shorttext}" />
             </areascroll>
 
             <!-- current element whatsonnow -->
@@ -274,7 +274,7 @@
             </area>
             <areascroll condition="not{separator}++{whatsonnext}++eq({schedulesmenustyle}, 2)" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="{areaheight}/{schedulesmenuitems}*6" width="{areawidth}*0.95 - {areaheight}/{schedulesmenuitems}*6" layer="3">
                 <drawtext name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="80%" color="{clrFontMenuItemSelected}" text="{title}" />
-                <drawtext debug="true" condition="isset{shorttext}" x="{posx(menutext)}+{width(menutext)}" y="25%" font="{vdrOsd}" fontsize="60%" color="{clrFontMenuItem}" text="     {shorttext}" />
+                <drawtext condition="isset{shorttext}" x="{posx(menutext)}+{width(menutext)}" y="25%" font="{vdrOsd}" fontsize="60%" color="{clrFontMenuItem}" text="     {shorttext}" />
             </areascroll>
             <!-- current element whatsonnext -->
             <area condition="not{separator}++{whatsonnext}++{current}++eq({schedulesmenustyle}, 2)" x="2%" width="95%" layer="3">
