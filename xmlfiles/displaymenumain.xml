@@ -95,8 +95,7 @@
 	<area condition="{showmainmenusysinfo}" x="{areawidth}*0,759+5" y="14%" width="{areawidth}*0,11-10" height="4%" layer="2" >
             <drawtext align="center" y="2%" font="{vdrOsd}" fontsize="60%" color="{clrWhite}" text="{tr(systemload)}" />
             <drawimage imagetype="skinpart" path="farbverlauf" x="0" y="68%" width="{areawidth}" height="25%" />
-<!--            <drawrectangle name="leftbar" x="0" y="68%" width="{areawidth}*{loadhand}/2500 - 4*{loadhand}/2500 - {areawidth}/2500 - 4/2500" height="25%" color="{clrBlack}" /> -->
-            <drawrectangle name="leftbar" x="0" y="68%" width="{areawidth}*{loadhand}/10000 - 4*{loadhand}/10000 - {areawidth}/10000 - 4/10000" height="25%" color="{clrBlack}" />
+            <drawrectangle name="leftbar" x="0" y="68%" width="{areawidth}*{loadhand}/2500 - 4*{loadhand}/2500 - {areawidth}/2500 - 4/2500" height="25%" color="{clrBlack}" />
             <drawrectangle x="{width(leftbar)}+4" y="68%" width="{areawidth} - {width(leftbar)} -2" height="25%" color="{clrBlack}" />
         </area>
     </systemload>
