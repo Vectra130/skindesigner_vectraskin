@@ -222,8 +222,8 @@
             <!-- element whatson -->
             <area condition="not{separator}++{whatson}++not{current}++eq({schedulesmenustyle}, 2)" x="2%" width="95%" layer="3">
                 <drawtext x="0" valign="center" name="startstoptime" font="{vdrOsd}" fontsize="70%" color="{clrFontMenuItem}" text="{start} - {stop}" />
-                <drawimage condition="{timerfull}" imagetype="icon" path="ico_activetimer" x="{posy(startstoptime)}+{width(startstoptime)}+10" valign="center" width="{areaheight}*5/10" height="{areaheight}*5/10" />
-                <drawimage condition="{timerpartitial}" imagetype="icon" path="ico_activetimer" x="{posy(startstoptime)}+{width(startstoptime)}+10" valign="center" width="{areaheight}*3/10" height="{areaheight}*3/10" />
+                <drawimage condition="{timerfull}" imagetype="icon" path="ico_activetimer" x="{posx(startstoptime)}+{width(startstoptime)}+10" valign="center" width="{areaheight}*0.75" height="{areaheight}*0.75" />
+                <drawimage condition="{timerpartitial}" imagetype="icon" path="ico_activetimer" x="{posx(startstoptime)}+{width(startstoptime)}+10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4" />
             </area>
             <areascroll condition="not{separator}++{whatson}++eq({schedulesmenustyle}, 2)" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="15%" width="80%" layer="3">
                 <drawtext name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="80%" color="{clrFontMenuItemSelected}" text="{title}" />
@@ -232,21 +232,21 @@
             <!-- current element whatson -->
             <area condition="not{separator}++{whatson}++{current}++eq({schedulesmenustyle}, 2)" x="2%" width="95%" layer="3">
                 <drawtext x="0" valign="center" name="startstoptime" font="{vdrOsd}" fontsize="70%" color="{clrFontMenuItemSelected}" text="{start} - {stop}" />
-                <drawimage condition="{timerfull}" imagetype="icon" path="ico_activetimer" x="{posy(startstoptime)}+{width(startstoptime)}+10" valign="center" width="{areaheight}*5/10" height="{areaheight}*5/10" />
-                <drawimage condition="{timerpartitial}" imagetype="icon" path="ico_activetimer" x="{posy(startstoptime)}+{width(startstoptime)}+10" valign="center" width="{areaheight}*3/10" height="{areaheight}*3/10" />
+                <drawimage condition="{timerfull}" imagetype="icon" path="ico_activetimer" x="{posx(startstoptime)}+{width(startstoptime)}+10" valign="center" width="{areaheight}*0.75" height="{areaheight}*0.75" />
+                <drawimage condition="{timerpartitial}" imagetype="icon" path="ico_activetimer" x="{posx(startstoptime)}+{width(startstoptime)}+10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4" />
             </area>
 
             <!-- element whatsonnow -->
             <area condition="not{separator}++{whatsonnow}++eq({schedulesmenustyle}, 2)" x="1" width="5%" layer="3">
                 <drawimage name="logo" imagetype="channellogo" path="{channelid}" x="0" width="100%" height="90%" valign="center" />
             </area>
-            <area condition="not{separator}++{whatsonnow}++eq({schedulesmenustyle}, 2)" x="2%" width="95%" layer="3">
+            <area condition="not{separator}++{whatsonnow}++not{current}++eq({schedulesmenustyle}, 2)" x="2%" width="95%" layer="3">
                 <drawtext x="{areaheight}+10" valign="center" name="startstoptime" font="{vdrOsd}" fontsize="70%" color="{clrFontMenuItem}" text="{start} - {stop}" />
                 <drawrectangle name="timebar2" x="{posx(startstoptime)}+{width(startstoptime)} + {areaheight}" y="{areaheight}*0.5-10" width="{areaheight}*2" height="20" color="{clrFontMenuItem}" />
                 <drawrectangle x="{posx(timebar2)}+1" y="{posy(timebar2)}+1" width="{width(timebar2)}-2" height="{height(timebar2)}-2" color="{clrTransparent}" />
                 <drawrectangle x="{posx(timebar2)}+1" y="{posy(timebar2)}+1" width="{areaheight}*2 * {elapsed}/{duration} - 2" height="{height(timebar2)}-2" color="{clrWhite}" />
-                <drawimage condition="{timerfull}" imagetype="icon" path="ico_activetimer" x="{posy(startstoptime)}+{width(startstoptime)}+10" valign="center" width="{areaheight}*5/10" height="{areaheight}*5/10" />
-                <drawimage condition="{timerpartitial}" imagetype="icon" path="ico_activetimer" x="{posy(startstoptime)}+{width(startstoptime)}+10" valign="center" width="{areaheight}*3/10" height="{areaheight}*3/10" />
+                <drawimage condition="{timerfull}" imagetype="icon" path="ico_activetimer" x="{posx(startstoptime)}+{width(startstoptime)}+5" valign="center" width="{areaheight}*0.75" height="{areaheight}*0.75" />
+                <drawimage condition="{timerpartitial}" imagetype="icon" path="ico_activetimer" x="{posx(startstoptime)}+{width(startstoptime)}+5" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4" />
             </area>
             <areascroll condition="not{separator}++{whatsonnow}++eq({schedulesmenustyle}, 2)" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="{areaheight}/{schedulesmenuitems}*9" width="{areawidth}*0.95 - {areaheight}/{schedulesmenuitems}*9" layer="3">
                 <drawtext name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="80%" color="{clrFontMenuItemSelected}" text="{title}" />
@@ -259,8 +259,8 @@
                 <drawrectangle name="timebar2" x="{posx(startstoptime)}+{width(startstoptime)} + {areaheight}" y="{areaheight}*0.5-10" width="{areaheight}*2" height="20" color="{clrFontMenuItem}" />
                 <drawrectangle x="{posx(timebar2)}+1" y="{posy(timebar2)}+1" width="{width(timebar2)}-2" height="{height(timebar2)}-2" color="{clrTransparent}" />
                 <drawrectangle x="{posx(timebar2)}+1" y="{posy(timebar2)}+1" width="{areaheight}*2 * {elapsed}/{duration} - 2" height="{height(timebar2)}-2" color="{clrWhite}" />
-                <drawimage condition="{timerfull}" imagetype="icon" path="ico_activetimer" x="{posy(startstoptime)}+{width(startstoptime)}+10" valign="center" width="{areaheight}*5/10" height="{areaheight}*5/10" />
-                <drawimage condition="{timerpartitial}" imagetype="icon" path="ico_activetimer" x="{posy(startstoptime)}+{width(startstoptime)}+10" valign="center" width="{areaheight}*3/10" height="{areaheight}*3/10" />
+                <drawimage condition="{timerfull}" imagetype="icon" path="ico_activetimer" x="{posx(startstoptime)}+{width(startstoptime)}+5" valign="center" width="{areaheight}*0.75" height="{areaheight}*0.75" />
+                <drawimage condition="{timerpartitial}" imagetype="icon" path="ico_activetimer" x="{posx(startstoptime)}+{width(startstoptime)}+5" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4" />
             </area>
 
             <!-- element whatsonnext -->
@@ -269,8 +269,8 @@
             </area>
             <area condition="not{separator}++{whatsonnext}++not{current}++eq({schedulesmenustyle}, 2)" x="2%" width="95%" layer="3">
                 <drawtext x="{areaheight}+10" valign="center" name="startstoptime" font="{vdrOsd}" fontsize="70%" color="{clrFontMenuItem}" text="{start} - {stop}" />
-                <drawimage condition="{timerfull}" imagetype="icon" path="ico_activetimer" x="{posy(startstoptime)}+{width(startstoptime)}+10" valign="center" width="{areaheight}*5/10" height="{areaheight}*5/10" />
-                <drawimage condition="{timerpartitial}" imagetype="icon" path="ico_activetimer" x="{posy(startstoptime)}+{width(startstoptime)}+10" valign="center" width="{areaheight}*3/10" height="{areaheight}*3/10" />
+                <drawimage condition="{timerfull}" imagetype="icon" path="ico_activetimer" x="{posx(startstoptime)}+{width(startstoptime)}+5" valign="center" width="{areaheight}*0.75" height="{areaheight}*0.75" />
+                <drawimage condition="{timerpartitial}" imagetype="icon" path="ico_activetimer" x="{posx(startstoptime)}+{width(startstoptime)}+5" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4" />
             </area>
             <areascroll condition="not{separator}++{whatsonnext}++eq({schedulesmenustyle}, 2)" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="{areaheight}/{schedulesmenuitems}*6" width="{areawidth}*0.95 - {areaheight}/{schedulesmenuitems}*6" layer="3">
                 <drawtext name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="80%" color="{clrFontMenuItemSelected}" text="{title}" />
@@ -279,8 +279,8 @@
             <!-- current element whatsonnext -->
             <area condition="not{separator}++{whatsonnext}++{current}++eq({schedulesmenustyle}, 2)" x="2%" width="95%" layer="3">
                 <drawtext x="{areaheight}+10" valign="center" name="startstoptime" font="{vdrOsd}" fontsize="70%" color="{clrFontMenuItemSelected}" text="{start} - {stop}" />
-                <drawimage condition="{timerfull}" imagetype="icon" path="ico_activetimer" x="{posy(startstoptime)}+{width(startstoptime)}+10" valign="center" width="{areaheight}*5/10" height="{areaheight}*5/10" />
-                <drawimage condition="{timerpartitial}" imagetype="icon" path="ico_activetimer" x="{posy(startstoptime)}+{width(startstoptime)}+10" valign="center" width="{areaheight}*3/10" height="{areaheight}*3/10" />
+                <drawimage condition="{timerfull}" imagetype="icon" path="ico_activetimer" x="{posx(startstoptime)}+{width(startstoptime)}+5" valign="center" width="{areaheight}*0.75" height="{areaheight}*0.75" />
+                <drawimage condition="{timerpartitial}" imagetype="icon" path="ico_activetimer" x="{posx(startstoptime)}+{width(startstoptime)}+5" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4" />
             </area>
 
             <!-- element whatsonfavorites -->
@@ -289,8 +289,8 @@
             </area>
             <area condition="not{separator}++{whatsonfavorites}++not{current}++eq({schedulesmenustyle}, 2)" x="2%" width="95%" layer="3">
                 <drawtext x="{areaheight}+10" valign="center" name="startstoptime" font="{vdrOsd}" fontsize="70%" color="{clrFontMenuItem}" text="{start} - {stop}" />
-                <drawimage condition="{timerfull}" imagetype="icon" path="ico_activetimer" x="{posy(startstoptime)}+{width(startstoptime)}+10" valign="center" width="{areaheight}*5/10" height="{areaheight}*5/10" />
-                <drawimage condition="{timerpartitial}" imagetype="icon" path="ico_activetimer" x="{posy(startstoptime)}+{width(startstoptime)}+10" valign="center" width="{areaheight}*3/10" height="{areaheight}*3/10" />
+                <drawimage condition="{timerfull}" imagetype="icon" path="ico_activetimer" x="{posx(startstoptime)}+{width(startstoptime)}+5" valign="center" width="{areaheight}*0.75" height="{areaheight}*0.75" />
+                <drawimage condition="{timerpartitial}" imagetype="icon" path="ico_activetimer" x="{posx(startstoptime)}+{width(startstoptime)}+5" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4" />
             </area>
             <areascroll condition="not{separator}++{whatsonfavorites}++eq({schedulesmenustyle}, 2)" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="{areaheight}/{schedulesmenuitems}*6" width="{areawidth}*0.95 - {areaheight}/{schedulesmenuitems}*6" layer="3">
                 <drawtext name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="80%" color="{clrFontMenuItemSelected}" text="{title}" />
@@ -299,8 +299,8 @@
             <!-- current element whatsonfavorites -->
             <area condition="not{separator}++{whatsonfavorites}++{current}++eq({schedulesmenustyle}, 2)" x="2%" width="95%" layer="3">
                 <drawtext x="{areaheight}+10" valign="center" name="startstoptime" font="{vdrOsd}" fontsize="70%" color="{clrFontMenuItemSelected}" text="{start} - {stop}" />
-                <drawimage condition="{timerfull}" imagetype="icon" path="ico_activetimer" x="{posy(startstoptime)}+{width(startstoptime)}+10" valign="center" width="{areaheight}*5/10" height="{areaheight}*5/10" />
-                <drawimage condition="{timerpartitial}" imagetype="icon" path="ico_activetimer" x="{posy(startstoptime)}+{width(startstoptime)}+10" valign="center" width="{areaheight}*3/10" height="{areaheight}*3/10" />
+                <drawimage condition="{timerfull}" imagetype="icon" path="ico_activetimer" x="{posx(startstoptime)}+{width(startstoptime)}+5" valign="center" width="{areaheight}*0.75" height="{areaheight}*0.75" />
+                <drawimage condition="{timerpartitial}" imagetype="icon" path="ico_activetimer" x="{posx(startstoptime)}+{width(startstoptime)}+5" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4" />
             </area>
 
             <!-- day or channel separator -->
