@@ -78,7 +78,7 @@
         <area condition="{showmainmenusysinfo}" x="{areawidth}*0.759" y="13%" width="11%" height="17%" layer="1">
             <fill color="{clrBackground}" />
 	</area>
-	<area condition="{showmainmenusysinfo}++{cputemp}" x="{areawidth}*0,759+5" y="22%" width="{areawidth}*0,11-10" height="4%" layer="2" >
+	<area debug="true" condition="{showmainmenusysinfo}++{cputemp}" x="{areawidth}*0,759+5" y="22%" width="{areawidth}*0,11-10" height="4%" layer="2" >
             <drawtext align="center" y="2%" font="{vdrOsd}" fontsize="60%" color="{clrWhite}" text="{tr(cputemp)}" />
             <drawimage imagetype="skinpart" path="farbverlauf" x="0" y="68%" width="{areawidth}" height="25%" />
             <drawrectangle name="leftbar" x="0" y="68%" width="{areawidth}*{cputemp}/80 - 4*{cputemp}/80 - {areawidth}*1/80 - 4*1/80" height="25%" color="{clrBlack}" />
@@ -92,7 +92,7 @@
         </area>
     </temperatures>
     <systemload>
-	<area condition="{showmainmenusysinfo}" x="{areawidth}*0,759+5" y="14%" width="{areawidth}*0,11-10" height="4%" layer="2" >
+	<area debug="true" condition="{showmainmenusysinfo}" x="{areawidth}*0,759+5" y="14%" width="{areawidth}*0,11-10" height="4%" layer="2" >
             <drawtext align="center" y="2%" font="{vdrOsd}" fontsize="60%" color="{clrWhite}" text="{tr(systemload)}" />
             <drawimage imagetype="skinpart" path="farbverlauf" x="0" y="68%" width="{areawidth}" height="25%" />
             <drawrectangle name="leftbar" x="0" y="68%" width="{areawidth}*{loadhand}/2500 - 4*{loadhand}/2500 - {areawidth}/2500 - 4/2500" height="25%" color="{clrBlack}" />
