@@ -27,7 +27,7 @@
 	        <drawimage condition="{timers[recording]}" x="{columnwidth}/1.6" y="85%" imagetype="icon" path="ico_timer_recording" width="15%" height="15%" />
                 <drawtextbox x="5" y="58%" width="{columnwidth}-10" align="center" maxlines="2" font="{vdrOsd}" fontsize="15%" color="{clrWhite}" text="{timers[title]}" />
 
-                <drawtext align="center" y="{areaheight}*0.85-2" font="{vdrOsd}" fontsize="15%" color="{clrWhite}" text="{timers[datetime]}" />
+                <drawtext align="center" y="{areaheight}*0.85-2" font="{vdrOsd}" fontsize="15%" color="{clrGray}" text="{timers[datetime]}" />
             </loop>
         </area>
     </timers>
@@ -65,7 +65,7 @@
             <drawimage imagetype="icon" path="ico_discusage" align="center" y="2" width="{areawidth}*45/100" height="{areawidth}*45/100"/>
             <drawtext align="center" y="20%" font="{vdrOsd}" fontsize="17%" color="{clrTransWhite}" text="{usedpercent}%" />
             <drawtext name="diskusage" align="center" y="60%" font="{vdrOsd}" fontsize="17%" color="{clrWhite}" text="{freetime}h {tr(free)}" />
-            <drawtext align="center" y="{posy(diskusage)}+{height(diskusage)}-5" font="{vdrOsd}" fontsize="12%" color="{clrWhite}" text="({freegb}GB)" />
+            <drawtext align="center" y="{posy(diskusage)}+{height(diskusage)}-5" font="{vdrOsd}" fontsize="12%" color="{clrGray}" text="({freegb}GB)" />
 	</area>
 	<area x="{areawidth}*0.87+5" y="28%" width="{areawidth}*0.11-10" height="1%" layer="2" >
             <drawimage imagetype="skinpart" path="farbverlauf" x="0" y="0" width="{areawidth}" height="100%" />
@@ -78,22 +78,54 @@
         <area condition="{showmainmenusysinfo}" x="{areawidth}*0.759" y="13%" width="11%" height="17%" layer="1">
             <fill color="{clrBackground}" />
 	</area>
-	<area debug="true" condition="{showmainmenusysinfo}++{cputemp}" x="{areawidth}*0.759+5" y="22%" width="{areawidth}*0.11-10" height="4%" layer="2" >
+	<!-- cpu temp -->
+	<area condition="{showmainmenusysinfo}++{cputemp}" x="{areawidth}*0.759+5" y="22%" width="{areawidth}*0.11-10" height="4%" layer="2" >
             <drawtext align="center" y="2%" font="{vdrOsd}" fontsize="60%" color="{clrWhite}" text="{tr(cputemp)}" />
+            <drawtext condition="{showmainmenusysinfovalue}" align="right" y="{areaheight}*0.56" font="{vdrOsd}" fontsize="40%" color="{clrGray}" text="{cputemp}°C" />
+        </area>
+	<!-- ohne Werte -->
+	<area condition="{showmainmenusysinfo}++{cputemp}++not{showmainmenusysinfovalue}" x="{areawidth}*0.759+5" y="22%" width="{areawidth}*0.11-10" height="4%" layer="2" >
             <drawimage imagetype="skinpart" path="farbverlauf" x="0" y="68%" width="{areawidth}" height="25%" />
             <drawrectangle name="leftbar" x="0" y="68%" width="{areawidth}*{cputemp}/80 - 4*{cputemp}/80 - {areawidth}*1/80 - 4*1/80" height="25%" color="{clrBlack}" />
             <drawrectangle x="{width(leftbar)}+4" y="68%" width="{areawidth} - {width(leftbar)} -2" height="25%" color="{clrBlack}" />
         </area>
+	<!-- mit Werten -->
+	<area condition="{showmainmenusysinfo}++{cputemp}++{showmainmenusysinfovalue}" x="{areawidth}*0.759+5" y="22%" width="{areawidth}*0.09-10" height="4%" layer="2" >
+            <drawimage imagetype="skinpart" path="farbverlauf" x="0" y="68%" width="{areawidth}" height="25%" />
+            <drawrectangle name="leftbar" x="0" y="68%" width="{areawidth}*{cputemp}/80 - 4*{cputemp}/80 - {areawidth}*1/80 - 4*1/80" height="25%" color="{clrBlack}" />
+            <drawrectangle x="{width(leftbar)}+4" y="68%" width="{areawidth} - {width(leftbar)} -2" height="25%" color="{clrBlack}" />
+        </area>
+	<!-- gpu temp -->
 	<area condition="{showmainmenusysinfo}++{gputemp}" x="{areawidth}*0.759+5" y="26%" width="{areawidth}*0.11-10" height="4%" layer="2" >
             <drawtext align="center" y="2%" font="{vdrOsd}" fontsize="60%" color="{clrWhite}" text="{tr(gputemp)}" />
+            <drawtext condition="{showmainmenusysinfovalue}" align="right" y="{areaheight}*0.56" font="{vdrOsd}" fontsize="40%" color="{clrGray}" text="{gputemp}°C" />
+        </area>
+	<!-- ohne Werte -->
+	<area condition="{showmainmenusysinfo}++{gputemp}++not{showmainmenusysinfovalue}" x="{areawidth}*0.759+5" y="26%" width="{areawidth}*0.11-10" height="4%" layer="2" >
+            <drawimage imagetype="skinpart" path="farbverlauf" x="0" y="68%" width="{areawidth}" height="25%" />
+            <drawrectangle name="leftbar" x="0" y="68%" width="{areawidth}*{gputemp}/80 - 4*{gputemp}/80 - {areawidth}*1/80 - 4*1/80" height="25%" color="{clrBlack}" />
+            <drawrectangle x="{width(leftbar)}+4" y="68%" width="{areawidth} - {width(leftbar)} -2" height="25%" color="{clrBlack}" />
+        </area>
+	<!-- mit Werten -->
+	<area condition="{showmainmenusysinfo}++{gputemp}++{showmainmenusysinfovalue}" x="{areawidth}*0.759+5" y="26%" width="{areawidth}*0.09-10" height="4%" layer="2" >
             <drawimage imagetype="skinpart" path="farbverlauf" x="0" y="68%" width="{areawidth}" height="25%" />
             <drawrectangle name="leftbar" x="0" y="68%" width="{areawidth}*{gputemp}/80 - 4*{gputemp}/80 - {areawidth}*1/80 - 4*1/80" height="25%" color="{clrBlack}" />
             <drawrectangle x="{width(leftbar)}+4" y="68%" width="{areawidth} - {width(leftbar)} -2" height="25%" color="{clrBlack}" />
         </area>
     </temperatures>
     <systemload>
-	<area debug="true" condition="{showmainmenusysinfo}" x="{areawidth}*0.759+5" y="14%" width="{areawidth}*0.11-10" height="4%" layer="2" >
+	<area condition="{showmainmenusysinfo}" x="{areawidth}*0.759+5" y="14%" width="{areawidth}*0.11-10" height="4%" layer="2" >
             <drawtext align="center" y="2%" font="{vdrOsd}" fontsize="60%" color="{clrWhite}" text="{tr(systemload)}" />
+            <drawtext condition="{showmainmenusysinfovalue}" align="right" y="{areaheight}*0.56" font="{vdrOsd}" fontsize="40%" color="{clrGray}" text="{load}" />
+        </area>
+	<!-- ohne Werte -->
+	<area condition="{showmainmenusysinfo}++not{showmainmenusysinfovalue}" x="{areawidth}*0.759+5" y="14%" width="{areawidth}*0.11-10" height="4%" layer="2" >
+            <drawimage imagetype="skinpart" path="farbverlauf" x="0" y="68%" width="{areawidth}" height="25%" />
+            <drawrectangle name="leftbar" x="0" y="68%" width="{areawidth}*{loadhand}/2500 - 4*{loadhand}/2500 - {areawidth}/2500 - 4/2500" height="25%" color="{clrBlack}" />
+            <drawrectangle x="{width(leftbar)}+4" y="68%" width="{areawidth} - {width(leftbar)} -2" height="25%" color="{clrBlack}" />
+        </area>
+	<!-- mit Werten -->
+	<area condition="{showmainmenusysinfo}++{showmainmenusysinfovalue}" x="{areawidth}*0.759+5" y="14%" width="{areawidth}*0.09-10" height="4%" layer="2" >
             <drawimage imagetype="skinpart" path="farbverlauf" x="0" y="68%" width="{areawidth}" height="25%" />
             <drawrectangle name="leftbar" x="0" y="68%" width="{areawidth}*{loadhand}/2500 - 4*{loadhand}/2500 - {areawidth}/2500 - 4/2500" height="25%" color="{clrBlack}" />
             <drawrectangle x="{width(leftbar)}+4" y="68%" width="{areawidth} - {width(leftbar)} -2" height="25%" color="{clrBlack}" />
@@ -102,6 +134,16 @@
     <customtokens> <!-- memusage -->
 	<area condition="{showmainmenusysinfo}++{ctMem}" x="{areawidth}*0.759+5" y="18%" width="{areawidth}*0.11-10" height="4%" layer="2" >
             <drawtext align="center" y="2%" font="{vdrOsd}" fontsize="60%" color="{clrWhite}" text="{tr(memusage)}" />
+            <drawtext condition="{showmainmenusysinfovalue}" align="right" y="{areaheight}*0.56" font="{vdrOsd}" fontsize="40%" color="{clrGray}" text="{ctMem}%" />
+        </area>
+	<!-- ohne Werte -->
+	<area condition="{showmainmenusysinfo}++{ctMem}++not{showmainmenusysinfovalue}" x="{areawidth}*0.759+5" y="18%" width="{areawidth}*0.11-10" height="4%" layer="2" >
+            <drawimage imagetype="skinpart" path="farbverlauf" x="0" y="68%" width="{areawidth}" height="25%" />
+            <drawrectangle name="leftbar" x="0" y="68%" width="{areawidth}*{ctMem}/100 - 4*{ctMem}/100 - {areawidth}*1/100 - 4*1/100" height="25%" color="{clrBlack}" />
+            <drawrectangle x="{width(leftbar)}+4" y="68%" width="{areawidth} - {width(leftbar)} -2" height="25%" color="{clrBlack}" />
+        </area>
+	<!-- mit Werten -->
+	<area condition="{showmainmenusysinfo}++{ctMem}++{showmainmenusysinfovalue}" x="{areawidth}*0.759+5" y="18%" width="{areawidth}*0.09-10" height="4%" layer="2" >
             <drawimage imagetype="skinpart" path="farbverlauf" x="0" y="68%" width="{areawidth}" height="25%" />
             <drawrectangle name="leftbar" x="0" y="68%" width="{areawidth}*{ctMem}/100 - 4*{ctMem}/100 - {areawidth}*1/100 - 4*1/100" height="25%" color="{clrBlack}" />
             <drawrectangle x="{width(leftbar)}+4" y="68%" width="{areawidth} - {width(leftbar)} -2" height="25%" color="{clrBlack}" />
