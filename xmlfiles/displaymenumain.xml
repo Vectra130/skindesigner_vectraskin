@@ -185,29 +185,29 @@
 
     <customtokens>
 	<!-- memusage -->
-	<area condition="{showmainmenusysinfo}" x="{areawidth}*0.319+5" y="58%" width="{areawidth}*0.22-10" height="4%" layer="2" >
+	<area condition="{showmainmenusysinfo}++{ctMem}" x="{areawidth}*0.319+5" y="58%" width="{areawidth}*0.22-10" height="4%" layer="2" >
             <drawtext align="center" y="8%" font="{vdrOsd}" fontsize="50%" color="{clrWhite}" text="{tr(memusage)}" />
             <drawtext condition="{showmainmenusysinfovalue}" align="right" y="{areaheight}*0.46" font="{vdrOsd}" fontsize="60%" color="{clrGray}" text="{ctMem}%" />
         </area>
-	<area condition="{showmainmenusysinfo}++{showmainmenusysinfovalue}" x="{areawidth}*0.319 + {areaheight}*0.02" y="58%" width="{areawidth}*0.19 - {areaheight}*0.02" height="4%" layer="2" >
+	<area condition="{showmainmenusysinfo}++{showmainmenusysinfovalue}++{ctMem}" x="{areawidth}*0.319 + {areaheight}*0.02" y="58%" width="{areawidth}*0.19 - {areaheight}*0.02" height="4%" layer="2" >
             <drawimage imagetype="skinpart" path="farbverlauf" x="0" y="68%" width="{areawidth}" height="25%" />
             <drawrectangle name="leftbar" x="0" y="68%" width="{ctMem}/100*{areawidth} - 5*{ctMem}/100" height="25%" color="{clrBlack}" />
             <drawrectangle x="{width(leftbar)} + 5" y="68%" width="{areawidth} - {width(leftbar)} - 5" height="25%" color="{clrBlack}" />
         </area>
 	<!-- swap -->
-	<area condition="{showmainmenusysinfo}" x="{areawidth}*0.319+5" y="62%" width="{areawidth}*0.22-10" height="4%" layer="2" >
+	<area condition="{showmainmenusysinfo++{ctSwap}}" x="{areawidth}*0.319+5" y="62%" width="{areawidth}*0.22-10" height="4%" layer="2" >
             <drawtext align="center" y="8%" font="{vdrOsd}" fontsize="50%" color="{clrWhite}" text="{tr(swapusage)}" />
             <drawtext condition="{showmainmenusysinfovalue}" align="right" y="{areaheight}*0.46" font="{vdrOsd}" fontsize="60%" color="{clrGray}" text="{ctSwap}%" />
         </area>
-	<area condition="{showmainmenusysinfo}++{showmainmenusysinfovalue}" x="{areawidth}*0.319 + {areaheight}*0.02" y="62%" width="{areawidth}*0.19 - {areaheight}*0.02" height="4%" layer="2" >
+	<area condition="{showmainmenusysinfo}++{showmainmenusysinfovalue}++{ctSwap}+1" x="{areawidth}*0.319 + {areaheight}*0.02" y="62%" width="{areawidth}*0.19 - {areaheight}*0.02" height="4%" layer="2" >
             <drawimage imagetype="skinpart" path="farbverlauf" x="0" y="68%" width="{areawidth}" height="25%" />
             <drawrectangle name="leftbar" x="0" y="68%" width="{ctSwap}/100*{areawidth} - 5*{ctSwap}/100" height="25%" color="{clrBlack}" />
             <drawrectangle x="{width(leftbar)} + 5" y="68%" width="{areawidth} - {width(leftbar)} - 5" height="25%" color="{clrBlack}" />
         </area>
 	<!-- 1w test temp -->
-	<area condition="{showmainmenusysinfo}" x="{areawidth}*0.319+5" y="83%" width="{areawidth}*0.22-10" height="4%" layer="2" >
+	<area condition="{showmainmenusysinfo}++{vectrasetup}" x="{areawidth}*0.319+5" y="83%" width="{areawidth}*0.22-10" height="4%" layer="2" >
             <drawtext align="center" y="10" font="{vdrOsd}" fontsize="50%" color="{clrWhite}" text="1w test Temperatur:" />
-            <drawtext align="right" y="{areaheight}*0.15" font="{vdrOsd}" fontsize="60%" color="{clrGray}" text="{ctOutside}°C" />
+            <drawtext align="right" y="{areaheight}*0.15" font="{vdrOsd}" fontsize="60%" color="{clrGray}" text="{ct1wOutside}°C" />
         </area>
 <!--
 	<area condition="{showmainmenusysinfo}++{showmainmenusysinfovalue}" x="{areawidth}*0.319 + {areaheight}*0.02" y="83%" width="{areawidth}*0.19 - {areaheight}*0.02" height="4%" layer="2" >
