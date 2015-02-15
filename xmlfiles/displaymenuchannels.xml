@@ -37,7 +37,7 @@
                 <drawimage condition="{current}" imagetype="skinpart" path="menubuttonactive" x="0" y="1%" width="{areawidth}" height="{areaheight}*0.98"/>
             </area>
             <!-- channel logo -->
-            <area condition="not{separator}" x="1" width="5%" layer="3">
+            <area condition="not{separator}" x="{areaheight}/12/4" width="{areawidth}*0.035" layer="3">
                 <drawimage name="logo" imagetype="channellogo" path="{channelid}" x="0" width="100%" height="74%" valign="center" />
             </area>
             <!-- scrollable channel name -->

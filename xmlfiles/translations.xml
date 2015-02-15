@@ -255,10 +255,6 @@
             <trans lang="en_EN">Humidity</trans>
             <trans lang="de_DE">Luftfeuchtigkeit</trans>
         </token>
-        <token name="tr(apparenttemp)">
-            <trans lang="en_EN">Felt Temperature</trans>
-            <trans lang="de_DE">Gefühlte Temperatur</trans>
-        </token>
         <token name="tr(windbearing)">
             <trans lang="en_EN">Wind Bearing</trans>
             <trans lang="de_DE">Windrichtung</trans>
@@ -306,5 +302,13 @@
         <token name="tr(for)">
             <trans lang="en_EN">for</trans>
             <trans lang="de_DE">für</trans>
+        </token>
+        <token name="tr(temperatures)">
+            <trans lang="en_EN">Temperatures</trans>
+            <trans lang="de_DE">Temperaturen</trans>
+        </token>
+        <token name="tr(outsidetemp)">
+            <trans lang="en_EN">Outside temperature</trans>
+            <trans lang="de_DE">Außentemperatur</trans>
         </token>
 </translations>

@@ -144,7 +144,7 @@
             <areascroll condition="not{separator}++{whatson}++{current}++eq({schedulesmenustyle}, 1)" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="1%" width="-{areawidth}*0.04 + {areawidth}*{schedulesmenusize}*0.01" layer="3">
                 <drawtext name="menutext" x="0" y="40%" font="{vdrOsd}" fontsize="55%" color="{clrFontMenuItemSelected}" text="{title}" />
             </areascroll>
-            <area condition="not{separator}++{whatsonnow}++eq({schedulesmenustyle}, 1)" x="1" width="5%" layer="3">
+            <area condition="not{separator}++{whatsonnow}++eq({schedulesmenustyle}, 1)" x="{areaheight}/{schedulesmenuitems}/4" width="{areawidth}*0.035" layer="3">
                 <drawimage name="logo" imagetype="channellogo" path="{channelid}" x="0" width="100%" height="74%" valign="center" />
             </area>
             <area condition="not{separator}++{whatsonnow}++not{current}++eq({schedulesmenustyle}, 1)" x="5%" width="-{areawidth}*0.08 + {areawidth}*{schedulesmenusize}*0.01" layer="3">
@@ -167,7 +167,7 @@
                 <drawimage name="sep" imagetype="icon" path="ico_daydelimiter" x="10" valign="center" width="{areaheight}-10" height="{areaheight}-10"/>
                 <drawtext x="{width(sep)} + 20" valign="center" font="{vdrOsd}" fontsize="60%" color="{clrFontInactive}" text="{title}" />
             </area>
-            <area condition="not{separator}++{whatsonnext}++eq({schedulesmenustyle}, 1)" x="1" width="5%" layer="3">
+            <area condition="not{separator}++{whatsonnext}++eq({schedulesmenustyle}, 1)" x="{areaheight}/{schedulesmenuitems}/4" width="{areawidth}*0.035" layer="3">
                 <drawimage name="logo" imagetype="channellogo" path="{channelid}" x="0" width="100%" height="74%" valign="center" />
             </area>
             <area condition="not{separator}++{whatsonnext}++not{current}++eq({schedulesmenustyle}, 1)" x="5%" width="-{areawidth}*0.08 + {areawidth}*{schedulesmenusize}*0.01" layer="3">
@@ -186,7 +186,7 @@
             <areascroll condition="not{separator}++{whatsonnext}++{current}++eq({schedulesmenustyle}, 1)" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="5%" width="-{areawidth}*0.08 + {areawidth}*{schedulesmenusize}*0.01" layer="3">
                 <drawtext name="menutext" x="0" y="40%" font="{vdrOsd}" fontsize="55%" color="{clrFontMenuItemSelected}" text="{title}" />
             </areascroll>
-            <area condition="not{separator}++{whatsonfavorites}++eq({schedulesmenustyle}, 1)" x="1" width="5%" layer="3">
+            <area condition="not{separator}++{whatsonfavorites}++eq({schedulesmenustyle}, 1)" x="{areaheight}/{schedulesmenuitems}/4" width="{areawidth}*0.035" layer="3">
                 <drawimage name="logo" imagetype="channellogo" path="{channelid}" x="0" width="100%" height="74%" valign="center" />
             </area>
             <area condition="not{separator}++{whatsonfavorites}++not{current}++eq({schedulesmenustyle}, 1)" x="5%" width="-{areawidth}*0.08 + {areawidth}*{schedulesmenusize}*0.01" layer="3">
@@ -237,7 +237,7 @@
             </area>
 
             <!-- element whatsonnow -->
-            <area condition="not{separator}++{whatsonnow}++eq({schedulesmenustyle}, 2)" x="1" width="5%" layer="3">
+            <area condition="not{separator}++{whatsonnow}++eq({schedulesmenustyle}, 2)" x="{areaheight}/{schedulesmenuitems}/4" width="{areawidth}*0.035" layer="3">
                 <drawimage name="logo" imagetype="channellogo" path="{channelid}" x="0" width="100%" height="90%" valign="center" />
             </area>
             <area condition="not{separator}++{whatsonnow}++not{current}++eq({schedulesmenustyle}, 2)" x="2%" width="95%" layer="3">
@@ -264,7 +264,7 @@
             </area>
 
             <!-- element whatsonnext -->
-            <area condition="not{separator}++{whatsonnext}++eq({schedulesmenustyle}, 2)" x="1" width="5%" layer="3">
+            <area condition="not{separator}++{whatsonnext}++eq({schedulesmenustyle}, 2)" x="{areaheight}/{schedulesmenuitems}/4" width="{areawidth}*0.035" layer="3">
                 <drawimage name="logo" imagetype="channellogo" path="{channelid}" x="0" width="100%" height="74%" valign="center" />
             </area>
             <area condition="not{separator}++{whatsonnext}++not{current}++eq({schedulesmenustyle}, 2)" x="2%" width="95%" layer="3">
@@ -284,7 +284,7 @@
             </area>
 
             <!-- element whatsonfavorites -->
-            <area condition="not{separator}++{whatsonfavorites}++eq({schedulesmenustyle}, 2)" x="1" width="5%" layer="3">
+            <area condition="not{separator}++{whatsonfavorites}++eq({schedulesmenustyle}, 2)" x="{areaheight}/{schedulesmenuitems}/4" width="{areawidth}*0.035" layer="3">
                 <drawimage name="logo" imagetype="channellogo" path="{channelid}" x="0" width="100%" height="74%" valign="center" />
             </area>
             <area condition="not{separator}++{whatsonfavorites}++not{current}++eq({schedulesmenustyle}, 2)" x="2%" width="95%" layer="3">
