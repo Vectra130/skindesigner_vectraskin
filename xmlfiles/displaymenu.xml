@@ -40,7 +40,7 @@
             <drawellipse x="{areawidth}*29/100" y="{areaheight}*90/100 - {areawidth}*2/100" width="{areawidth}*2/100" height="{areawidth}*2/100" quadrant="-3" color="{clrBorder}" />
             <drawellipse x="{areawidth}*29/100 - 2" y="{areaheight}*90/100 - {areawidth}*2/100 + 2" width="{areawidth}*2/100" height="{areawidth}*2/100" quadrant="-3" color="{clrBackground}" />
 	    <!-- black background -->
-            <drawrectangle x="31%" y="12%" width="69%" height="68%%" color="{clrRed}" />
+            <drawrectangle x="30%" y="12%" width="{areawidth}*0.3-10" height="76%" color="{clrBlack}" />
         </area>
         <area x="0" y="0" width="100%" height="10%" layer="2">
             <drawimage cache="true" imagetype="skinpart" path="headertop" x="0" y="0" width="90%" height="100%"/>
