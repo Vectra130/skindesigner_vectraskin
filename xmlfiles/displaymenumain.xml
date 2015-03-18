@@ -186,10 +186,26 @@
             <drawrectangle x="{width(leftbar)} + 5" y="68%" width="{areawidth} - {width(leftbar)} - 5" height="25%" color="{clrBlack}" />
         </area>
     </systemload>
-
+    <systemmemory>
+	<area condition="{showmainmenusysinfo}" x="{areawidth}*0.319+5" y="58%" width="{areawidth}*0.22-10" height="4%" layer="2" >
+            <drawtext align="center" y="8%" font="{vdrOsd}" fontsize="50%" color="{clrWhite}" text="{tr(memusage)}" />
+            <drawtext condition="{showmainmenusysinfovalue}" align="right" y="{areaheight}*0.46" font="{vdrOsd}" fontsize="60%" color="{clrGray}" text="{usedmempercent}%" />
+        </area>
+	<area condition="{showmainmenusysinfo}++{showmainmenusysinfovalue}" x="{areawidth}*0.319 + {areaheight}*0.02" y="58%" width="{areawidth}*0.19 - {areaheight}*0.02" height="4%" layer="2" >
+            <drawimage imagetype="skinpart" path="farbverlauf" x="0" y="68%" width="{areawidth}" height="25%" />
+            <drawrectangle name="leftbar" x="0" y="68%" width="{usedmem}/{totalmem}*{areawidth} - 5*{usedmem}/{totalmem}" height="25%" color="{clrBlack}" />
+            <drawrectangle x="{width(leftbar)} + 5" y="68%" width="{areawidth} - {width(leftbar)} - 5" height="25%" color="{clrBlack}" />
+        </area>
+    </systemmemory>
+    <!-- Available Variables systemmemory:
+    {totalmem}                  total system memory in MB
+    {usedmem}                   currently used system memory in MB
+    {usedmempercent}            currently used system memory in Percent
+    -->
+ 
     <customtokens>
 	<!-- memusage -->
-	<area condition="{showmainmenusysinfo}++{ctMem}" x="{areawidth}*0.319+5" y="58%" width="{areawidth}*0.22-10" height="4%" layer="2" >
+<!--	<area condition="{showmainmenusysinfo}++{ctMem}" x="{areawidth}*0.319+5" y="58%" width="{areawidth}*0.22-10" height="4%" layer="2" >
             <drawtext align="center" y="8%" font="{vdrOsd}" fontsize="50%" color="{clrWhite}" text="{tr(memusage)}" />
             <drawtext condition="{showmainmenusysinfovalue}" align="right" y="{areaheight}*0.46" font="{vdrOsd}" fontsize="60%" color="{clrGray}" text="{ctMem}%" />
         </area>
@@ -198,7 +214,7 @@
             <drawrectangle name="leftbar" x="0" y="68%" width="{ctMem}/100*{areawidth} - 5*{ctMem}/100" height="25%" color="{clrBlack}" />
             <drawrectangle x="{width(leftbar)} + 5" y="68%" width="{areawidth} - {width(leftbar)} - 5" height="25%" color="{clrBlack}" />
         </area>
-	<!-- swap -->
+-->	<!-- swap -->
 	<area condition="{showmainmenusysinfo++{ctSwap}}" x="{areawidth}*0.319+5" y="62%" width="{areawidth}*0.22-10" height="4%" layer="2" >
             <drawtext align="center" y="8%" font="{vdrOsd}" fontsize="50%" color="{clrWhite}" text="{tr(swapusage)}" />
             <drawtext condition="{showmainmenusysinfovalue}" align="right" y="{areaheight}*0.46" font="{vdrOsd}" fontsize="60%" color="{clrGray}" text="{ctSwap}%" />
