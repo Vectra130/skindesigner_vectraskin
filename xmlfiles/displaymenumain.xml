@@ -18,7 +18,7 @@
         </area>
     </header>
 
-    <timers>
+    <timers detached="true" delay="0" fadetime="500">
         <area condition="gt({numtimers}, 0)++lt({numtimers}, 7)" x="{areawidth}*0.319" y="13%" width="{areawidth}*0.11 * {numtimers}" height="{areaheight}*0.02 - 2" layer="2">
 	    <drawimage name="numTimersIcon" x="{areawidth}/2 - {width(numTimersText)}/2 - 5 - {width(numTimersIcon)}/2" y="3" imagetype="icon" path="ico_activetimer" width="{areaheight}-2" height="{areaheight}-2" />
             <drawtext name="numTimersText" x="{posx(numTimersIcon)}+{width(numTimersIcon)} +10" valign="center" font="{vdrOsd}" fontsize="120%" color="{clrWhite}" text="{numtimers} aktive Timer" />
@@ -111,8 +111,8 @@
         </area>
     </header>
 
-    <discusage>
-        <area x="{areawidth}*0.319" y="32%" width="22%" height="17%" layer="1">
+    <discusage detached="true" delay="500" fadetime="500">
+        <area background="true" x="{areawidth}*0.319" y="32%" width="22%" height="17%" layer="1">
             <fill condition="lt({freepercent}, 6)" color="{clrTransRed}" />
             <fill condition="gt({freepercent}, 5)" color="{clrBackground}" />
             <drawellipse x="0" y="0" width="{areaheight}*0.13" height="{areaheight}*0.13" quadrant="-2" color="{clrTransparent}" />
@@ -135,8 +135,8 @@
         </area>        
     </discusage>
 
-    <temperatures>
-        <area condition="{showmainmenusysinfo}" x="{areawidth}*0.319" y="70%" width="{areawidth}*0.22" height="17%" layer="1">
+    <temperatures detached="true" delay="1500" fadetime="500">
+        <area condition="{showmainmenusysinfo}" background="true" x="{areawidth}*0.319" y="70%" width="{areawidth}*0.22" height="17%" layer="1">
             <fill color="{clrBackground}" />
             <drawellipse x="0" y="0" width="{areaheight}*0.13" height="{areaheight}*0.13" quadrant="-2" color="{clrTransparent}" />
             <drawellipse x="{areawidth} - {areaheight}*0.13" y="0" width="{areaheight}*0.13" height="{areaheight}*0.13" quadrant="-1" color="{clrTransparent}" />
@@ -166,8 +166,8 @@
             <drawrectangle x="{width(leftbar)} + 5" y="68%" width="{areawidth} - {width(leftbar)} - 5" height="25%" color="{clrBlack}" />
         </area>
     </temperatures>
-    <systemload>
-        <area condition="{showmainmenusysinfo}" x="{areawidth}*0.319" y="51%" width="{areawidth}*0.22" height="17%" layer="1">
+    <systemload detached="true" delay="1000" fadetime="500">
+        <area condition="{showmainmenusysinfo}" background="true" x="{areawidth}*0.319" y="51%" width="{areawidth}*0.22" height="17%" layer="1">
             <fill color="{clrBackground}" />
             <drawellipse x="0" y="0" width="{areaheight}*0.13" height="{areaheight}*0.13" quadrant="-2" color="{clrTransparent}" />
             <drawellipse x="{areawidth} - {areaheight}*0.13" y="0" width="{areaheight}*0.13" height="{areaheight}*0.13" quadrant="-1" color="{clrTransparent}" />
@@ -186,7 +186,7 @@
             <drawrectangle x="{width(leftbar)} + 5" y="68%" width="{areawidth} - {width(leftbar)} - 5" height="25%" color="{clrBlack}" />
         </area>
     </systemload>
-    <systemmemory>
+    <systemmemory detached="true" delay="1000" fadetime="500">
 	<area condition="{showmainmenusysinfo}" x="{areawidth}*0.319+5" y="58%" width="{areawidth}*0.22-10" height="4%" layer="2" >
             <drawtext align="center" y="8%" font="{vdrOsd}" fontsize="50%" color="{clrWhite}" text="{tr(memusage)}" />
             <drawtext condition="{showmainmenusysinfovalue}" align="right" y="{areaheight}*0.46" font="{vdrOsd}" fontsize="60%" color="{clrGray}" text="{usedmempercent}%" />
@@ -203,7 +203,7 @@
     {usedmempercent}            currently used system memory in Percent
     -->
  
-    <customtokens>
+    <customtokens detached="true" delay="1000" fadetime="500">
 	<!-- memusage -->
 <!--	<area condition="{showmainmenusysinfo}++{ctMem}" x="{areawidth}*0.319+5" y="58%" width="{areawidth}*0.22-10" height="4%" layer="2" >
             <drawtext align="center" y="8%" font="{vdrOsd}" fontsize="50%" color="{clrWhite}" text="{tr(memusage)}" />
@@ -238,7 +238,7 @@
 -->
     </customtokens>
 
-    <currentweather>
+    <currentweather detached="true">
         <area condition="{showmenuweather}" x="40%" y="1%" width="20%" height="8%" layer="3">
             <drawimage name="weathericon" imagetype="icon" path="{icon}" x="{areawidth}/2 + {width(temperature)}/2 - {width(weathericon)}/2 + 10" valign="center" width="{areaheight}*1" height="{areaheight}*1"/>
             <drawtext name="temperature" x="{areawidth}/2 - {width(temperature)}/2 - {width(weathericon)}/2 - 10" valign="center" font="{digital}" fontsize="60%" color="{clrWhite}" text="{temperature} 'C" />

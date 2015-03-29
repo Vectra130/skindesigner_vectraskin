@@ -311,4 +311,8 @@
             <trans lang="en_EN">Outside temperature</trans>
             <trans lang="de_DE">Außentemperatur</trans>
         </token>
+        <token name="tr(channelgroup)">
+            <trans lang="en_EN">Channelgroup</trans>
+            <trans lang="de_DE">Kanalgruppe</trans>
+        </token>
 </translations>

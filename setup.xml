@@ -44,6 +44,12 @@
         <parameter type="int" name="schedulesmenusize" min="30" max="70" displaytext="{tr(schedulesmenusizetext)}">30</parameter>
         <parameter type="int" name="schedulesmenuitems" min="12" max="20" displaytext="{tr(schedulesmenuitemstext)}">12</parameter>
     </submenu>
+    <submenu name="TvGuideNg" displaytext="{tr(subtvguide)}">
+        <parameter type="bool" name="tvguide_channumber" displaytext="{tr(tvguide_channumbertext)}">1</parameter>
+        <parameter type="bool" name="tvguide_grid_line_horizontal" displaytext="{tr(tvguide_grid_line_horizontaltext)}">1</parameter>
+        <parameter type="bool" name="tvguide_grid_line_vertical" displaytext="{tr(tvguide_grid_line_verticaltext)}">1</parameter>
+        <parameter type="int" name="tvguide_grid_fontsize" min="50" max="80" displaytext="{tr(tvguide_grid_fontsizetext)}">80</parameter>
+    </submenu>
     <submenu name="Special" displaytext="{tr(subspecial)}">
         <parameter type="bool" name="vectrasetup" displaytext="{tr(vectrasetuptext)}">0</parameter>
     </submenu>
@@ -195,6 +201,26 @@
         <token name="tr(subspecial)">
             <trans lang="en_EN">Vectra's special settings ;-)</trans>
             <trans lang="de_DE">Vectra's Spezialeinstellungen ;-)</trans>
+        </token>
+        <token name="tr(subtvguide)">
+            <trans lang="en_EN">TV Guide NG</trans>
+            <trans lang="de_DE">TV Guide NG</trans>
+        </token>
+        <token name="tr(tvguide_channumbertext)">
+            <trans lang="en_EN">Show channel numbers</trans>
+            <trans lang="de_DE">Kanalnummern anzeigen</trans>
+        </token>
+        <token name="tr(tvguide_grid_line_horizontaltext)">
+            <trans lang="en_EN">Show horizontal grid separator</trans>
+            <trans lang="de_DE">Horizontale Trennlinien im Grid anzeigen</trans>
+        </token>
+        <token name="tr(tvguide_grid_line_verticaltext)">
+            <trans lang="en_EN">Show vertical grid separator</trans>
+            <trans lang="de_DE">Vertikale Trennlinien im Grid anzeigen</trans>
+        </token>
+        <token name="tr(tvguide_grid_fontsizetext)">
+            <trans lang="en_EN">Fontsize in grid</trans>
+            <trans lang="de_DE">Schriftgröße im Grid</trans>
         </token>
     </translations>
 </setup>

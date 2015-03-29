@@ -1,16 +1,10 @@
 #!/bin/bash
-# v1.1 eeebox
 
 #Infos fuer den SkinDesigner
 
-DBUS="/usr/bin/vdr-dbus-send.sh /Plugins/skindesigner plugin.SVDRPCommand string:SCTK"
+DBUS="/usr/bin/vdr-dbus-send /Plugins/skindesigner plugin.SVDRPCommand string:SCTK"
 OUTPUTFLDR=/tmp/skindesigner
 mkdir -p $OUTPUTFLDR
-
-#mem usage
-MEMUSAGE=$(free | grep "Mem:" | awk '{ print $3*100/$2 }'  | awk -F'.' '{ print $1 }' )
-[ $MEMUSAGE -gt 100 ] && MEMUSAGE=100
-$DBUS string:"ctMem = ${MEMUSAGE}"
 
 #swap usage
 #SWAPUSAGE=$(free | grep "Swap:" | awk '{ print ($2-$4)*100/$2 }'  | awk -F'.' '{ print $1 }' )
