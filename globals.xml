@@ -14,9 +14,12 @@
         <color name="clrBorder">FF4B4B4B</color>
         <color name="clrTransBorder">994B4B4B</color>
         <color name="clrGray">FF858585</color>
+<!--
         <color name="clrBackground">B0222222</color>
+-->
+        <color name="clrBackground">FF222222</color>
         <color name="clrTransBlack">99000000</color>
-        <color name="clrTransBlackDark">FD000000</color>
+        <color name="clrTransBlackDark">DD000000</color>
         <color name="clrTransRed">99FF0000</color>
         <color name="clrTransGreen">995FE200</color>
         <color name="clrTransYellow">99E2DA00</color>
