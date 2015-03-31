@@ -13,11 +13,13 @@
         </area>
 <!-- 0.010204 0.045454 -->
 	<area x="{areawidth}*{displaychannelclockx}*0.01" y="{areaheight}*{displaychannelclocky}*0.01" width="20%" height="14%" layer="1" transparency="10">
-	    <drawimage name="clockback" cache="true" imagetype="skinpart" path="widgetback" x="0" y="0" width="100%" height="100%"/>
+	    <drawimage name="clockback" cache="true" imagetype="skinpart" path="clockback" x="0" y="0" width="100%" height="100%"/>
 	</area>
+<!--
 	<area x="{areawidth}*{displaychannelclockx}*0.01 + {areawidth}*0.15 - {areaheight}*0.10/2" y="{areaheight}*{displaychannelclocky}*0.01 + {areaheight}*0.02" width="{areaheight}*0.10" height="{areaheight}*0.10" layer="1">
 	    <drawimage name="menuclockback" cache="true" imagetype="skinpart" path="menuclockback" x="0" y="0" width="100%" height="100%"/>
 	</area>
+-->
 	<area condition="{showweather}" x="{areawidth}*{displaychannelweatherx}*0.01" y="{areaheight}*{displaychannelweathery}*0.01" width="20%" height="14%" layer="1" transparency="10">
 	    <drawimage name="weatherback" cache="true" imagetype="skinpart" path="widgetback" x="0" y="0" width="100%" height="100%"/>
 	</area>
