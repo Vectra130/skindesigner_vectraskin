@@ -15,14 +15,14 @@ displayplugin SYSTEM "../../../dtd/displayplugin.dtd">
 	    <drawrectangle x="5" y="5" width="{areawidth} - 10" height="{areaheight} - 10" color="{clrTransBlackDark}" />
 -->
 	    <drawellipse x="5" y="5" width="30" height="30" quadrant="-2" color="{clrProgressbar}" />
-	    <drawellipse x="0" y="0" width="30" height="30" quadrant="-2" color="" />
+	    <drawellipse x="0" y="0" width="30" height="30" quadrant="-2" color="{clrTransparent}" />
 	    <drawellipse x="5" y="{areaheight} - 35" width="30" height="30" quadrant="-3" color="{clrProgressbar}" />
-	    <drawellipse x="0" y="{areaheight} - 30" width="30" height="30" quadrant="-3" color="" />
+	    <drawellipse x="0" y="{areaheight} - 30" width="30" height="30" quadrant="-3" color="{clrTransparent}" />
 
 	    <drawellipse x="{areawidth} - 35" y="5" width="30" height="30" quadrant="-1" color="{clrProgressbar}" />
-	    <drawellipse x="{areawidth} - 30" y="0" width="30" height="30" quadrant="-1" color="" />
+	    <drawellipse x="{areawidth} - 30" y="0" width="30" height="30" quadrant="-1" color="{clrTransparent}" />
 	    <drawellipse x="{areawidth} - 35" y="{areaheight} - 35" width="30" height="30" quadrant="-4" color="{clrProgressbar}" />
-	    <drawellipse x="{areawidth} - 30" y="{areaheight} - 30" width="30" height="30" quadrant="-4" color="" />
+	    <drawellipse x="{areawidth} - 30" y="{areaheight} - 30" width="30" height="30" quadrant="-4" color="{clrTransparent}" />
 	</area>
     </viewelement>
 <!--
@@ -158,8 +158,8 @@ displayplugin SYSTEM "../../../dtd/displayplugin.dtd">
         <area condition="{boolselector}" layer="6">
             <drawtext condition="not{current}" x="1%" valign="center" font="{vdrOsd}" fontsize="70%" color="{clrFontMenuItem}" text="{text}" />
             <drawtext condition="{current}" x="1%" valign="center" font="{vdrOsd}" fontsize="70%" color="{clrFontMenuItemSelected}" text="{text}" />
-            <drawimage condition="{value}" imagetype="icon" path="ico_yes" x="{areawidth} - {areaheight}*0.8" y="10%" width="{areaheight}*0.8" height="{areaheight}*0.8"/>
-            <drawimage condition="not{value}" imagetype="icon" path="ico_no" x="{areawidth} - {areaheight}*0.8" y="10%" width="{areaheight}*0.8" height="{areaheight}*0.8"/>
+            <drawimage condition="{value}" imagetype="icon" path="ico_timer_active" x="{areawidth} - {areaheight}*0.4" y="30%" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+            <drawimage condition="not{value}" imagetype="icon" path="ico_timer_inactive" x="{areawidth} - {areaheight}*0.4" y="30%" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
         </area>
         <!-- String Selector 
         {stringselector}  true
@@ -169,10 +169,10 @@ displayplugin SYSTEM "../../../dtd/displayplugin.dtd">
         <area condition="{stringselector}" layer="6">
             <drawtext condition="not{current}" x="1%" valign="center" font="{vdrOsd}" fontsize="70%" color="{clrFontMenuItem}" text="{text}" />
             <drawtext condition="{current}" x="1%" valign="center" font="{vdrOsd}" fontsize="70%" color="{clrFontMenuItemSelected}" text="{text}" />
-            <drawimage imagetype="icon" path="ico_arrow_right" x="{areawidth} - {areaheight}*0.8" y="10%" width="{areaheight}*0.8" height="{areaheight}*0.8"/>
+            <drawimage imagetype="icon" path="ico_arrow_right" x="{areawidth} - {areaheight}*0.4" y="30%" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
             <drawtext condition="not{current}" name="value" x="{areawidth} - {width(value)} - {areaheight}" valign="center" font="{vdrOsd}" fontsize="70%" color="{clrFontMenuItem}" text="{value}" />
             <drawtext condition="{current}" name="value" x="{areawidth} - {width(value)} - {areaheight}" valign="center" font="{vdrOsd}" fontsize="70%" color="{clrFontMenuItemSelected}" text="{value}" />
-            <drawimage imagetype="icon" path="ico_arrow_left" x="{areawidth} - {width(value)} - 2*{areaheight}" y="10%" width="{areaheight}*0.8" height="{areaheight}*0.8"/>
+            <drawimage imagetype="icon" path="ico_arrow_left" x="{areawidth} - {width(value)} - 2*{areaheight}" y="30%" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
         </area>
         <!-- Text Input 
         {textinput}     true
