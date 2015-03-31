@@ -25,7 +25,7 @@
 	</area>
         <area condition="gt({numtimers}, 6)" x="{areawidth}*0.319" y="13%" width="{areawidth}*0.11 * 6" height="{areaheight}*0.02 - 2" layer="2">
 	    <drawimage name="numTimersIcon" x="{areawidth}/2 - {width(numTimersText)}/2 - 5 - {width(numTimersIcon)}/2" y="3" imagetype="icon" path="ico_activetimer" width="{areaheight}-2" height="{areaheight}-2" />
-            <drawtext name="numTimersText" x="{posx(numTimersIcon)}+{width(numTimersIcon)} +10" valign="center" font="{vdrOsd}" fontsize="120%" color="{clrWhite}" text="{numtimers} {tr(active)} {tr(timers)}" />
+            <drawtext name="numTimersText" x="{posx(numTimersIcon)}+{width(numTimersIcon)} +10" valign="center" font="{vdrOsd}" fontsize="120%" color="{clrWhite}" text="{numtimers} {tr(active)} {tr(timer)}" />
 	</area>
         <area background="true" condition="gt({numtimers}, 0)" x="{areawidth}*0.299" y="13%" width="2%" height="17%" layer="2">
 	    <drawtextvertical x="0" y="0" align="left" valign="center" font="{vdrOsd}" fontsize="{areawidth}/1.75" color="{clrGray}" text="{tr(timer)}" />

@@ -427,7 +427,7 @@ displayplugin SYSTEM "../../../dtd/displayplugin.dtd">
 <!--
             <drawtext condition="{timeractive}" align="right" y="5%" font="{vdrOsd}" fontsize="25%" color="{clrWhite}" text="active " />
 -->
-            <drawtext x="{areaheight}*1.8" y="55%" font="{vdrOsd}" fontsize="45%" color="{clrWhite}" text="{tr(Active)} {tr(Timer)}: {activetimers}, {tr(Recordings)}: {recordingsdone}" />
+            <drawtext x="{areaheight}*1.8" y="55%" font="{vdrOsd}" fontsize="45%" color="{clrWhite}" text="{tr(Active)} {tr(timer)}: {activetimers}, {tr(recordings)}: {recordingsdone}" />
         </area>
         <!-- Timeline Header 
         {timelineheader}            true

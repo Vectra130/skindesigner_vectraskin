@@ -498,13 +498,13 @@
 
     <grid name="channelgroups_hor" x="{areawidth}*0.9925 - 2" y="13%" width="{areawidth}*0.0075" height="74%">
         <area layer="2">
-            <drawtextvertical align="center" valign="center" font="{vdrOsd}" width="100%" fontsize="100%" color="{clrWhite}" text="{group}" />
+            <drawtextvertical align="center" valign="center" font="{vdrOsd}" fontsize="100%" color="{clrWhite}" text="{group}" />
         </area>        
     </grid>
 
     <grid name="channelgroups_ver" x="{areawidth}*0.9925 - 2" y="13%" width="{areawidth}*0.0075" height="74%">
         <area layer="2">
-            <drawtextvertical align="center" valign="center" font="{vdrOsd}" width="100%" fontsize="100%" color="{clrWhite}" text="{group}" />
+            <drawtextvertical align="center" valign="center" font="{vdrOsd}" fontsize="100%" color="{clrWhite}" text="{group}" />
         </area>        
     </grid>
 
