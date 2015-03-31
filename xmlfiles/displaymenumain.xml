@@ -223,6 +223,7 @@
         </area>
     </systemload>
     <systemmemory detached="true" delay="1500" fadetime="500">
+	<!-- mem -->
 	<area condition="{showmainmenusysinfo}" x="{areawidth}*0.319+5" y="{areaheight}*0.70 + {areaheight}*0.17/6/2 + {areaheight}*0.17/6" width="{areawidth}*0.22-10" height="{areaheight}*0.17/6" layer="2" >
             <drawtext align="center" y="0" font="{vdrOsd}" fontsize="70%" color="{clrWhite}" text="{tr(memusage)}" />
             <drawtext condition="{showmainmenusysinfovalue}" align="right" y="{areaheight}*0.45" font="{vdrOsd}" fontsize="60%" color="{clrGray}" text="{usedmempercent}%" />
@@ -230,6 +231,16 @@
 	<area condition="{showmainmenusysinfo}++{showmainmenusysinfovalue}" x="{areawidth}*0.319 + {areaheight}*0.02" y="{areaheight}*0.70 + {areaheight}*0.17/6/2 + {areaheight}*0.17/6" width="{areawidth}*0.19 - {areaheight}*0.02" height="{areaheight}*0.17/6" layer="2" >
             <drawimage imagetype="skinpart" path="farbverlauf" x="0" y="68%" width="{areawidth}" height="25%" />
             <drawrectangle name="leftbar" x="0" y="68%" width="{usedmem}/{totalmem}*{areawidth} - 5*{usedmem}/{totalmem}" height="25%" color="{clrBlack}" />
+            <drawrectangle x="{width(leftbar)} + 5" y="68%" width="{areawidth} - {width(leftbar)} - 5" height="25%" color="{clrBlack}" />
+        </area>
+	<!-- swap -->
+	<area condition="{vectrasetup}++{showmainmenusysinfo}" x="{areawidth}*0.319+5" y="{areaheight}*0.70 + {areaheight}*0.17/6/2 + {areaheight}*0.17/6*2" width="{areawidth}*0.22-10" height="{areaheight}*0.17/6" layer="2" >
+            <drawtext align="center" y="0" font="{vdrOsd}" fontsize="70%" color="{clrWhite}" text="{tr(swapusage)}" />
+            <drawtext condition="{showmainmenusysinfovalue}" align="right" y="{areaheight}*0.45" font="{vdrOsd}" fontsize="60%" color="{clrGray}" text="{usedswappercent}%" />
+        </area>
+	<area condition="{vectrasetup}++{showmainmenusysinfo}++{showmainmenusysinfovalue}" x="{areawidth}*0.319 + {areaheight}*0.02" y="{areaheight}*0.70 + {areaheight}*0.17/6/2 + {areaheight}*0.17/6*2" width="{areawidth}*0.19 - {areaheight}*0.02" height="{areaheight}*0.17/6" layer="2" >
+            <drawimage imagetype="skinpart" path="farbverlauf" x="0" y="68%" width="{areawidth}" height="25%" />
+            <drawrectangle name="leftbar" x="0" y="68%" width="{usedswap}/{totalswap}*{areawidth} - 5*{usedswap}/{totalswap}" height="25%" color="{clrBlack}" />
             <drawrectangle x="{width(leftbar)} + 5" y="68%" width="{areawidth} - {width(leftbar)} - 5" height="25%" color="{clrBlack}" />
         </area>
     </systemmemory>
@@ -241,8 +252,8 @@
     -->
  
     <customtokens detached="true" delay="1500" fadetime="500">
-	<!-- memusage -->
 	<!-- swap -->
+<!--
 	<area condition="{showmainmenusysinfo++{vectrasetup}}" x="{areawidth}*0.319+5" y="{areaheight}*0.70 + {areaheight}*0.17/6/2 + {areaheight}*0.17/6*2" width="{areawidth}*0.22-10" height="{areaheight}*0.17/6" layer="2" >
             <drawtext align="center" y="0" font="{vdrOsd}" fontsize="70%" color="{clrWhite}" text="{tr(swapusage)}" />
             <drawtext condition="{showmainmenusysinfovalue}" align="right" y="{areaheight}*0.45" font="{vdrOsd}" fontsize="60%" color="{clrGray}" text="{ctSwap}%" />
@@ -252,6 +263,7 @@
             <drawrectangle name="leftbar" x="0" y="68%" width="{ctSwap}/100*{areawidth} - 5*{ctSwap}/100" height="25%" color="{clrBlack}" />
             <drawrectangle x="{width(leftbar)} + 5" y="68%" width="{areawidth} - {width(leftbar)} - 5" height="25%" color="{clrBlack}" />
         </area>
+-->
 	<!-- 1w test temp -->
 <!--
 	<area condition="{showmainmenusysinfo}++{vectrasetup}" x="{areawidth}*0.319+5" y="83%" width="{areawidth}*0.22-10" height="4%" layer="2" >
