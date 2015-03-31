@@ -7,6 +7,10 @@
         <trans lang="en_EN">Recordings</trans>
         <trans lang="de_DE">Aufzeichnungen</trans>
     </token>
+    <token name="tr(last)">
+        <trans lang="en_EN">Last</trans>
+	<trans lang="de_DE">Letzten</trans>
+    </token>
     <token name="tr(schedule)">
         <trans lang="en_EN">Schedule</trans>
         <trans lang="de_DE">Programm</trans>
@@ -14,6 +18,14 @@
     <token name="tr(info)">
         <trans lang="en_EN">Info</trans>
         <trans lang="de_DE">Info</trans>
+    </token>
+    <token name="tr(active)">
+        <trans lang="en_EN">active</trans>
+        <trans lang="de_DE">aktive</trans>
+    </token>
+    <token name="tr(Active)">
+        <trans lang="en_EN">Active</trans>
+        <trans lang="de_DE">Aktive</trans>
     </token>
     <token name="tr(timer)">
         <trans lang="en_EN">Timers</trans>
@@ -46,6 +58,10 @@
     <token name="tr(swapusage)">
         <trans lang="en_EN">Swap storage</trans>
 	<trans lang="de_DE">Swap Speicher</trans>
+    </token>
+    <token name="tr(system)">
+        <trans lang="en_EN">System</trans>
+	<trans lang="de_DE">System</trans>
     </token>
     <token name="tr(free)">
         <trans lang="en_EN">free</trans>

@@ -25,6 +25,7 @@
         <parameter type="bool" name="showmenuweather" displaytext="{tr(showmenuweathertext)}">1</parameter>
         <parameter type="bool" name="showmainmenusysinfo" displaytext="{tr(showmainmenusysinfotext)}">1</parameter>
         <parameter type="bool" name="showmainmenusysinfovalue" displaytext="{tr(showmainmenusysinfovaluetext)}">1</parameter>
+        <parameter type="bool" name="showmainmenurecordings" displaytext="{tr(showmainmenurecordingstext)}">1</parameter>
     </submenu>
     <submenu name="DisplayChannel" displaytext="{tr(subdisplaychannel)}">
         <parameter type="bool" name="showweather" displaytext="{tr(showweathertext)}">1</parameter>
@@ -117,6 +118,10 @@
         <token name="tr(showmainmenusysinfotext)">
             <trans lang="en_EN">Show sysinfo in mainmenu</trans>
             <trans lang="de_DE">Sysinfo im Hauptmenü anzeigen</trans>
+        </token>
+        <token name="tr(showmainmenurecordingstext)">
+            <trans lang="en_EN">Show last three recordings in mainmenu</trans>
+            <trans lang="de_DE">Letzten drei Auszeichnungen im Hauptmenü anzeigen</trans>
         </token>
         <token name="tr(showmainmenusysinfovaluetext)">
             <trans lang="en_EN">Show values in sysinfo</trans>
