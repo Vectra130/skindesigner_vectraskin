@@ -86,6 +86,9 @@ displayplugin SYSTEM "../../../dtd/displayplugin.dtd">
         -->
         <area condition="not{info}++not{buttonyesno}++not{timerconflictheader}++not{timerconflict}++not{timelineheader}++not{timelinetimer}" layer="5">
 <!--
+	    <drawrectangle condition="not{current}" x="0" y="0" width="100%" height="100%" color="{clrRed}" />
+-->
+<!--
             <drawimage condition="not{current}" imagetype="skinpart" path="menubutton" x="0" y="0" width="100%" height="100%"/>
 -->
             <drawimage condition="{current}" imagetype="skinpart" path="menubuttonactive" x="0" y="0" width="100%" height="100%"/>
@@ -363,16 +366,22 @@ displayplugin SYSTEM "../../../dtd/displayplugin.dtd">
         {channellogoexisis}  true if channel logo exists
         {hastimer}           true if event has a timer
         -->
+        <area condition="{event}" layer="4">
+<!--
+	    <drawrectangle x="0" y="0" width="100%" height="100%" color="{clrTransBlackDark}" />
+-->
+	    <drawimage imagetype="skinpart" path="displayvolume" x="0" y="0" width="100%" height="100%" />
+	</area>
         <area condition="{event}" layer="6">
             <drawimage condition="{current}" imagetype="icon" path="ico_info_active" x="{areaheight}*0.05" valign="center" width="{areaheight}*0.5" height="{areaheight}*0.5"/>
             <drawimage condition="not{current}" imagetype="icon" path="ico_info_inactive" x="{areaheight}*0.05" valign="center" width="{areaheight}*0.5" height="{areaheight}*0.5"/>
             <drawimage condition="{channellogoexisis}" imagetype="channellogo" path="{channelid}" x="{areaheight}*0.8" valign="center" width="{areaheight}*0.8" height="{areaheight}*0.8" />
             <drawtext condition="not{current}" x="{areaheight}*2.2" y="2" font="{vdrOsd}" fontsize="40%" color="{clrFontMenuItem}" text="{weekday} {date} {starttime} - {stoptime} {channelname}" />
-            <drawtext condition="not{current}" x="{areaheight}*2.2" y="30%" width="{areawidth} - 3*{areaheight}" font="{vdrOsd}" fontsize="55%" color="{clrFontMenuItem}" text="{title}" />
-            <drawtext condition="not{current}" x="{areaheight}*2.2" y="69%" width="{areawidth} - 3*{areaheight}" font="{vdrOsd}" fontsize="40%" color="{clrFontMenuItem}" text="{shorttext}" />
+            <drawtext condition="not{current}" x="{areaheight}*2.2" y="30%" width="{areawidth} - 3*{areaheight}" font="{vdrOsd}" fontsize="45%" color="{clrFontMenuItem}" text="{title}" />
+            <drawtext condition="not{current}" x="{areaheight}*2.2" y="69%" width="{areawidth} - 3*{areaheight}" font="{vdrOsd}" fontsize="30%" color="{clrFontMenuItem}" text="{shorttext}" />
             <drawtext condition="{current}" x="{areaheight}*2.2" y="2" font="{vdrOsd}" fontsize="40%" color="{clrFontMenuItemSelected}" text="{weekday} {date} {starttime} - {stoptime} {channelname}" />
-            <drawtext condition="{current}" x="{areaheight}*2.2" y="30%" width="{areawidth} - 3*{areaheight}" font="{vdrOsd}" fontsize="55%" color="{clrFontMenuItemSelected}" text="{title}" />
-            <drawtext condition="{current}" x="{areaheight}*2.2" y="69%" width="{areawidth} - 3*{areaheight}" font="{vdrOsd}" fontsize="40%" color="{clrFontMenuItemSelected}" text="{shorttext}" />
+            <drawtext condition="{current}" x="{areaheight}*2.2" y="30%" width="{areawidth} - 3*{areaheight}" font="{vdrOsd}" fontsize="45%" color="{clrFontMenuItemSelected}" text="{title}" />
+            <drawtext condition="{current}" x="{areaheight}*2.2" y="69%" width="{areawidth} - 3*{areaheight}" font="{vdrOsd}" fontsize="30%" color="{clrFontMenuItemSelected}" text="{shorttext}" />
             <drawimage condition="{current}++not{hastimer}" imagetype="icon" path="ico_record_active" x="{areawidth} - {areaheight}*0.6" valign="center" width="{areaheight}*0.5" height="{areaheight}*0.5"/>
             <drawimage condition="not{current}++not{hastimer}" imagetype="icon" path="ico_record_inactive" x="{areawidth} - {areaheight}*0.6" valign="center" width="{areaheight}*0.5" height="{areaheight}*0.5"/>
             <drawimage condition="{hastimer}" imagetype="icon" path="ico_activetimer" x="{areawidth} - {areaheight}*0.6" valign="center" width="{areaheight}*0.5" height="{areaheight}*0.5"/>

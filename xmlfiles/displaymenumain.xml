@@ -160,7 +160,7 @@
 <!--
 	        <drawimage debug="true" condition="{recordings[hasposter]}" name="recposter" x="5" y="{rowheight}*0.025" imagetype="image" path="{recordings[posterpath]}" width="{rowheight}*0.95/{recordings[posterheight]}*{recordings[posterwidth]}" height="{rowheight}*0.95" />
 -->
-	        <drawimage debug="true" condition="{recordings[hasposter]}" name="recposter" x="{areawidth} - {rowheight}*0.95/4*2.5" y="{rowheight}*0.025" imagetype="image" path="{recordings[posterpath]}" width="{rowheight}*0.95/4*2.5" height="{rowheight}*0.95" />
+	        <drawimage condition="{recordings[hasposter]}" name="recposter" x="{areawidth} - {rowheight}*0.95/4*2.5" y="{rowheight}*0.025" imagetype="image" path="{recordings[posterpath]}" width="{rowheight}*0.95/4*2.5" height="{rowheight}*0.95" />
                 <drawtext condition="{recordings[hasposter]}" x="5" y="{rowheight}*0.125" width="{areawidth}*0.89" font="{vdrOsd}" fontsize="{rowheight}*0.375" color="{clrGray}" text="{recordings[date]}    {recordings[time]}" />
                 <drawtext condition="{recordings[hasposter]}" x="5" y="{rowheight}*0.40" width="{areawidth}*0.89" font="{vdrOsd}" fontsize="{rowheight}*0.475" color="{clrWhite}" text="{recordings[name]}" />
 <!--
