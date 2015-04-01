@@ -1,4 +1,5 @@
 <menumain x="0" y="0" width="100%" height="100%" fadetime="0" scaletvx="{areawidth}*60/100-10" scaletvy="34%" scaletvwidth="40%" scaletvheight="50%" >
+<!--
     <scrollbar>
         <area condition="not{vectrasetup}" x="{areawidth}*0.30" y="16%" width="{areawidth}*0.0075" height="68%" layer="2">
             <fill color="{clrBorder}" />
@@ -9,6 +10,7 @@
              <drawimage cache="true" imagetype="skinpart" path="verticalbartop" x="4" y="4 + {areaheight} * {offset} / 1000" width="{areawidth} - 8" height="{areaheight} * {height} / 1000 - 8"/>
         </area>
      </scrollbar>
+-->
 
     <header>
         <area x="1%" y="0" width="64%" height="10%" layer="3">
@@ -73,6 +75,9 @@
         <area x="{areawidth}*0.319" y="15%" width="66%" height="15%" layer="2">
             <loop name="timers" x="0" y="0" orientation="horizontal" rowheight="100%" columnwidth="{areawidth} / 6" overflow="cut">
                 <drawimage cache="true" name="logo" imagetype="channellogo" path="{timers[channelid]}" height="45%" width="{columnwidth}*0.75" align="center" y="10%" />
+	        <drawellipse condition="{showmainmenutimertype}" x="0" y="{areaheight}*0.01" width="{columnwidth}*0.10" height="{columnwidth}*0.10" quadrant="4" color="{clrBlack}" />
+	        <drawtext condition="{showmainmenutimertype}++{timers[isremotetimer]}" x="{columnwidth}*0.008" y="{columnwidth}*0.003" font="{vdrOsd}" fontsize="{columnwidth}*0.10" color="{clrGray}" text="S" />
+	        <drawtext condition="{showmainmenutimertype}++not{timers[isremotetimer]}" x="{columnwidth}*0.008" y="{columnwidth}*0.003" font="{vdrOsd}" fontsize="{columnwidth}*0.10" color="{clrGray}" text="L" />
 	        <drawimage condition="{timers[recording]}" x="{columnwidth}*0.38" y="85%" imagetype="icon" path="ico_timer_recording" width="15%" height="15%" />
                 <drawtextbox x="5" y="58%" width="{columnwidth}-10" align="center" maxlines="2" font="{vdrOsd}" fontsize="15%" color="{clrWhite}" text="{timers[title]}" />
                 <drawtext align="center" y="{areaheight}*0.85-2" font="{vdrOsd}" fontsize="15%" color="{clrGray}" text="{timers[datetime]}" />
@@ -216,7 +221,7 @@
             <drawtext align="center" y="0" font="{vdrOsd}" fontsize="70%" color="{clrWhite}" text="{tr(systemload)}" />
             <drawtext condition="{showmainmenusysinfovalue}" align="right" y="{areaheight}*0.45" font="{vdrOsd}" fontsize="60%" color="{clrGray}" text="{load}" />
         </area>
-	<area condition="{showmainmenusysinfo}++{showmainmenusysinfovalue}" x="{areawidth}*0.319 + {areaheight}*0.02" y="{areaheight}*0.70 + {areaheight}*0.17/6/2" width="{areawidth}*0.19 - {areaheight}*0.02" height="{areaheight}*0.17/6" layer="2" >
+	<area condition="{showmainmenusysinfo}" x="{areawidth}*0.319 + {areaheight}*0.02" y="{areaheight}*0.70 + {areaheight}*0.17/6/2" width="{areawidth}*0.19 - {areaheight}*0.02" height="{areaheight}*0.17/6" layer="2" >
             <drawimage imagetype="skinpart" path="farbverlauf" x="0" y="68%" width="{areawidth}" height="25%" />
             <drawrectangle name="leftbar" x="0" y="68%" width="{loadhand}/2500*{areawidth} - 5*{loadhand}/2500" height="25%" color="{clrBlack}" />
             <drawrectangle x="{width(leftbar)} + 5" y="68%" width="{areawidth} - {width(leftbar)} - 5" height="25%" color="{clrBlack}" />
@@ -228,7 +233,7 @@
             <drawtext align="center" y="0" font="{vdrOsd}" fontsize="70%" color="{clrWhite}" text="{tr(memusage)}" />
             <drawtext condition="{showmainmenusysinfovalue}" align="right" y="{areaheight}*0.45" font="{vdrOsd}" fontsize="60%" color="{clrGray}" text="{usedmempercent}%" />
         </area>
-	<area condition="{showmainmenusysinfo}++{showmainmenusysinfovalue}" x="{areawidth}*0.319 + {areaheight}*0.02" y="{areaheight}*0.70 + {areaheight}*0.17/6/2 + {areaheight}*0.17/6" width="{areawidth}*0.19 - {areaheight}*0.02" height="{areaheight}*0.17/6" layer="2" >
+	<area condition="{showmainmenusysinfo}" x="{areawidth}*0.319 + {areaheight}*0.02" y="{areaheight}*0.70 + {areaheight}*0.17/6/2 + {areaheight}*0.17/6" width="{areawidth}*0.19 - {areaheight}*0.02" height="{areaheight}*0.17/6" layer="2" >
             <drawimage imagetype="skinpart" path="farbverlauf" x="0" y="68%" width="{areawidth}" height="25%" />
             <drawrectangle name="leftbar" x="0" y="68%" width="{usedmem}/{totalmem}*{areawidth} - 5*{usedmem}/{totalmem}" height="25%" color="{clrBlack}" />
             <drawrectangle x="{width(leftbar)} + 5" y="68%" width="{areawidth} - {width(leftbar)} - 5" height="25%" color="{clrBlack}" />
@@ -238,7 +243,7 @@
             <drawtext align="center" y="0" font="{vdrOsd}" fontsize="70%" color="{clrWhite}" text="{tr(swapusage)}" />
             <drawtext condition="{showmainmenusysinfovalue}" align="right" y="{areaheight}*0.45" font="{vdrOsd}" fontsize="60%" color="{clrGray}" text="{usedswappercent}%" />
         </area>
-	<area condition="{vectrasetup}++{showmainmenusysinfo}++{showmainmenusysinfovalue}" x="{areawidth}*0.319 + {areaheight}*0.02" y="{areaheight}*0.70 + {areaheight}*0.17/6/2 + {areaheight}*0.17/6*2" width="{areawidth}*0.19 - {areaheight}*0.02" height="{areaheight}*0.17/6" layer="2" >
+	<area condition="{vectrasetup}++{showmainmenusysinfo}" x="{areawidth}*0.319 + {areaheight}*0.02" y="{areaheight}*0.70 + {areaheight}*0.17/6/2 + {areaheight}*0.17/6*2" width="{areawidth}*0.19 - {areaheight}*0.02" height="{areaheight}*0.17/6" layer="2" >
             <drawimage imagetype="skinpart" path="farbverlauf" x="0" y="68%" width="{areawidth}" height="25%" />
             <drawrectangle name="leftbar" x="0" y="68%" width="{usedswap}/{totalswap}*{areawidth} - 5*{usedswap}/{totalswap}" height="25%" color="{clrBlack}" />
             <drawrectangle x="{width(leftbar)} + 5" y="68%" width="{areawidth} - {width(leftbar)} - 5" height="25%" color="{clrBlack}" />

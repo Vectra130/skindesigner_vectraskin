@@ -26,6 +26,7 @@
         <parameter type="bool" name="showmainmenusysinfo" displaytext="{tr(showmainmenusysinfotext)}">1</parameter>
         <parameter type="bool" name="showmainmenusysinfovalue" displaytext="{tr(showmainmenusysinfovaluetext)}">1</parameter>
         <parameter type="bool" name="showmainmenurecordings" displaytext="{tr(showmainmenurecordingstext)}">1</parameter>
+        <parameter type="bool" name="showmainmenutimertype" displaytext="{tr(showmainmenutimertypetext)}">1</parameter>
     </submenu>
     <submenu name="DisplayChannel" displaytext="{tr(subdisplaychannel)}">
         <parameter type="bool" name="showweather" displaytext="{tr(showweathertext)}">1</parameter>
@@ -49,7 +50,7 @@
         <parameter type="bool" name="tvguide_channumber" displaytext="{tr(tvguide_channumbertext)}">1</parameter>
         <parameter type="bool" name="tvguide_grid_line_horizontal" displaytext="{tr(tvguide_grid_line_horizontaltext)}">1</parameter>
         <parameter type="bool" name="tvguide_grid_line_vertical" displaytext="{tr(tvguide_grid_line_verticaltext)}">1</parameter>
-        <parameter type="int" name="tvguide_grid_fontsize" min="50" max="80" displaytext="{tr(tvguide_grid_fontsizetext)}">80</parameter>
+        <parameter type="int" name="tvguide_grid_fontsize" min="50" max="80" displaytext="{tr(tvguide_grid_fontsizetext)}">60</parameter>
     </submenu>
     <submenu name="Special" displaytext="{tr(subspecial)}">
         <parameter type="bool" name="vectrasetup" displaytext="{tr(vectrasetuptext)}">0</parameter>
@@ -126,6 +127,10 @@
         <token name="tr(showmainmenusysinfovaluetext)">
             <trans lang="en_EN">Show values in sysinfo</trans>
             <trans lang="de_DE">Zeige Werte im Sysinfo</trans>
+        </token>
+        <token name="tr(showmainmenutimertypetext)">
+            <trans lang="en_EN">Show local/server timer index</trans>
+            <trans lang="de_DE">Zeige Lokal/Server Timer Index</trans>
         </token>
         <token name="tr(recordingsmenusizetext)">
             <trans lang="en_EN">Menulisting size in recordings menu</trans>
