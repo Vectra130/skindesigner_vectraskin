@@ -20,7 +20,7 @@
         </area>
     </header>
 
-    <timers detached="true" delay="0" fadetime="500">
+    <timers detached="true" delay="500" fadetime="{widgetfadetime}">
         <area condition="gt({numtimers}, 0)++lt({numtimers}, 7)" x="{areawidth}*0.319" y="13%" width="{areawidth}*0.11 * {numtimers}" height="{areaheight}*0.02 - 2" layer="2">
 	    <drawimage name="numTimersIcon" x="{areawidth}/2 - {width(numTimersText)}/2 - 5 - {width(numTimersIcon)}/2" y="3" imagetype="icon" path="ico_activetimer" width="{areaheight}-2" height="{areaheight}-2" />
             <drawtext name="numTimersText" x="{posx(numTimersIcon)}+{width(numTimersIcon)} +10" valign="center" font="{vdrOsd}" fontsize="120%" color="{clrWhite}" text="{numtimers} {tr(active)} {tr(timer)}" />
@@ -120,7 +120,7 @@
     </header>
 
     <!-- disc widget -->
-    <discusage detached="true" delay="500" fadetime="500">
+    <discusage detached="true" delay="1500" fadetime="{widgetfadetime}">
         <area background="true" x="{areawidth}*0.319" y="32%" width="22%" height="17%" layer="1">
             <fill condition="lt({freepercent}, 6)" color="{clrTransRed}" />
             <fill condition="gt({freepercent}, 5)" color="{clrBackground}" />
@@ -148,7 +148,7 @@
     </discusage>
 
     <!-- last recordings widget -->
-    <lastrecordings detached="true" delay="1000" fadetime="500">
+    <lastrecordings detached="true" delay="2500" fadetime="{widgetfadetime}">
         <area condition="{showmainmenurecordings}" background="true" x="{areawidth}*0.319" y="51%" width="{areawidth}*0.22" height="17%" layer="1">
             <fill color="{clrBackground}" />
             <drawellipse x="0" y="0" width="{areaheight}*0.13" height="{areaheight}*0.13" quadrant="-2" color="{clrTransparent}" />
@@ -179,7 +179,7 @@
     </lastrecordings>
 
     <!-- system widget -->
-    <temperatures detached="true" delay="1500" fadetime="500">
+    <temperatures detached="true" delay="3500" fadetime="{widgetfadetime}">
         <area condition="{showmainmenusysinfo}" background="true" x="{areawidth}*0.319" y="70%" width="{areawidth}*0.22" height="17%" layer="1">
             <fill color="{clrBackground}" />
             <drawellipse x="0" y="0" width="{areaheight}*0.13" height="{areaheight}*0.13" quadrant="-2" color="{clrTransparent}" />
@@ -216,7 +216,7 @@
         </area>
     </temperatures>
 
-    <systemload detached="true" delay="1500" fadetime="500">
+    <systemload detached="true" delay="3500" fadetime="{widgetfadetime}">
 	<area condition="{showmainmenusysinfo}" x="{areawidth}*0.319+5" y="{areaheight}*0.70 + {areaheight}*0.17/6/2" width="{areawidth}*0.22-10" height="{areaheight}*0.17/6" layer="2" >
             <drawtext align="center" y="0" font="{vdrOsd}" fontsize="70%" color="{clrWhite}" text="{tr(systemload)}" />
             <drawtext condition="{showmainmenusysinfovalue}" align="right" y="{areaheight}*0.45" font="{vdrOsd}" fontsize="60%" color="{clrGray}" text="{load}" />
@@ -227,7 +227,7 @@
             <drawrectangle x="{width(leftbar)} + 5" y="68%" width="{areawidth} - {width(leftbar)} - 5" height="25%" color="{clrBlack}" />
         </area>
     </systemload>
-    <systemmemory detached="true" delay="1500" fadetime="500">
+    <systemmemory detached="true" delay="3500" fadetime="{widgetfadetime}">
 	<!-- mem -->
 	<area condition="{showmainmenusysinfo}" x="{areawidth}*0.319+5" y="{areaheight}*0.70 + {areaheight}*0.17/6/2 + {areaheight}*0.17/6" width="{areawidth}*0.22-10" height="{areaheight}*0.17/6" layer="2" >
             <drawtext align="center" y="0" font="{vdrOsd}" fontsize="70%" color="{clrWhite}" text="{tr(memusage)}" />
@@ -256,7 +256,9 @@
     {usedmempercent}            currently used system memory in Percent
     -->
  
-    <customtokens detached="true" delay="1500" fadetime="500">
+<!--
+    <customtokens detached="true" delay="1500" fadetime="{widgetfadetime}">
+-->
 	<!-- swap -->
 <!--
 	<area condition="{showmainmenusysinfo++{vectrasetup}}" x="{areawidth}*0.319+5" y="{areaheight}*0.70 + {areaheight}*0.17/6/2 + {areaheight}*0.17/6*2" width="{areawidth}*0.22-10" height="{areaheight}*0.17/6" layer="2" >
@@ -283,7 +285,9 @@
             <drawrectangle x="{width(leftbar)} + 5" y="68%" width="{areawidth} - {width(leftbar)} - 5" height="25%" color="{clrBlack}" />
         </area>
 -->
+<!--
     </customtokens>
+-->
 
     <currentweather detached="true">
         <area condition="{showmenuweather}" x="40%" y="1%" width="20%" height="8%" layer="3">

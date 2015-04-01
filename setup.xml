@@ -27,6 +27,7 @@
         <parameter type="bool" name="showmainmenusysinfovalue" displaytext="{tr(showmainmenusysinfovaluetext)}">1</parameter>
         <parameter type="bool" name="showmainmenurecordings" displaytext="{tr(showmainmenurecordingstext)}">1</parameter>
         <parameter type="bool" name="showmainmenutimertype" displaytext="{tr(showmainmenutimertypetext)}">1</parameter>
+        <parameter type="int" name="widgetfadetime" min="0" max="3000" displaytext="{tr(widgetfadetimetext)}">0</parameter>
     </submenu>
     <submenu name="DisplayChannel" displaytext="{tr(subdisplaychannel)}">
         <parameter type="bool" name="showweather" displaytext="{tr(showweathertext)}">1</parameter>
@@ -92,6 +93,10 @@
             <trans lang="en_EN">Fade time in ms</trans>
             <trans lang="de_DE">Einblendzeit in ms</trans>
         </token>
+        <token name="tr(widgetfadetimetext)">
+            <trans lang="en_EN">Main menu widget Fade time in ms</trans>
+            <trans lang="de_DE">Hauptmenü Widget Einblendzeit in ms</trans>
+        </token>
         <token name="tr(nummenuitemsmain)">
             <trans lang="en_EN">Items in main menu</trans>
             <trans lang="de_DE">Elemente im Hauptmenü</trans>
@@ -129,8 +134,8 @@
             <trans lang="de_DE">Zeige Werte im Sysinfo</trans>
         </token>
         <token name="tr(showmainmenutimertypetext)">
-            <trans lang="en_EN">Show local/server timer index</trans>
-            <trans lang="de_DE">Zeige Lokal/Server Timer Index</trans>
+            <trans lang="en_EN">Show local/server timer index in mainmenu</trans>
+            <trans lang="de_DE">Zeige Lokal/Server Timer Indexim Hauptmenü</trans>
         </token>
         <token name="tr(recordingsmenusizetext)">
             <trans lang="en_EN">Menulisting size in recordings menu</trans>
