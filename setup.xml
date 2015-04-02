@@ -86,28 +86,28 @@
             <trans lang="de_DE">Poster und Banner anzeigen beim Kanalwechsel</trans>
         </token>
         <token name="tr(showmainmenuiconstext)">
-            <trans lang="en_EN">Show Icons in Main Menu</trans>
-            <trans lang="de_DE">Icons im Hauptmenü anzeigen</trans>
+            <trans lang="en_EN">Show Icons</trans>
+            <trans lang="de_DE">Icons anzeigen</trans>
         </token>
         <token name="tr(fadetext)">
             <trans lang="en_EN">Fade time in ms</trans>
             <trans lang="de_DE">Einblendzeit in ms</trans>
         </token>
         <token name="tr(widgetfadetimetext)">
-            <trans lang="en_EN">Main menu widget Fade time in ms</trans>
-            <trans lang="de_DE">Hauptmenü Widget Einblendzeit in ms</trans>
+            <trans lang="en_EN">Widget Fade time in ms</trans>
+            <trans lang="de_DE">Widget Einblendzeit in ms</trans>
         </token>
         <token name="tr(nummenuitemsmain)">
-            <trans lang="en_EN">Items in main menu</trans>
-            <trans lang="de_DE">Elemente im Hauptmenü</trans>
+            <trans lang="en_EN">Num Items</trans>
+            <trans lang="de_DE">Anzahl Menüelemente</trans>
         </token>
         <token name="tr(nummenuitems)">
             <trans lang="en_EN">Items in sdchedules, timers, ... menus</trans>
-            <trans lang="de_DE">Elemente in Programm, Timer, ... Menüs</trans>
+            <trans lang="de_DE">Anzahl Elemente in Programm, Timer, ... Menüs</trans>
         </token>
         <token name="tr(nummenuitemsdefault)">
             <trans lang="en_EN">Items in default list menu</trans>
-            <trans lang="de_DE">Elemente im Standard ListenMenü</trans>
+            <trans lang="de_DE">Anzahl Elemente im Standard ListenMenü</trans>
         </token>
         <token name="tr(showsubtitle)">
             <trans lang="en_EN">Show shorttexts in schedules menus</trans>
@@ -118,24 +118,24 @@
             <trans lang="de_DE">Wetter Widget beim Kanalwechsel</trans>
         </token>
         <token name="tr(showmenuweathertext)">
-            <trans lang="en_EN">Show weather in menu</trans>
-            <trans lang="de_DE">Wetter im Hauptmenü anzeigen</trans>
+            <trans lang="en_EN">Show weather</trans>
+            <trans lang="de_DE">Wetter anzeigen</trans>
         </token>
         <token name="tr(showmainmenusysinfotext)">
-            <trans lang="en_EN">Show sysinfo in mainmenu</trans>
-            <trans lang="de_DE">Sysinfo im Hauptmenü anzeigen</trans>
+            <trans lang="en_EN">Show sysinfo</trans>
+            <trans lang="de_DE">Sysinfo Widget anzeigen</trans>
         </token>
         <token name="tr(showmainmenurecordingstext)">
-            <trans lang="en_EN">Show last three recordings in mainmenu</trans>
-            <trans lang="de_DE">Letzten drei Auszeichnungen im Hauptmenü anzeigen</trans>
+            <trans lang="en_EN">Show last three recordings</trans>
+            <trans lang="de_DE">Letzten drei Aufzeichnungen anzeigen</trans>
         </token>
         <token name="tr(showmainmenusysinfovaluetext)">
             <trans lang="en_EN">Show values in sysinfo</trans>
             <trans lang="de_DE">Zeige Werte im Sysinfo</trans>
         </token>
         <token name="tr(showmainmenutimertypetext)">
-            <trans lang="en_EN">Show local/server timer index in mainmenu</trans>
-            <trans lang="de_DE">Zeige Lokal/Server Timer Indexim Hauptmenü</trans>
+            <trans lang="en_EN">Show local/server timer index</trans>
+            <trans lang="de_DE">Zeige Lokal/Server Timer Index</trans>
         </token>
         <token name="tr(recordingsmenusizetext)">
             <trans lang="en_EN">Menulisting size in recordings menu</trans>
@@ -198,8 +198,8 @@
             <trans lang="de_DE">Allgemein</trans>
         </token>
         <token name="tr(submainmenu)">
-            <trans lang="en_EN">Menu</trans>
-            <trans lang="de_DE">Menü</trans>
+            <trans lang="en_EN">Main menu</trans>
+            <trans lang="de_DE">Hauptmenü</trans>
         </token>
         <token name="tr(subdisplaychannel)">
             <trans lang="en_EN">Channel switch</trans>
