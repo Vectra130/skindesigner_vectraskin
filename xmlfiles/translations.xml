@@ -167,6 +167,10 @@
         <trans lang="en_EN">Recording Information</trans>
         <trans lang="de_DE">Aufnahme Informationen</trans>
     </token>
+    <token name="tr(recchannelname)">
+        <trans lang="en_EN">Recording Channel</trans>
+        <trans lang="de_DE">Aufgenommen auf Kanal</trans>
+    </token>
     <token name="tr(seriesgalery)">
         <trans lang="en_EN">Series Galery</trans>
         <trans lang="de_DE">Serien Galerie</trans>

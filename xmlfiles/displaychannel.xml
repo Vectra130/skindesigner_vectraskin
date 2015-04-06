@@ -202,7 +202,7 @@
     {isRecording}                      true if currently a recording is running on this channel
     -->
     <statusinfo>
-        <area x="{areawidth}*0.98 - {areaheight}*0.25 - 25" y="95%" width="{areaheight}*0.25 + 20" height="3%" layer="2">
+        <area x="{areawidth}*0.98 - {areaheight}*0.15-20  - {areaheight}*0.1" y="95%" width="{areaheight}*0.15 + 20" height="3%" layer="2">
             <drawimage condition="{hasVT}" imagetype="icon" path="ico_txton" x="0" y="0" width="{areaheight}" height="{areaheight}"/>
             <drawimage condition="not{hasVT}" imagetype="icon" path="ico_txtoff" x="0" y="0" width="{areaheight}" height="{areaheight}"/>
             <drawimage condition="{isStereo}" imagetype="icon" path="ico_stereoon" x="{areaheight}+5" y="0" width="{areaheight}" height="{areaheight}"/>
@@ -225,10 +225,20 @@
     {isWideScreen}                     true if aspect is 16:9 or 21:9
     -->
     <screenresolution>
-        <area x="{areawidth}*0.98 - {areaheight}*0.1" y="95%" width="{areaheight}*0.15" height="3%" layer="2">
+        <area x="{areawidth}*0.98 - {areaheight}*0.09" y="95%" width="{areaheight}*0.09" height="3%" layer="2">
             <drawimage imagetype="icon" path="ico_{resolution}" x="0" y="0" width="{areaheight}*3" height="{areaheight}"/>
         </area>
     </screenresolution>
+
+<!--
+    <devices mode="light">
+        <area x="{areawidth}*0.5" y="95%" width="{areawidth}*0.25" height="3%" layer="2">
+	    <loop name="devices" x="0" y="0" orientation="horizontal" columnwidth="{areawidth}/{numdevices}" rowheight="{areaheight}">
+		<drawtext x="0" y="0" font="{vdrOsd}" fontsize="50%" color="{clrWhite}" text="{devices[num]} {devices[type]}" />
+	    </loop>
+	</area>
+    </devices>
+-->
 
     <!-- Available Variables dvbdeviceinfo:
     {prevAvailable}                     true if previous Channel Group is avaialble
