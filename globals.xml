@@ -37,10 +37,10 @@
 	&translations;
 
    <fonts>
-        <font name="light">Source Sans Pro:Light</font>
-        <font name="bold">Source Sans Pro:Bold</font>
-        <font name="semibold">Source Sans Pro:Semibold</font>
-        <font name="regular">Source Sans Pro:Regular</font>
+        <font name="light">Roboto:Light</font>
+        <font name="bold">Roboto:Bold</font>
+        <font name="semibold">Roboto:Semibold</font>
+        <font name="regular">Roboto:Regular</font>
         <font name="digital">DS-Digital:Normal</font>
     </fonts>
 </globals>

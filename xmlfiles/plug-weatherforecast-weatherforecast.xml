@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE menuplugin SYSTEM "../../../dtd/displaymenuplugin.dtd">
 
-<menuplugin x="0" y="0" width="100%" height="100%" fadetime="0" scaletvx="33%" scaletvy="10%" scaletvwidth="65%" scaletvheight="80%">
+<menuplugin x="0" y="0" width="100%" height="100%" fadetime="{menufadetime}" scaletvx="33%" scaletvy="10%" scaletvwidth="65%" scaletvheight="80%">
     <scrollbar>
         <area x="{areawidth}*0.005 + {areawidth}* 30 *0.01" y="16%" width="{areawidth}*0.0075" height="68%" layer="2">
             <fill color="{clrBorder}" />
@@ -96,10 +96,10 @@
                 <drawimage condition="{current}" imagetype="skinpart" path="menubuttonactive" x="0" y="1%" width="{areawidth}" height="{areaheight}*0.98"/>
             </area>
             <areascroll condition="not{current}" scrollelement="menuelement" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="0" width="28%" layer="3">
-                <drawtext name="menuelement" x="10" valign="center" font="{vdrOsd}" fontsize="50%" color="{clrFontMenuItem}" text="{menuitemtext}" />
+                <drawtext name="menuelement" x="10" valign="center" font="{regular}" fontsize="50%" color="{clrFontMenuItem}" text="{menuitemtext}" />
             </areascroll>
             <areascroll condition="{current}" scrollelement="menuelement" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="0" width="28%" layer="3">
-                <drawtext name="menuelement" x="10" valign="center" font="{vdrOsd}" fontsize="50%" color="{clrFontMenuItemSelected}" text="{menuitemtext}" />
+                <drawtext name="menuelement" x="10" valign="center" font="{regular}" fontsize="50%" color="{clrFontMenuItemSelected}" text="{menuitemtext}" />
             </areascroll>
         </listelement>
         <!-- additional element which is drawn for current element -->
@@ -111,31 +111,31 @@
             <area condition="{iscurrent}" x="32%" y="2%" width="67%" height="96%" layer="3">
                 <drawimage name="weathericon" imagetype="icon" path="{icon}" x="2%" y="0" width="{areawidth}*0.2" height="{areawidth}*0.2"/>
                 <drawtext align="right" y="2%" font="{semibold}" fontsize="6%" color="{clrWhite}" text="{city}" />
-                <drawtext align="right" y="8%" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{timestamp}" />
-                <drawtext align="right" y="14%" font="{vdrOsd}" fontsize="12%" color="{clrWhite}" text="{temperature}°C" />
-                <drawtext align="right" y="26%" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{summary}" />
-                <drawtext x="2%" y="45%" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{tr(apparenttemp)}: {apparenttemperature} °C" />
-                <drawtext x="2%" y="51%" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{tr(precipitationprobability)}: {precipitationprobability} %" />
-                <drawtext x="2%" y="57%" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{tr(precipitationintensity)}: {precipitationintensity} l/qm" />
-                <drawtext x="2%" y="63%" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{tr(humidity)}: {humidity} %" />
-                <drawtext x="2%" y="69%" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{tr(windspeed)}: {windspeed} km/h" />
-                <drawtext x="2%" y="75%" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{tr(windbearing)}: {windbearingstring}  ({windbearing} °)" />
-                <drawtext x="2%" y="81%" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{tr(cloudcover)}: {cloudcover} %" />
+                <drawtext align="right" y="8%" font="{regular}" fontsize="6%" color="{clrWhite}" text="{timestamp}" />
+                <drawtext align="right" y="14%" font="{regular}" fontsize="12%" color="{clrWhite}" text="{temperature}°C" />
+                <drawtext align="right" y="26%" font="{regular}" fontsize="6%" color="{clrWhite}" text="{summary}" />
+                <drawtext x="2%" y="45%" font="{regular}" fontsize="6%" color="{clrWhite}" text="{tr(apparenttemp)}: {apparenttemperature} °C" />
+                <drawtext x="2%" y="51%" font="{regular}" fontsize="6%" color="{clrWhite}" text="{tr(precipitationprobability)}: {precipitationprobability} %" />
+                <drawtext x="2%" y="57%" font="{regular}" fontsize="6%" color="{clrWhite}" text="{tr(precipitationintensity)}: {precipitationintensity} l/qm" />
+                <drawtext x="2%" y="63%" font="{regular}" fontsize="6%" color="{clrWhite}" text="{tr(humidity)}: {humidity} %" />
+                <drawtext x="2%" y="69%" font="{regular}" fontsize="6%" color="{clrWhite}" text="{tr(windspeed)}: {windspeed} km/h" />
+                <drawtext x="2%" y="75%" font="{regular}" fontsize="6%" color="{clrWhite}" text="{tr(windbearing)}: {windbearingstring}  ({windbearing} °)" />
+                <drawtext x="2%" y="81%" font="{regular}" fontsize="6%" color="{clrWhite}" text="{tr(cloudcover)}: {cloudcover} %" />
             </area>
             <area condition="{ishourly}" x="32%" y="2%" width="67%" height="96%" layer="3">
                 <loop name="hourly" x="0" y="0" orientation="vertical" columnwidth="{areawidth}" rowheight="{areaheight}/12" overflow="cut">
                     <drawtext x="2%" font="{semibold}" fontsize="7%" valign="center" color="{clrWhite}" text="{hourly[timestamp]}" />
                     <drawimage imagetype="icon" path="{hourly[icon]}" x="22%" valign="center" width="{rowheight}*0.8" height="{rowheight}*0.8"/>
-                    <drawtext x="35%" font="{vdrOsd}" fontsize="7%" valign="center" color="{clrWhite}" text="{hourly[temperature]}°C" />
-                    <drawtext x="60%" font="{vdrOsd}" fontsize="5%" valign="center" width="38%" color="{clrWhite}" text="{hourly[summary]}" />
+                    <drawtext x="35%" font="{regular}" fontsize="7%" valign="center" color="{clrWhite}" text="{hourly[temperature]}°C" />
+                    <drawtext x="60%" font="{regular}" fontsize="5%" valign="center" width="38%" color="{clrWhite}" text="{hourly[summary]}" />
                     <drawrectangle x="2%" y="{rowheight} - 1" width="{columnwidth}*0.96" height="1" color="{clrWhite}" />
                 </loop>
             </area>
             <area condition="{isdaily}" x="32%" y="2%" width="67%" height="96%" layer="3">
                 <loop name="daily" x="2%" y="0" orientation="vertical" columnwidth="{areawidth}*0.96" rowheight="{areaheight}/7" overflow="cut">
                     <drawtext x="0" font="{semibold}" fontsize="{rowheight}/2" y="5" color="{clrWhite}" text="{daily[dayname]} {daily[day]}" />
-                    <drawtext x="35%" font="{vdrOsd}" fontsize="{rowheight}/2" y="5" color="{clrWhite}" text="{daily[temperaturemin]}°C - {daily[temperaturemax]}°C" />
-                    <drawtext x="0" font="{vdrOsd}" fontsize="{rowheight}*0.3" width="{columnwidth} - {rowheight}*0.7" y="{rowheight}*0.6" color="{clrWhite}" text="{daily[summary]}" />
+                    <drawtext x="35%" font="{regular}" fontsize="{rowheight}/2" y="5" color="{clrWhite}" text="{daily[temperaturemin]}°C - {daily[temperaturemax]}°C" />
+                    <drawtext x="0" font="{regular}" fontsize="{rowheight}*0.3" width="{columnwidth} - {rowheight}*0.7" y="{rowheight}*0.6" color="{clrWhite}" text="{daily[summary]}" />
                     <drawimage imagetype="icon" path="{daily[icon]}" x="{columnwidth} - {rowheight}*0.7" valign="center" width="{rowheight}*0.7" height="{rowheight}*0.7"/>
                     <drawrectangle x="0" y="{rowheight} - 1" width="{columnwidth}" height="1" color="{clrWhite}" />
                 </loop>

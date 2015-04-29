@@ -18,24 +18,39 @@
 -->
     <submenu name="General" displaytext="{tr(subgeneral)}">
         <parameter type="bool" name="showposter" displaytext="{tr(showpostertext)}">1</parameter>
-        <parameter type="int" name="fadetime" min="0" max="1000" displaytext="{tr(fadetext)}">0</parameter>
     </submenu>
     <submenu name="MainMenu" displaytext="{tr(submainmenu)}">
+        <parameter type="int" name="menufadetime" min="0" max="1000" displaytext="{tr(fadetext)}">50</parameter>
         <parameter type="bool" name="showmainmenuicons" displaytext="{tr(showmainmenuiconstext)}">1</parameter>
         <parameter type="bool" name="showmenuweather" displaytext="{tr(showmenuweathertext)}">1</parameter>
         <parameter type="bool" name="showmainmenusysinfo" displaytext="{tr(showmainmenusysinfotext)}">1</parameter>
+<!--
         <parameter type="bool" name="showmainmenusysinfovalue" displaytext="{tr(showmainmenusysinfovaluetext)}">1</parameter>
+-->
         <parameter type="bool" name="showmainmenurecordings" displaytext="{tr(showmainmenurecordingstext)}">1</parameter>
         <parameter type="bool" name="showmainmenutimertype" displaytext="{tr(showmainmenutimertypetext)}">1</parameter>
-        <parameter type="int" name="widgetfadetime" min="0" max="3000" displaytext="{tr(widgetfadetimetext)}">0</parameter>
+        <parameter type="int" name="widgetfadetime" min="0" max="3000" displaytext="{tr(widgetfadetimetext)}">200</parameter>
+        <parameter type="int" name="widgetdelay" min="50" max="3000" displaytext="{tr(widgetdelaytext)}">1000</parameter>
+        <parameter type="bool" name="mainmenurecblink" displaytext="{tr(recblinktext)}">1</parameter>
+    </submenu>
+    <submenu name="DefaultMenu" displaytext="{tr(subdisplaymenudefault)}">
+        <parameter type="int" name="defaultmenuitems" min="6" max="20" displaytext="{tr(nummenuitems)}">20</parameter>
     </submenu>
     <submenu name="DisplayChannel" displaytext="{tr(subdisplaychannel)}">
+        <parameter type="int" name="displaychannelfadetime" min="0" max="1000" displaytext="{tr(fadetext)}">50</parameter>
         <parameter type="bool" name="showweather" displaytext="{tr(showweathertext)}">1</parameter>
         <parameter type="int" name="displaychannelweatherx" min="0" max="80" displaytext="{tr(displaychannelweatherxtext)}">1</parameter>
         <parameter type="int" name="displaychannelweathery" min="0" max="86" displaytext="{tr(displaychannelweatherytext)}">1</parameter>
         <parameter type="int" name="displaychannelclockx" min="0" max="80" displaytext="{tr(displaychannelclockxtext)}">79</parameter>
         <parameter type="int" name="displaychannelclocky" min="0" max="86" displaytext="{tr(displaychannelclockytext)}">1</parameter>
-        <parameter type="int" name="displaychannelfontzoom" min="0" max="30" displaytext="{tr(displaychannelfontzoomtext)}">20</parameter>
+        <parameter type="int" name="displaychannelfontzoom" min="0" max="20" displaytext="{tr(displaychannelfontzoomtext)}">20</parameter>
+        <parameter type="bool" name="displaychannelrecblink" displaytext="{tr(recblinktext)}">0</parameter>
+    </submenu>
+    <submenu name="DisplayVolume" displaytext="{tr(subdisplayvolume)}">
+        <parameter type="int" name="displayvolumefadetime" min="0" max="1000" displaytext="{tr(fadetext)}">50</parameter>
+    </submenu>
+    <submenu name="DisplayMessage" displaytext="{tr(subdisplaymessage)}">
+        <parameter type="int" name="displaymessagefadetime" min="0" max="1000" displaytext="{tr(fadetext)}">300</parameter>
     </submenu>
     <submenu name="DisplayMenuRecordings" displaytext="{tr(subdisplaymenurecordings)}">
         <parameter type="int" name="recordingsmenusize" min="30" max="70" displaytext="{tr(recordingsmenusizetext)}">30</parameter>
@@ -45,28 +60,19 @@
         <parameter type="int" name="schedulesmenufadetime" min="0" max="1000" displaytext="{tr(schedulesmenufadetimetext)}">500</parameter>
         <parameter type="int" name="schedulesmenudelay" min="0" max="5000" displaytext="{tr(schedulesmenudelaytext)}">2000</parameter>
         <parameter type="int" name="schedulesmenusize" min="30" max="70" displaytext="{tr(schedulesmenusizetext)}">30</parameter>
-        <parameter type="int" name="schedulesmenuitems" min="12" max="20" displaytext="{tr(schedulesmenuitemstext)}">12</parameter>
+        <parameter type="int" name="schedulesmenuitems" min="6" max="20" displaytext="{tr(nummenuitems)}">12</parameter>
     </submenu>
     <submenu name="TvGuideNg" displaytext="{tr(subtvguide)}">
         <parameter type="bool" name="tvguide_channumber" displaytext="{tr(tvguide_channumbertext)}">1</parameter>
         <parameter type="bool" name="tvguide_grid_line_horizontal" displaytext="{tr(tvguide_grid_line_horizontaltext)}">1</parameter>
         <parameter type="bool" name="tvguide_grid_line_vertical" displaytext="{tr(tvguide_grid_line_verticaltext)}">1</parameter>
-        <parameter type="int" name="tvguide_grid_fontsize" min="50" max="80" displaytext="{tr(tvguide_grid_fontsizetext)}">60</parameter>
+        <parameter type="int" name="tvguide_grid_fontsize" min="10" max="80" displaytext="{tr(tvguide_grid_fontsizetext)}">60</parameter>
+        <parameter type="bool" name="tvguiderecblink" displaytext="{tr(recblinktext)}">0</parameter>
     </submenu>
     <submenu name="Special" displaytext="{tr(subspecial)}">
         <parameter type="bool" name="vectrasetup" displaytext="{tr(vectrasetuptext)}">0</parameter>
+        <parameter type="bool" name="showmainmenuupsinfo" displaytext="{tr(showmainmenuupsinfotext)}">1</parameter>
     </submenu>
-<!--
-        <parameter type="int" name="nummenuitemsmain" min="6" max="30" displaytext="{tr(nummenuitemsmain)}">10</parameter>
-        <parameter type="int" name="nummenuitems" min="6" max="30" displaytext="{tr(nummenuitems)}">10</parameter>
-        <parameter type="int" name="nummenuitemsdefault" min="6" max="30" displaytext="{tr(nummenuitemsdefault)}">16</parameter>
-        <parameter type="bool" name="showsubtitle" displaytext="{tr(showsubtitle)}">1</parameter>
--->
-<!-- displaychannel -->
-<!--
-        <parameter type="int" name="displaychannelbannery" min="0" max="86" displaytext="{tr(displaychannelbannerytext)}">1</parameter>
-        <parameter type="int" name="displaychannelposterx" min="0" max="1" displaytext="{tr(displaychannelposterxtext)}">1</parameter>
--->
     </menu>
 
     <!--
@@ -97,17 +103,13 @@
             <trans lang="en_EN">Widget Fade time in ms</trans>
             <trans lang="de_DE">Widget Einblendzeit in ms</trans>
         </token>
-        <token name="tr(nummenuitemsmain)">
-            <trans lang="en_EN">Num Items</trans>
-            <trans lang="de_DE">Anzahl Menüelemente</trans>
+        <token name="tr(widgetdelaytext)">
+            <trans lang="en_EN">Widget delay in ms</trans>
+            <trans lang="de_DE">Widget Einblendverzögerung in ms</trans>
         </token>
         <token name="tr(nummenuitems)">
-            <trans lang="en_EN">Items in sdchedules, timers, ... menus</trans>
-            <trans lang="de_DE">Anzahl Elemente in Programm, Timer, ... Menüs</trans>
-        </token>
-        <token name="tr(nummenuitemsdefault)">
-            <trans lang="en_EN">Items in default list menu</trans>
-            <trans lang="de_DE">Anzahl Elemente im Standard ListenMenü</trans>
+            <trans lang="en_EN">Num Items</trans>
+            <trans lang="de_DE">Anzahl Menüelemente</trans>
         </token>
         <token name="tr(showsubtitle)">
             <trans lang="en_EN">Show shorttexts in schedules menus</trans>
@@ -124,6 +126,10 @@
         <token name="tr(showmainmenusysinfotext)">
             <trans lang="en_EN">Show sysinfo</trans>
             <trans lang="de_DE">Sysinfo Widget anzeigen</trans>
+        </token>
+        <token name="tr(showmainmenuupsinfotext)">
+            <trans lang="en_EN">Show UPS info</trans>
+            <trans lang="de_DE">USV Info Widget anzeigen</trans>
         </token>
         <token name="tr(showmainmenurecordingstext)">
             <trans lang="en_EN">Show last three recordings</trans>
@@ -157,10 +163,6 @@
             <trans lang="en_EN">Extra info delay in schedules menu (ms)</trans>
             <trans lang="de_DE">Verzögerung der Zusatzinfos im Programm Menü (ms)</trans>
         </token>
-        <token name="tr(schedulesmenuitemstext)">
-            <trans lang="en_EN">Number of entries in schedules menu</trans>
-            <trans lang="de_DE">Anzahl Listeneinträge im Programm Menü</trans>
-        </token>
         <token name="tr(vectrasetuptext)">
             <trans lang="en_EN">Setup for my system</trans>
             <trans lang="de_DE">Setup für mein eigenes System</trans>
@@ -193,6 +195,10 @@
             <trans lang="en_EN">Zoom fonts in channel switch</trans>
             <trans lang="de_DE">Schriftgröße beim Kanalwechsel</trans>
         </token>
+        <token name="tr(recblinktext)">
+            <trans lang="en_EN">Blinking REC Icon</trans>
+            <trans lang="de_DE">Blinkendes Aufnahme Symbol</trans>
+        </token>
         <token name="tr(subgeneral)">
             <trans lang="en_EN">General</trans>
             <trans lang="de_DE">Allgemein</trans>
@@ -204,6 +210,18 @@
         <token name="tr(subdisplaychannel)">
             <trans lang="en_EN">Channel switch</trans>
             <trans lang="de_DE">Kanalwechsel</trans>
+        </token>
+        <token name="tr(subdisplayvolume)">
+            <trans lang="en_EN">Volume</trans>
+            <trans lang="de_DE">Lautstärke</trans>
+        </token>
+        <token name="tr(subdisplaymenudefault)">
+            <trans lang="en_EN">Settings menus</trans>
+            <trans lang="de_DE">Einstellungs Menüs</trans>
+        </token>
+        <token name="tr(subdisplaymessage)">
+            <trans lang="en_EN">Messages</trans>
+            <trans lang="de_DE">Nachrichten</trans>
         </token>
         <token name="tr(subdisplaymenurecordings)">
             <trans lang="en_EN">Recordings</trans>

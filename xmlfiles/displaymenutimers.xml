@@ -1,4 +1,4 @@
-<menutimers x="0" y="0" width="100%" height="100%" fadetime="0" scaletvx="33%" scaletvy="10%" scaletvwidth="65%" scaletvheight="80%">
+<menutimers x="0" y="0" width="100%" height="100%" fadetime="{menufadetime}" scaletvx="33%" scaletvy="10%" scaletvwidth="65%" scaletvheight="80%">
     <scrollbar>
         <area x="{areawidth}*0.005 + {areawidth}* 30 *0.01" y="16%" width="{areawidth}*0.0075" height="68%" layer="2">
             <fill color="{clrBorder}" />
@@ -42,16 +42,16 @@
             </area>
             <!-- datetime and icons -->
             <area x="1%" width="28%" layer="3">
-                <drawtext condition="not{current}" x="22%" y="5" font="{vdrOsd}" fontsize="40%" color="{clrFontMenuItem}" text="{dayname} {day}. {timerstart} - {timerstop}" />
-                <drawtext condition="{current}" x="22%" y="5" font="{vdrOsd}" fontsize="40%" color="{clrFontMenuItemSelected}" text="{dayname} {day}. {timerstart} - {timerstop}" />
+                <drawtext condition="not{current}" x="22%" y="5" font="{regular}" fontsize="40%" color="{clrFontMenuItem}" text="{dayname} {day}. {timerstart} - {timerstop}" />
+                <drawtext condition="{current}" x="22%" y="5" font="{regular}" fontsize="40%" color="{clrFontMenuItemSelected}" text="{dayname} {day}. {timerstart} - {timerstop}" />
                 <drawimage condition="{flagactive}" imagetype="icon" path="ico_timer_active" x="{areawidth} - 0.5*{areaheight} - 20" y="0" width="0.5*{areaheight}" height="0.5*{areaheight}" />
                 <drawimage condition="not{flagactive}" imagetype="icon" path="ico_timer_inactive" x="{areawidth} - 0.5*{areaheight} - 20" y="0" width="0.5*{areaheight}" height="0.5*{areaheight}" />
                 <drawimage condition="{flagrecording}" name="active" imagetype="icon" path="ico_timer_recording" x="{areawidth} - {areaheight} - 20" y="0" width="0.5*{areaheight}" height="0.5*{areaheight}" />
             </area>
             <!-- Timer Name -->
             <areascroll scrollelement="timername" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="7%" width="20%" layer="3">
-                <drawtext condition="not{current}" name="timername" x="0" y="50%" font="{vdrOsd}" fontsize="50%" color="{clrFontMenuItem}" text="{title}" />
-                <drawtext condition="{current}" name="timername" x="0" y="50%" font="{vdrOsd}" fontsize="50%" color="{clrFontMenuItemSelected}" text="{title}" />
+                <drawtext condition="not{current}" name="timername" x="0" y="50%" font="{regular}" fontsize="50%" color="{clrFontMenuItem}" text="{title}" />
+                <drawtext condition="{current}" name="timername" x="0" y="50%" font="{regular}" fontsize="50%" color="{clrFontMenuItemSelected}" text="{title}" />
             </areascroll>
         </listelement>
         <!-- additional element which is drawn for current element -->
@@ -85,19 +85,19 @@
             </area>
             <area condition="{flagactive}" x="32%" y="2%" width="67%" height="96%" layer="2">
                 <!-- title -->
-                <drawtext name="title" align="center" y="0" font="{vdrOsd}" width="{areawidth}-20" fontsize="8%" color="{clrWhite}" text="{eventtitle} - {eventshorttext}" />
+                <drawtext name="title" align="center" y="0" font="{regular}" width="{areawidth}-20" fontsize="8%" color="{clrWhite}" text="{eventtitle} - {eventshorttext}" />
                 <!-- start and stop if event is not running -->
-                <drawtext x="10" y="9%" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{dayname} {eventstart} - {eventstop}, {channelname}" />
+                <drawtext x="10" y="9%" font="{regular}" fontsize="6%" color="{clrWhite}" text="{dayname} {eventstart} - {eventstop}, {channelname}" />
                 <!-- scraper poster -->
                 <drawimage condition="{hasposter}" name="poster" imagetype="image" path="{posterpath}" x="{posx(postertop)} + {width(postertop)}*0.03" y="{posy(postertop)} + {height(postertop)}*0.085" height="{height(postertop)}*0.9" width="{width(postertop)}*0.94" />
                 <drawimage condition="{hasposter}" name="postertop" imagetype="skinpart" path="recback_movie_top" x="{areawidth} - {areawidth}/4" y="17%" width="{areawidth}/4" height="{areawidth}/4 * {posterheight} / {posterwidth}"/>
                 <!-- description -->
-                <drawtextbox condition="{hasposter}" x="10" y="{posy(postertop)}" width="99%" height="{areaheight} - {posy(postertop)}" float="topright" floatwidth="{width(postertop)} + 10" floatheight="{height(postertop)} + 20" font="{vdrOsd}" fontsize="5%" color="{clrWhite}" text="{eventdescription}" />
-                <drawtextbox condition="not{hasposter}" x="10" y="{posy(poster)}" width="99%" height="{areaheight} - {posy(poster)}" font="{vdrOsd}" fontsize="5%" color="{clrWhite}" text="{eventdescription}" />
+                <drawtextbox condition="{hasposter}" x="10" y="{posy(postertop)}" width="99%" height="{areaheight} - {posy(postertop)}" float="topright" floatwidth="{width(postertop)} + 10" floatheight="{height(postertop)} + 20" font="{regular}" fontsize="5%" color="{clrWhite}" text="{eventdescription}" />
+                <drawtextbox condition="not{hasposter}" x="10" y="{posy(poster)}" width="99%" height="{areaheight} - {posy(poster)}" font="{regular}" fontsize="5%" color="{clrWhite}" text="{eventdescription}" />
             </area>
             <area condition="not{flagactive}" x="32%" y="2%" width="67%" height="96%" layer="2">
-                <drawtext x="10" y="0" font="{vdrOsd}" fontsize="8%" color="{clrWhite}" text="{channelname}" />
-                <drawtext x="10" y="10%" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{timerstart} - {timerstop}" />
+                <drawtext x="10" y="0" font="{regular}" fontsize="8%" color="{clrWhite}" text="{channelname}" />
+                <drawtext x="10" y="10%" font="{regular}" fontsize="6%" color="{clrWhite}" text="{timerstart} - {timerstop}" />
             </area>
         </currentelement>
         

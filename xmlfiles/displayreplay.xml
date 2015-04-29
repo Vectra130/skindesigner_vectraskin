@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE displayreplay SYSTEM "../../../dtd/displayreplay.dtd">
 
-<displayreplay x="0" y="0" width="100%" height="100%" fadetime="{fadeTime}">
+<displayreplay x="0" y="0" width="100%" height="100%" fadetime="{menufadetime}">
 
     <background>
         <area x="1%" y="74%" width="98%" height="25%" layer="1" transparency="20">
@@ -57,53 +57,10 @@
 
     <datetime>
         <area x="81%" y="4%" width="9%" height="8%" layer="2">
-            <drawtext align="center" valign="top" font="{vdrOsd}" fontsize="40%" color="{clrWhite}" text="{dayname}" />
-            <drawtext align="center" valign="bottom" font="{vdrOsd}" fontsize="38%" color="{clrWhite}" text="{dayleadingzero}.{month}   {time}" />
+            <drawtext align="center" valign="top" font="{regular}" fontsize="40%" color="{clrWhite}" text="{dayname}" />
+            <drawtext align="center" valign="bottom" font="{regular}" fontsize="38%" color="{clrWhite}" text="{dayleadingzero}.{month}   {time}" />
         </area>
     </datetime>
-
-<!--
-    <currentweather>
-        <area condition="{showweather}" x="{areawidth}*0.585" y="{areaheight}*0.015" width="19%" height="{areaheight}*0.13" layer="2">
-            <drawimage name="weathericon" imagetype="icon" path="{icon}" x="{areawidth}/6*5 - {width(weathericon)}/2" y="{areaheight}*0.02" width="{areaheight}*0.6" height="{areaheight}*0.6"/>
-            <drawtext name="summary" x="{areawidth}/6*4 - {width(summary)}/2" y="{areaheight}*0.58" font="{vdrOsd}" fontsize="20%" color="{clrWhite}" text="{summary}" />
-            <drawtext name="temperature" x="{areawidth}/6*3 - {width(temperature)}/2" y="{areaheight}*0.28 - {height(temperature)}/2" font="{digital}" fontsize="35%" color="{clrWhite}" text="{temperature} 'C" />
-            <drawtext name="apparenttemperature" x="{areawidth}/6*3 - {width(apparenttemperature)}/2" y="{posy(temperature)} + {height(temperature)} + {areaheight}*0.001" font="{vdrOsd}" fontsize="15%" color="{clrWhite}" text="{tr(felt)}: {apparenttemperature}°C" />
-            <drawimage condition="gt({windbearing}, 352) || le({windbearing}, 7}" name="windbearingicon" imagetype="icon" path="windbearing_01" x="{areawidth}/6 - {width(windbearingicon)}/2" y="{areaheight}*0.08" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
-            <drawimage condition="gt({windbearing}, 7) ++ le({windbearing}, 22}" name="windbearingicon" imagetype="icon" path="windbearing_02" x="{areawidth}/6 - {width(windbearingicon)}/2" y="{areaheight}*0.08" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
-            <drawimage condition="gt({windbearing}, 22) ++ le({windbearing}, 37}" name="windbearingicon" imagetype="icon" path="windbearing_03" x="{areawidth}/6 - {width(windbearingicon)}/2" y="{areaheight}*0.08" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
-            <drawimage condition="gt({windbearing}, 37) ++ le({windbearing}, 52}" name="windbearingicon" imagetype="icon" path="windbearing_04" x="{areawidth}/6 - {width(windbearingicon)}/2" y="{areaheight}*0.08" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
-            <drawimage condition="gt({windbearing}, 52) ++ le({windbearing}, 67}" name="windbearingicon" imagetype="icon" path="windbearing_05" x="{areawidth}/6 - {width(windbearingicon)}/2" y="{areaheight}*0.08" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
-            <drawimage condition="gt({windbearing}, 67) ++ le({windbearing}, 82}" name="windbearingicon" imagetype="icon" path="windbearing_06" x="{areawidth}/6 - {width(windbearingicon)}/2" y="{areaheight}*0.08" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
-            <drawimage condition="gt({windbearing}, 82) ++ le({windbearing}, 97}" name="windbearingicon" imagetype="icon" path="windbearing_07" x="{areawidth}/6 - {width(windbearingicon)}/2" y="{areaheight}*0.08" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
-            <drawimage condition="gt({windbearing}, 97) ++ le({windbearing}, 112}" name="windbearingicon" imagetype="icon" path="windbearing_08" x="{areawidth}/6 - {width(windbearingicon)}/2" y="{areaheight}*0.08" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
-            <drawimage condition="gt({windbearing}, 112) ++ le({windbearing}, 127}" name="windbearingicon" imagetype="icon" path="windbearing_09" x="{areawidth}/6 - {width(windbearingicon)}/2" y="{areaheight}*0.08" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
-            <drawimage condition="gt({windbearing}, 127) ++ le({windbearing}, 142}" name="windbearingicon" imagetype="icon" path="windbearing_10" x="{areawidth}/6 - {width(windbearingicon)}/2" y="{areaheight}*0.08" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
-            <drawimage condition="gt({windbearing}, 142) ++ le({windbearing}, 157}" name="windbearingicon" imagetype="icon" path="windbearing_11" x="{areawidth}/6 - {width(windbearingicon)}/2" y="{areaheight}*0.08" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
-            <drawimage condition="gt({windbearing}, 157) ++ le({windbearing}, 172}" name="windbearingicon" imagetype="icon" path="windbearing_12" x="{areawidth}/6 - {width(windbearingicon)}/2" y="{areaheight}*0.08" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
-            <drawimage condition="gt({windbearing}, 172) ++ le({windbearing}, 187}" name="windbearingicon" imagetype="icon" path="windbearing_13" x="{areawidth}/6 - {width(windbearingicon)}/2" y="{areaheight}*0.08" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
-            <drawimage condition="gt({windbearing}, 187) ++ le({windbearing}, 202}" name="windbearingicon" imagetype="icon" path="windbearing_14" x="{areawidth}/6 - {width(windbearingicon)}/2" y="{areaheight}*0.08" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
-            <drawimage condition="gt({windbearing}, 202) ++ le({windbearing}, 217}" name="windbearingicon" imagetype="icon" path="windbearing_15" x="{areawidth}/6 - {width(windbearingicon)}/2" y="{areaheight}*0.08" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
-            <drawimage condition="gt({windbearing}, 217) ++ le({windbearing}, 232}" name="windbearingicon" imagetype="icon" path="windbearing_16" x="{areawidth}/6 - {width(windbearingicon)}/2" y="{areaheight}*0.08" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
-            <drawimage condition="gt({windbearing}, 232) ++ le({windbearing}, 247}" name="windbearingicon" imagetype="icon" path="windbearing_17" x="{areawidth}/6 - {width(windbearingicon)}/2" y="{areaheight}*0.08" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
-            <drawimage condition="gt({windbearing}, 247) ++ le({windbearing}, 262}" name="windbearingicon" imagetype="icon" path="windbearing_18" x="{areawidth}/6 - {width(windbearingicon)}/2" y="{areaheight}*0.08" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
-            <drawimage condition="gt({windbearing}, 262) ++ le({windbearing}, 277}" name="windbearingicon" imagetype="icon" path="windbearing_19" x="{areawidth}/6 - {width(windbearingicon)}/2" y="{areaheight}*0.08" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
-            <drawimage condition="gt({windbearing}, 277) ++ le({windbearing}, 292}" name="windbearingicon" imagetype="icon" path="windbearing_20" x="{areawidth}/6 - {width(windbearingicon)}/2" y="{areaheight}*0.08" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
-            <drawimage condition="gt({windbearing}, 292) ++ le({windbearing}, 307}" name="windbearingicon" imagetype="icon" path="windbearing_21" x="{areawidth}/6 - {width(windbearingicon)}/2" y="{areaheight}*0.08" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
-            <drawimage condition="gt({windbearing}, 307) ++ le({windbearing}, 322}" name="windbearingicon" imagetype="icon" path="windbearing_22" x="{areawidth}/6 - {width(windbearingicon)}/2" y="{areaheight}*0.08" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
-            <drawimage condition="gt({windbearing}, 322) ++ le({windbearing}, 337}" name="windbearingicon" imagetype="icon" path="windbearing_23" x="{areawidth}/6 - {width(windbearingicon)}/2" y="{areaheight}*0.08" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
-            <drawimage condition="gt({windbearing}, 337) ++ le({windbearing}, 252}" name="windbearingicon" imagetype="icon" path="windbearing_24" x="{areawidth}/6 - {width(windbearingicon)}/2" y="{areaheight}*0.08" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
-            <drawtext name="windspeed" x="{areawidth}/6 - {width(windspeed)}/2" y="{areaheight}*0.49" font="{vdrOsd}" fontsize="16%" color="{clrWhite}" text="{windspeed}km/h" />
-            <drawtext name="windbearing" x="{areawidth}/6 - {width(windbearing)}/2" y="{areaheight}*0.60" font="{vdrOsd}" fontsize="16%" color="{clrWhite}" text="{tr(from)} {windbearingstring}" />
-            <drawimage name="precipitation_ico" imagetype="icon" path="rain_svg" x="{areawidth}/6 - {areawidth}*0.01 - {areaheight}*0.105 - {width(precipitationprobability)}/2" y="{areaheight}*0.82" height="{areaheight}*0.17" width="{areaheight}*0.17" />
-            <drawtext name="precipitationprobability" x="{areawidth}/6 - {areawidth}*0.01 + {areaheight}*0.105 - {width(precipitationprobability)}/2" y="{areaheight}*0.80" font="{vdrOsd}" fontsize="21%" color="{clrWhite}" text="{precipitationprobability}%" />
-            <drawimage name="mintemp_ico" imagetype="icon" path="mintemp" x="{areawidth}/6*3 - {areaheight}*0.105 - {width(mintemperature)}/2" y="{areaheight}*0.805" height="21%" width="{areaheight}*0.21" />
-            <drawtext name="mintemperature" x="{areawidth}/6*3 + {areaheight}*0.105 - {width(mintemperature)}/2" y="{areaheight}*0.80" font="{vdrOsd}" fontsize="21%" color="{clrWhite}" text="{mintemperature}°C" />
-            <drawimage name="maxtemp_ico" imagetype="icon" path="maxtemp" x="{areawidth}/6*5 - {areawidth}*0.01 - {areaheight}*0.105 - {width(maxtemperature)}/2" y="{areaheight}*0.805" height="21%" width="{areaheight}*0.21" />
-            <drawtext name="maxtemperature" x="{areawidth}/6*5 - {areawidth}*0.01 + {areaheight}*0.105 - {width(maxtemperature)}/2" y="{areaheight}*0.80" font="{vdrOsd}" fontsize="21%" color="{clrWhite}" text="{maxtemperature}°C" />
-        </area>
-    </currentweather>
--->
 
     <!-- Available Variables scrapercontent:
     {mediapath}                         Full Path of Poster or Banner to use in image path attribute
@@ -132,8 +89,8 @@
     -->
     <rectitle>
         <area x="3%" y="74%" width="60%" height="6%" layer="2">
-            <drawtext name="title" x="0" valign="center" font="{vdrOsd}" fontsize="95%" color="{clrWhite}" width="100%" text="{rectitle}" />
-            <drawtext condition="isset{recsubtitle}" x="{width(title)}" valign="center" font="{vdrOsd}" fontsize="95%" color="{clrWhite}" width="100%" text=" - {recsubtitle}" />
+            <drawtext name="title" x="0" valign="center" font="{regular}" fontsize="95%" color="{clrWhite}" width="100%" text="{rectitle}" />
+            <drawtext condition="isset{recsubtitle}" x="{width(title)}" valign="center" font="{regular}" fontsize="95%" color="{clrWhite}" width="100%" text=" - {recsubtitle}" />
         </area>
     </rectitle>
 
@@ -156,7 +113,7 @@
     -->
     <currenttime>
         <area x="3%" y="86%" width="30%" height="4%" layer="2">
-            <drawtext x="0" valign="center" font="{vdrOsd}" fontsize="100%" color="{clrWhite}" text="{reccurrent}" />
+            <drawtext x="0" valign="center" font="{regular}" fontsize="100%" color="{clrWhite}" text="{reccurrent}" />
         </area>
     </currenttime>
 
@@ -165,7 +122,7 @@
     -->
     <totaltime>
         <area x="67%" y="86%" width="30%" height="4%" layer="2">
-            <drawtext align="right" valign="center" font="{vdrOsd}" fontsize="100%" color="{clrWhite}" text="{rectotal}" />
+            <drawtext align="right" valign="center" font="{regular}" fontsize="100%" color="{clrWhite}" text="{rectotal}" />
         </area>
     </totaltime>
 
@@ -174,7 +131,7 @@
     {total}                     total frames of recording
     -->
     <progressbar>
-        <area x="3%" y="83%" width="94%" height="2%" layer="2">
+        <area x="3%" y="83%" width="94%" height="2%" layer="3">
             <drawellipse x="1" y="1" width="{areaheight}-2" height="{areaheight}-2" color="{clrProgressbar}" quadrant="0" />
             <drawellipse x="1 + {current}/{total}*{areawidth} - {current}/{total}*{areaheight}" y="1" width="{areaheight}-2" height="{areaheight}-2" color="{clrProgressbar}" quadrant="0" />
             <drawrectangle x="{areaheight}/2" y="1" width="{current}/{total}*{areawidth} - {current}/{total}*{areaheight}" height="{areaheight}-2" color="{clrProgressbar}" />
@@ -270,7 +227,7 @@
     -->
     <jump>
         <area x="5%" y="90%" width="30%" height="7%" layer="2">
-            <drawtext align="center" valign="center" font="{vdrOsd}" fontsize="80%" color="{clrWhite}" text="{jump}" />
+            <drawtext align="center" valign="center" font="{regular}" fontsize="80%" color="{clrWhite}" text="{jump}" />
         </area>
     </jump>
     <!-- Available Variables message:
@@ -288,7 +245,7 @@
             <drawimage condition="{error}" imagetype="skinpart" path="messageError" x="0" y="0" width="100%" height="100%" />
         </area>
         <area x="5%" y="58%" width="90%" height="15%" layer="7">
-            <drawtext align="center" valign="center" font="{vdrOsd}" fontsize="40%" color="{clrWhite}" text="{text}" />
+            <drawtext align="center" valign="center" font="{regular}" fontsize="40%" color="{clrWhite}" text="{text}" />
         </area>
     </message>
 
@@ -413,13 +370,13 @@
         <area x="0" y="0" width="100%" height="100%" layer="8" transparency="75">
             <drawimage condition="{isseries}" imagetype="image" path="{seriesposter1path}" align="center" valign="center" height="{areaheight}*0.98" width="{areaheight} * 0.98 * {seriesposter1height} / {seriesposter1width}"/>
 
-	    <drawtext condition="{ismovie}" name="movtitle" align="center" y="1%" font="{vdrOsd}" fontsize="8%" color="{clrGray}" text="{movietitle}" />
+	    <drawtext condition="{ismovie}" name="movtitle" align="center" y="1%" font="{regular}" fontsize="8%" color="{clrGray}" text="{movietitle}" />
             <drawrectangle condition="{showposter}++{ismovie}" x="3%" y="{posy(movtitle)} + {height(movtitle)} + 3" width="96%" height="4" color="{clrGray}" />
             <drawimage condition="{showposter}++{ismovie}" name="poster" imagetype="image" path="{posterpath}" x="1%" y="{posy(movtitle)} + {height(movtitle)} + 10" width="{areaheight} * 0.98  * {posterwidth} / {posterheight}" height="{areaheight} * 0.98"/>
-	    <drawtextbox condition="{showposter}++{ismovie}" x="{posx(poster)} + {width(poster)} + 20" y="{posy(movtitle)} + {height(movtitle)} + 10" width="{areawidth} - {posx(poster)} - {width(poster)} - 40" font="{vdrOsd}" fontsize="4%" color="{clrWhite}" text="{movieoverview}" />
+	    <drawtextbox condition="{showposter}++{ismovie}" x="{posx(poster)} + {width(poster)} + 20" y="{posy(movtitle)} + {height(movtitle)} + 10" width="{areawidth} - {posx(poster)} - {width(poster)} - 40" font="{regular}" fontsize="4%" color="{clrWhite}" text="{movieoverview}" />
         </area>
         <area x="0" y="0" width="100%" height="100%" layer="7" transparency="85">
-            <drawtext align="center" valign="bottom" font="{vdrOsd}" fontsize="50%" color="{clrTransWhite}" text="{tr(pause)}" />
+            <drawtext align="center" valign="bottom" font="{regular}" fontsize="50%" color="{clrTransWhite}" text="{tr(pause)}" />
         </area>
     </onpausemodeonly>
 </displayreplay>

@@ -1,4 +1,4 @@
-<menudetailedtext x="0" y="0" width="100%" height="100%" fadetime="0">
+<menudetailedtext x="0" y="0" width="100%" height="100%" fadetime="{menufadetime}">
     <background>
         <area x="0" y="0" width="100%" height="100%" layer="1">
             <fill color="{clrTransBlack}" />

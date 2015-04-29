@@ -33,7 +33,7 @@
     </token>
     <token name="tr(diskusage)">
         <trans lang="en_EN">Disk Usage</trans>
-        <trans lang="de_DE">Plattennutzung</trans>
+        <trans lang="de_DE">Festplatte</trans>
     </token>
     <token name="tr(systemload)">
         <trans lang="en_EN">System load</trans>
@@ -334,5 +334,29 @@
         <token name="tr(channelgroup)">
             <trans lang="en_EN">Channelgroup</trans>
             <trans lang="de_DE">Kanalgruppe</trans>
+        </token>
+        <token name="tr(upsinfo)">
+            <trans lang="en_EN">UPS info</trans>
+            <trans lang="de_DE">USV Info</trans>
+        </token>
+        <token name="tr(batteryload)">
+            <trans lang="en_EN">Battery load</trans>
+            <trans lang="de_DE">Batterie Ladung</trans>
+        </token>
+        <token name="tr(timeleft)">
+            <trans lang="en_EN">Time left</trans>
+            <trans lang="de_DE">Zeitreserve</trans>
+        </token>
+        <token name="tr(output)">
+            <trans lang="en_EN">Output</trans>
+            <trans lang="de_DE">Ausgang</trans>
+        </token>
+        <token name="tr(batterycurrent)">
+            <trans lang="en_EN">Battery voltage</trans>
+            <trans lang="de_DE">Batteriespannung</trans>
+        </token>
+        <token name="tr(temperature)">
+            <trans lang="en_EN">Temperature</trans>
+            <trans lang="de_DE">Temperatur</trans>
         </token>
 </translations>

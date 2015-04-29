@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE menuplugin SYSTEM "../../../dtd/displaymenuplugin.dtd">
 
-<menuplugin x="0" y="0" width="100%" height="100%" fadetime="0">
+<menuplugin x="0" y="0" width="100%" height="100%" fadetime="{menufadetime}">
    <background>
         <area x="0" y="0" width="100%" height="100%" layer="1">
             <fill color="{clrTransBlack}" />
@@ -63,11 +63,11 @@
         <loop name="hourly" x="0" y="1%" orientation="vertical" columnwidth="{areawidth}" rowheight="{areaheight}/5">
             <drawtext x="0" font="{semibold}" fontsize="9%" valign="center" color="{clrWhite}" text="{hourly[timestamp]}" />
             <drawimage imagetype="icon" path="{hourly[icon]}" x="{rowheight}*1.2" valign="center" width="{rowheight}*0.8" height="{rowheight}*0.8"/>
-            <drawtext name="temp" x="2.2*{rowheight} + 0.75*{rowheight} - {width(temp)}/2" font="{vdrOsd}" fontsize="11%" y="0" color="{clrWhite}" text="{hourly[temperature]}°C" />
-            <drawtext name="felt" x="2.2*{rowheight} + 0.75*{rowheight} - {width(felt)}/2" font="{vdrOsd}" fontsize="5%" y="{rowheight}*0.6" color="{clrWhite}" text="{tr(felt)} {hourly[apparenttemperature]}°C" />
-            <drawtext x="4.2*{rowheight}" font="{vdrOsd}" fontsize="{rowheight}/3-2" y="0" width="{columnwidth} - 4*{rowheight}" color="{clrWhite}" text="{hourly[summary]}" />
-            <drawtext x="4.2*{rowheight}" font="{vdrOsd}" fontsize="{rowheight}/3-2" y="{rowheight}/3" width="{columnwidth} - 4*{rowheight}" color="{clrWhite}" text="{tr(precipitationprobability)} {hourly[precipitationprobability]}%, {hourly[precipitationintensity]} l/qm" />
-            <drawtext x="4.2*{rowheight}" font="{vdrOsd}" fontsize="{rowheight}/3-2" y="{rowheight}*2/3" width="{columnwidth} - 4*{rowheight}" color="{clrWhite}" text="{tr(windspeed)} {hourly[windspeed]} km/h {tr(from)} {hourly[windbearingstring]}" />
+            <drawtext name="temp" x="2.2*{rowheight} + 0.75*{rowheight} - {width(temp)}/2" font="{regular}" fontsize="11%" y="0" color="{clrWhite}" text="{hourly[temperature]}°C" />
+            <drawtext name="felt" x="2.2*{rowheight} + 0.75*{rowheight} - {width(felt)}/2" font="{regular}" fontsize="5%" y="{rowheight}*0.6" color="{clrWhite}" text="{tr(felt)} {hourly[apparenttemperature]}°C" />
+            <drawtext x="4.2*{rowheight}" font="{regular}" fontsize="{rowheight}/3-2" y="0" width="{columnwidth} - 4*{rowheight}" color="{clrWhite}" text="{hourly[summary]}" />
+            <drawtext x="4.2*{rowheight}" font="{regular}" fontsize="{rowheight}/3-2" y="{rowheight}/3" width="{columnwidth} - 4*{rowheight}" color="{clrWhite}" text="{tr(precipitationprobability)} {hourly[precipitationprobability]}%, {hourly[precipitationintensity]} l/qm" />
+            <drawtext x="4.2*{rowheight}" font="{regular}" fontsize="{rowheight}/3-2" y="{rowheight}*2/3" width="{columnwidth} - 4*{rowheight}" color="{clrWhite}" text="{tr(windspeed)} {hourly[windspeed]} km/h {tr(from)} {hourly[windbearingstring]}" />
             <drawrectangle x="0" y="{rowheight} - 1" width="{columnwidth}" height="1" color="{clrWhite}" />
         </loop>
     </tab>

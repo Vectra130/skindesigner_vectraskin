@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE displayvolume SYSTEM "../../../dtd/displayvolume.dtd">
 
-<displayvolume x="20%" y="75%" width="60%" height="10%" fadetime="{fadeTime}">
+<displayvolume x="20%" y="75%" width="60%" height="10%" fadetime="{displayvolumefadetime}">
 
     <background>
     </background>
@@ -19,8 +19,8 @@
         </area>
         <!-- Header -->
         <area x="0" y="8%" width="100%" height="40%" layer="2">
-            <drawtext condition="not{mute}" x="4%" valign="center" align="center" font="{vdrOsd}" fontsize="100%" color="{clrWhite}" text="{tr(volume)}: {volpercent}%" />
-            <drawtext condition="{mute}" x="4%" valign="center" align="center" font="{vdrOsd}" fontsize="100%" color="{clrWhite}" text="{tr(volume)}: 0%" />
+            <drawtext condition="not{mute}" x="4%" valign="center" align="center" font="{regular}" fontsize="100%" color="{clrWhite}" text="{tr(volume)}: {volpercent}%" />
+            <drawtext condition="{mute}" x="4%" valign="center" align="center" font="{regular}" fontsize="100%" color="{clrWhite}" text="{tr(volume)}: 0%" />
 <!--            <drawimage condition="not{mute}" imagetype="icon" path="ico_volume" x="{areawidth} - 2*{areaheight}" y="5" width="{areaheight}" height="{areaheight}"/>
 -->
             <drawimage condition="{mute}" imagetype="icon" path="ico_mute" x="{areawidth} - 2*{areaheight}" y="5" width="{areaheight}" height="{areaheight}"/>

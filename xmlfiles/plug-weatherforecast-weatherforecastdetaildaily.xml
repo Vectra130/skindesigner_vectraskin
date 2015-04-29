@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE menuplugin SYSTEM "../../../dtd/displaymenuplugin.dtd">
 
-<menuplugin x="0" y="0" width="100%" height="100%" fadetime="0">
+<menuplugin x="0" y="0" width="100%" height="100%" fadetime="{menufadetime}">
    <background>
         <area x="0" y="0" width="100%" height="100%" layer="1">
             <fill color="{clrTransBlack}" />
@@ -65,10 +65,10 @@
        <loop name="daily" x="0" y="1%" orientation="vertical" columnwidth="{areawidth}" rowheight="{areaheight}/5">
             <drawtext x="0" font="{semibold}" fontsize="8%" valign="center" color="{clrWhite}" text="{daily[dayname]} {daily[day]}" />
             <drawimage imagetype="icon" path="{daily[icon]}" x="2.2*{rowheight}" valign="center" width="{rowheight}*0.8" height="{rowheight}*0.8"/>
-            <drawtext x="3.5*{rowheight}" font="{vdrOsd}" fontsize="{rowheight}*0.3" y="0" color="{clrWhite}" text="{daily[temperaturemin]}°C - {daily[temperaturemax]}°C   ({tr(max)} {daily[temperaturemaxtime]}, {tr(min)} {daily[temperaturemintime]})" />
-            <drawtext x="3.5*{rowheight}" font="{vdrOsd}" fontsize="{rowheight}/4" y="{rowheight}*0.25" width="{columnwidth} - 3.5*{rowheight}" color="{clrWhite}" text="{daily[summary]}" />
-            <drawtext x="3.5*{rowheight}" font="{vdrOsd}" fontsize="{rowheight}/4" y="{rowheight}*0.5" width="{columnwidth} - 3.5*{rowheight}" color="{clrWhite}" text="{tr(precipitationprobability)} {daily[precipitationprobability]}%, {daily[precipitationintensity]} l/qm, {tr(windspeed)} {daily[windspeed]} km/h {tr(from)} {daily[windbearingstring]}" />
-            <drawtext x="3.5*{rowheight}" font="{vdrOsd}" fontsize="{rowheight}/4" y="{rowheight}*0.75" width="{columnwidth} - 3.5*{rowheight}" color="{clrWhite}" text="{tr(cloudcover)} {daily[cloudcover]}%, {tr(visibility)} {daily[visibility]} km, {tr(pressure)} {daily[pressure]} HPa, {tr(ozone)} {daily[ozone]} DU" />
+            <drawtext x="3.5*{rowheight}" font="{regular}" fontsize="{rowheight}*0.3" y="0" color="{clrWhite}" text="{daily[temperaturemin]}°C - {daily[temperaturemax]}°C   ({tr(max)} {daily[temperaturemaxtime]}, {tr(min)} {daily[temperaturemintime]})" />
+            <drawtext x="3.5*{rowheight}" font="{regular}" fontsize="{rowheight}/4" y="{rowheight}*0.25" width="{columnwidth} - 3.5*{rowheight}" color="{clrWhite}" text="{daily[summary]}" />
+            <drawtext x="3.5*{rowheight}" font="{regular}" fontsize="{rowheight}/4" y="{rowheight}*0.5" width="{columnwidth} - 3.5*{rowheight}" color="{clrWhite}" text="{tr(precipitationprobability)} {daily[precipitationprobability]}%, {daily[precipitationintensity]} l/qm, {tr(windspeed)} {daily[windspeed]} km/h {tr(from)} {daily[windbearingstring]}" />
+            <drawtext x="3.5*{rowheight}" font="{regular}" fontsize="{rowheight}/4" y="{rowheight}*0.75" width="{columnwidth} - 3.5*{rowheight}" color="{clrWhite}" text="{tr(cloudcover)} {daily[cloudcover]}%, {tr(visibility)} {daily[visibility]} km, {tr(pressure)} {daily[pressure]} HPa, {tr(ozone)} {daily[ozone]} DU" />
             <drawrectangle x="0" y="{rowheight} - 1" width="{columnwidth}" height="1" color="{clrWhite}" />
         </loop>
     </tab>

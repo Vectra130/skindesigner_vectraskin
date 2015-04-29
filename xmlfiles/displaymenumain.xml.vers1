@@ -2,8 +2,8 @@
     <header>
         <area x="1%" y="0" width="64%" height="10%" layer="3">
             <drawimage imagetype="icon" path="ico_vdrlogo" x="0" valign="center" width="{areaheight} * 0.5 * 160 / 70" height="{areaheight}*0.5"/>
-            <drawtext condition="{vectrasetup}" x="{areaheight} * 0.9 * 160 / 70 - 70" valign="center" font="{vdrOsd}" fontsize="45%" color="{clrWhite}" text="{systemTyp} {vdrversion}" />
-            <drawtext condition="not{vectrasetup}" x="{areaheight} * 0.9 * 160 / 70 - 70" valign="center" font="{vdrOsd}" fontsize="45%" color="{clrWhite}" text="{vdrversion}" />
+            <drawtext condition="{vectrasetup}" x="{areaheight} * 0.9 * 160 / 70 - 70" valign="center" font="{regular}" fontsize="45%" color="{clrWhite}" text="{systemTyp} {vdrversion}" />
+            <drawtext condition="not{vectrasetup}" x="{areaheight} * 0.9 * 160 / 70 - 70" valign="center" font="{regular}" fontsize="45%" color="{clrWhite}" text="{vdrversion}" />
         </area>
     </header>
 
@@ -13,7 +13,7 @@
 	</area>
         <area x="{areawidth}*0.319" y="13%" width="44%" height="{areaheight}*0.02 - 2" layer="2">
 	    <drawimage condition="gt({numtimers}, 0)" x="2" y="1" imagetype="icon" path="ico_activetimer" width="{areaheight}-2" height="{areaheight}-2" />
-            <drawtext condition="gt({numtimers}, 0)" x="{areaheight}+10" valign="center" font="{vdrOsd}" fontsize="98%" color="{clrWhite}" text="{numtimers} aktive Timer" />
+            <drawtext condition="gt({numtimers}, 0)" x="{areaheight}+10" valign="center" font="{regular}" fontsize="98%" color="{clrWhite}" text="{numtimers} aktive Timer" />
 	</area>
         <area x="{areawidth}*0.319" y="15%" width="44%" height="15%" layer="1">
             <drawrectangle condition="gt({numtimers}, 0)" y="0" x="0" height="{areaheight}" width="{areawidth} / 4 * 99 / 100" color="{clrBackground}" />
@@ -25,9 +25,9 @@
             <loop name="timers" x="0" y="0" orientation="horizontal" rowheight="100%" columnwidth="{areawidth} / 4" overflow="cut">
                 <drawimage cache="true" name="logo" imagetype="channellogo" path="{timers[channelid]}" height="52%" width="{columnwidth} / 2" align="center" y="5" />
 	        <drawimage condition="{timers[recording]}" x="{columnwidth}/1.6" y="85%" imagetype="icon" path="ico_timer_recording" width="15%" height="15%" />
-                <drawtextbox x="5" y="58%" width="{columnwidth}-10" align="center" maxlines="2" font="{vdrOsd}" fontsize="15%" color="{clrWhite}" text="{timers[title]}" />
+                <drawtextbox x="5" y="58%" width="{columnwidth}-10" align="center" maxlines="2" font="{regular}" fontsize="15%" color="{clrWhite}" text="{timers[title]}" />
 
-                <drawtext align="center" y="{areaheight}*0.85-2" font="{vdrOsd}" fontsize="15%" color="{clrGray}" text="{timers[datetime]}" />
+                <drawtext align="center" y="{areaheight}*0.85-2" font="{regular}" fontsize="15%" color="{clrGray}" text="{timers[datetime]}" />
             </loop>
         </area>
     </timers>
@@ -63,9 +63,9 @@
         </area>
         <area x="87%" y="13%" width="11%" height="17%" layer="3">
             <drawimage imagetype="icon" path="ico_discusage" align="center" y="2" width="{areawidth}*45/100" height="{areawidth}*45/100"/>
-            <drawtext align="center" y="20%" font="{vdrOsd}" fontsize="17%" color="{clrTransWhite}" text="{usedpercent}%" />
-            <drawtext name="diskusage" align="center" y="60%" font="{vdrOsd}" fontsize="17%" color="{clrWhite}" text="{freetime}h {tr(free)}" />
-            <drawtext align="center" y="{posy(diskusage)}+{height(diskusage)}-5" font="{vdrOsd}" fontsize="12%" color="{clrGray}" text="({freegb}GB)" />
+            <drawtext align="center" y="20%" font="{regular}" fontsize="17%" color="{clrTransWhite}" text="{usedpercent}%" />
+            <drawtext name="diskusage" align="center" y="60%" font="{regular}" fontsize="17%" color="{clrWhite}" text="{freetime}h {tr(free)}" />
+            <drawtext align="center" y="{posy(diskusage)}+{height(diskusage)}-5" font="{regular}" fontsize="12%" color="{clrGray}" text="({freegb}GB)" />
 	</area>
 	<area x="{areawidth}*0.87+5" y="28%" width="{areawidth}*0.11-10" height="1%" layer="2" >
             <drawimage imagetype="skinpart" path="farbverlauf" x="0" y="0" width="{areawidth}" height="100%" />
@@ -80,8 +80,8 @@
 	</area>
 	<!-- cpu temp -->
 	<area condition="{showmainmenusysinfo}++{cputemp}" x="{areawidth}*0.759+5" y="22%" width="{areawidth}*0.11-10" height="4%" layer="2" >
-            <drawtext align="center" y="2%" font="{vdrOsd}" fontsize="60%" color="{clrWhite}" text="{tr(cputemp)}" />
-            <drawtext condition="{showmainmenusysinfovalue}" align="right" y="{areaheight}*0.56" font="{vdrOsd}" fontsize="40%" color="{clrGray}" text="{cputemp}°C" />
+            <drawtext align="center" y="2%" font="{regular}" fontsize="60%" color="{clrWhite}" text="{tr(cputemp)}" />
+            <drawtext condition="{showmainmenusysinfovalue}" align="right" y="{areaheight}*0.56" font="{regular}" fontsize="40%" color="{clrGray}" text="{cputemp}°C" />
         </area>
 	<!-- ohne Werte -->
 	<area condition="{showmainmenusysinfo}++{cputemp}++not{showmainmenusysinfovalue}" x="{areawidth}*0.759+5" y="22%" width="{areawidth}*0.11-10" height="4%" layer="2" >
@@ -97,8 +97,8 @@
         </area>
 	<!-- gpu temp -->
 	<area condition="{showmainmenusysinfo}++{gputemp}" x="{areawidth}*0.759+5" y="26%" width="{areawidth}*0.11-10" height="4%" layer="2" >
-            <drawtext align="center" y="2%" font="{vdrOsd}" fontsize="60%" color="{clrWhite}" text="{tr(gputemp)}" />
-            <drawtext condition="{showmainmenusysinfovalue}" align="right" y="{areaheight}*0.56" font="{vdrOsd}" fontsize="40%" color="{clrGray}" text="{gputemp}°C" />
+            <drawtext align="center" y="2%" font="{regular}" fontsize="60%" color="{clrWhite}" text="{tr(gputemp)}" />
+            <drawtext condition="{showmainmenusysinfovalue}" align="right" y="{areaheight}*0.56" font="{regular}" fontsize="40%" color="{clrGray}" text="{gputemp}°C" />
         </area>
 	<!-- ohne Werte -->
 	<area condition="{showmainmenusysinfo}++{gputemp}++not{showmainmenusysinfovalue}" x="{areawidth}*0.759+5" y="26%" width="{areawidth}*0.11-10" height="4%" layer="2" >
@@ -115,8 +115,8 @@
     </temperatures>
     <systemload>
 	<area condition="{showmainmenusysinfo}" x="{areawidth}*0.759+5" y="14%" width="{areawidth}*0.11-10" height="4%" layer="2" >
-            <drawtext align="center" y="2%" font="{vdrOsd}" fontsize="60%" color="{clrWhite}" text="{tr(systemload)}" />
-            <drawtext condition="{showmainmenusysinfovalue}" align="right" y="{areaheight}*0.56" font="{vdrOsd}" fontsize="40%" color="{clrGray}" text="{load}" />
+            <drawtext align="center" y="2%" font="{regular}" fontsize="60%" color="{clrWhite}" text="{tr(systemload)}" />
+            <drawtext condition="{showmainmenusysinfovalue}" align="right" y="{areaheight}*0.56" font="{regular}" fontsize="40%" color="{clrGray}" text="{load}" />
         </area>
 	<!-- ohne Werte -->
 	<area condition="{showmainmenusysinfo}++not{showmainmenusysinfovalue}" x="{areawidth}*0.759+5" y="14%" width="{areawidth}*0.11-10" height="4%" layer="2" >
@@ -133,8 +133,8 @@
     </systemload>
     <customtokens> <!-- memusage -->
 	<area condition="{showmainmenusysinfo}++{ctMem}" x="{areawidth}*0.759+5" y="18%" width="{areawidth}*0.11-10" height="4%" layer="2" >
-            <drawtext align="center" y="2%" font="{vdrOsd}" fontsize="60%" color="{clrWhite}" text="{tr(memusage)}" />
-            <drawtext condition="{showmainmenusysinfovalue}" align="right" y="{areaheight}*0.56" font="{vdrOsd}" fontsize="40%" color="{clrGray}" text="{ctMem}%" />
+            <drawtext align="center" y="2%" font="{regular}" fontsize="60%" color="{clrWhite}" text="{tr(memusage)}" />
+            <drawtext condition="{showmainmenusysinfovalue}" align="right" y="{areaheight}*0.56" font="{regular}" fontsize="40%" color="{clrGray}" text="{ctMem}%" />
         </area>
 	<!-- ohne Werte -->
 	<area condition="{showmainmenusysinfo}++{ctMem}++not{showmainmenusysinfovalue}" x="{areawidth}*0.759+5" y="18%" width="{areawidth}*0.11-10" height="4%" layer="2" >
@@ -189,14 +189,14 @@
                 <drawimage cache="true" imagetype="menuicon" path="{icon}" x="10" valign="center" width="{areaheight}*0.75" height="{areaheight}*0.75"/>
             </area>
             <areascroll condition="not{showmainmenuicons}" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="2%" width="98%" layer="3">
-                <drawtext condition="not{current}" name="menutext" x="2%" valign="center" font="{vdrOsd}" fontsize="40%" color="{clrFontMenuItem}" text="{number} {label}" />
-                <drawtext condition="{current}" name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="80%" color="{clrFontMenuItemSelected}" text="{number}" />
-                <drawtext condition="{current}" name="menutext" x="15%" valign="center" font="{vdrOsd}" fontsize="40%" color="{clrFontMenuItemSelected}" text="{label}" />
+                <drawtext condition="not{current}" name="menutext" x="2%" valign="center" font="{regular}" fontsize="40%" color="{clrFontMenuItem}" text="{number} {label}" />
+                <drawtext condition="{current}" name="menutext" x="0" valign="center" font="{regular}" fontsize="80%" color="{clrFontMenuItemSelected}" text="{number}" />
+                <drawtext condition="{current}" name="menutext" x="15%" valign="center" font="{regular}" fontsize="40%" color="{clrFontMenuItemSelected}" text="{label}" />
             </areascroll>
             <areascroll condition="{showmainmenuicons}" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="23%" width="77%" layer="3">
-                <drawtext condition="not{current}" name="menutext" x="2%" valign="center" font="{vdrOsd}" fontsize="40%" color="{clrFontMenuItem}" text="{number} {label}" />
-                <drawtext condition="{current}" name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="80%" color="{clrFontMenuItemSelected}" text="{number}" />
-                <drawtext condition="{current}" name="menutext" x="15%" valign="center" font="{vdrOsd}" fontsize="40%" color="{clrFontMenuItemSelected}" text="{label}" />
+                <drawtext condition="not{current}" name="menutext" x="2%" valign="center" font="{regular}" fontsize="40%" color="{clrFontMenuItem}" text="{number} {label}" />
+                <drawtext condition="{current}" name="menutext" x="0" valign="center" font="{regular}" fontsize="80%" color="{clrFontMenuItemSelected}" text="{number}" />
+                <drawtext condition="{current}" name="menutext" x="15%" valign="center" font="{regular}" fontsize="40%" color="{clrFontMenuItemSelected}" text="{label}" />
             </areascroll>
         </listelement>
 	<currentelement fadetime="0" delay="50">

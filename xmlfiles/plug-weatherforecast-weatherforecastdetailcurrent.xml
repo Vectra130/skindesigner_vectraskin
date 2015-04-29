@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE menuplugin SYSTEM "../../../dtd/displaymenuplugin.dtd">
 
-<menuplugin x="0" y="0" width="100%" height="100%" fadetime="0">
+<menuplugin x="0" y="0" width="100%" height="100%" fadetime="{menufadetime}">
     <background>
         <area x="0" y="0" width="100%" height="100%" layer="1">
             <fill color="{clrTransBlack}" />
@@ -53,22 +53,22 @@
         </area>
         <area x="1%" y="10%" width="97%" height="15%" layer="3">
             <drawimage name="weathericon" imagetype="icon" path="{icon}" align="right" valign="center" width="{areaheight}*0.7" height="70%"/>
-            <drawtext name="temp" x="{areawidth} - {width(weathericon)} - {width(temp)} - 10" valign="center" font="{vdrOsd}" fontsize="50%" color="{clrWhite}" text="{temperature}°C" />
+            <drawtext name="temp" x="{areawidth} - {width(weathericon)} - {width(temp)} - 10" valign="center" font="{regular}" fontsize="50%" color="{clrWhite}" text="{temperature}°C" />
             <drawtext x="2%" y="20%" font="{semibold}" fontsize="35%" color="{clrWhite}" text="{tr(conditions)} {tr(for)} {city}, {timestamp}:" />
             <drawtext x="2%" y="55%" font="{semibold}" fontsize="35%" color="{clrWhite}" text="{summary}" />
         </area>
     </detailheader>
 
     <tab name="current" x="2%" y="25%" width="94%" height="60%" layer="2" scrollheight="{areaheight}/4">
-        <drawtext x="0" y="6%" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{tr(apparenttemp)}: {apparenttemperature}°C" />
-        <drawtext x="0" y="12%" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{tr(todaymin)}: {mintemperature}°C, {tr(todaymax)}: {maxtemperature}°C" />
-        <drawtext x="0" y="18%" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{tr(precipitationprobability)}: {precipitationprobability} %" />
-        <drawtext x="0" y="24%" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{tr(precipitationintensity)}: {precipitationintensity} l/qm" />
-        <drawtext x="0" y="30%" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{tr(humidity)}: {humidity} %" />
-        <drawtext x="0" y="36%" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{tr(windspeed)}: {windspeed} km/h aus {windbearingstring}" />
-        <drawtext x="0" y="42%" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{tr(visibility)}: {visibility} km" />
-        <drawtext x="0" y="48%" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{tr(cloudcover)}: {cloudcover} %" />
-        <drawtext x="0" y="54%" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{tr(pressure)}: {pressure} HPa" />
-        <drawtext x="0" y="60%" font="{vdrOsd}" fontsize="6%" color="{clrWhite}" text="{tr(ozone)}: {ozone} DU" />
+        <drawtext x="0" y="6%" font="{regular}" fontsize="6%" color="{clrWhite}" text="{tr(apparenttemp)}: {apparenttemperature}°C" />
+        <drawtext x="0" y="12%" font="{regular}" fontsize="6%" color="{clrWhite}" text="{tr(todaymin)}: {mintemperature}°C, {tr(todaymax)}: {maxtemperature}°C" />
+        <drawtext x="0" y="18%" font="{regular}" fontsize="6%" color="{clrWhite}" text="{tr(precipitationprobability)}: {precipitationprobability} %" />
+        <drawtext x="0" y="24%" font="{regular}" fontsize="6%" color="{clrWhite}" text="{tr(precipitationintensity)}: {precipitationintensity} l/qm" />
+        <drawtext x="0" y="30%" font="{regular}" fontsize="6%" color="{clrWhite}" text="{tr(humidity)}: {humidity} %" />
+        <drawtext x="0" y="36%" font="{regular}" fontsize="6%" color="{clrWhite}" text="{tr(windspeed)}: {windspeed} km/h aus {windbearingstring}" />
+        <drawtext x="0" y="42%" font="{regular}" fontsize="6%" color="{clrWhite}" text="{tr(visibility)}: {visibility} km" />
+        <drawtext x="0" y="48%" font="{regular}" fontsize="6%" color="{clrWhite}" text="{tr(cloudcover)}: {cloudcover} %" />
+        <drawtext x="0" y="54%" font="{regular}" fontsize="6%" color="{clrWhite}" text="{tr(pressure)}: {pressure} HPa" />
+        <drawtext x="0" y="60%" font="{regular}" fontsize="6%" color="{clrWhite}" text="{tr(ozone)}: {ozone} DU" />
     </tab>
 </menuplugin>
