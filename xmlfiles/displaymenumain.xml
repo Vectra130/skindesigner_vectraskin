@@ -136,7 +136,7 @@
         <area background="true" x="{areawidth}*0.319" y="32%" width="22%" height="15%" layer="3">
             <drawimage name="ico_discusage" imagetype="icon" path="ico_discusage" valign="center" x="{areawidth}/8*2.5 - {width(ico_discusage)}/2" width="{areawidth}*45/100/2" height="{areawidth}*45/100/2"/>
 	</area>
-        <area x="{areawidth}*0.419" y="32%" width="11%" height="15%" layer="3">
+        <area x="{areawidth}*0.419" y="29%" width="11%" height="21%" layer="3">
             <drawtext align="center" y="30%" font="{regular}" fontsize="17%" color="{clrTransWhite}" text="{usedpercent}%" />
             <drawtext name="diskusage" align="center" y="50%" font="{regular}" fontsize="17%" color="{clrWhite}" text="{freetime}h {tr(free)}" />
             <drawtext align="center" y="{posy(diskusage)}+{height(diskusage)}" font="{regular}" fontsize="12%" color="{clrGray}" text="({freegb}GB)" />
