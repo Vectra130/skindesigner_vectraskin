@@ -20,6 +20,10 @@
              <drawimage cache="true" imagetype="skinpart" path="verticalbartop" x="2" y="4 + {areaheight} * {offset} / 1000" width="{areawidth} - 4" height="{areaheight} * {height} / 1000 - 8"/>
         </area>
     </scrollbar>
+
+    <header>
+    </header>
+
     <!-- Available Variables in detailheader elements:
     {title}                   title of event
     {shorttext}               shorttext of event
